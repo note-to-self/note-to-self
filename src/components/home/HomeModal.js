@@ -20,25 +20,37 @@ justify-content: center;
 align-items: center;
 background-color: white;
 opacity: 1;
-transition: 1s opacity;
+transition: 2s opacity;
 animation-fill-mode: both;
 animation-delay: 0;
-animation-duration: 2s;
--webkit-animation-name: fadeOut;
-animation-name: fadeOut;
+animation-duration: 3s;
+-webkit-animation-name: fadeIn, fadeOut;
+animation-name: fadeIn, fadeOut;
 
 .logo {
   padding-bottom: 70%;
   width: 40%;
 }
 
-@-webkit-keyframes fadeOut {
-  80% {opacity: 1;}
-  100% {opacity: 0;
-        z-index:-1}
-}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  30% {opacity: .2;}
+  40% {opacity: .4;}
+  50% {opacity: .6;}
+  70% {opacity: .8;}
+  90% {opacity: .9;}
+  100% {opacity: 1;}
+} 
+
 @keyframes fadeOut {
-  80% {opacity: 1;}
+  20% {opacity: 1;}
+  30% {opacity: .9;}
+  40% {opacity: .8;}
+  50% {opacity: .7;}
+  60% {opacity: .6;}
+  70% {opacity: .5;}
+  80% {opacity: .4;}
+  90% {opacity: .2;}
   100% {opacity: 0;
         z-index:-1}
   }
