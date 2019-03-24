@@ -30,7 +30,8 @@ export const handleAuth = () => {
             token: result.idToken,
             id: info.sub,
             name: info.nickname,
-            profilePicture: info.picture
+            profilePicture: info.picture,
+            user_metadata: info['https://note-to-self-client.com/metadata']
           });
         });
       } else {
