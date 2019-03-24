@@ -1,7 +1,14 @@
 import React from 'react';
+import HomeModal from '../home/HomeModal';
+import Home from '../home/Home';
+
+
 
 export default function App() {
   return (
-    <h1>NOTE TO SELF</h1> 
+    <>
+    <HomeModal/>
+    <Home/>
+    </>
   );
 }
