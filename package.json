@@ -21,11 +21,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "copy-webpack-plugin": "^5.0.2",
-=======
     "auth0-js": "^9.10.1",
->>>>>>> ecc9ee36ee2857b4c533370b4a02f6032a7f7da0
     "dotenv-webpack": "^1.7.0",
     "normalize.css": "^8.0.1",
     "promise-middleware-redux": "^1.0.5",
