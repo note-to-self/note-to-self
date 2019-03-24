@@ -1,21 +1,26 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { withSession } from './containers/withSession';
-import Callback from './containers/auth/Callback';
+import Callback from './containers/Callback';
 import Home from './components/Home';
+import AuthContainer from './containers/authContainer';
 
 export const ROUTES  = {
   HOME: {
-    path: '/',
-    component: withSession(Home),
-    linkTo: () => '/'
+    path: '/home',
+    component: Home,
+    linkTo: () => '/home'
   },
   CALLBACK: {
     path: '/callback',
     component: Callback,
     linkTo: () => '/callback'
+  },
+  AUTHCONTAINER: {
+    path: '/auth',
+    component: withSession(AuthContainer),
+    LinkTo: () => '/auth'
   }
-    
 };
 
 export const getRoutes = () => {

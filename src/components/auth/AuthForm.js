@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AuthForm({ handleAuth }) {
+function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
   return (
-    <form onSubmit={handleAuth} id="signup">
+    <form onSubmit={handleAuth.bind(null, email, password, name, phone)} id="signup">
       <fieldset>
         <legend>Sign up</legend>
         <label htmlFor="signup-email"></label>
-        <input type="email" id="signup-email" placeholder="Email" required/>
+        <input onChange={onChange} type="email" id="signup-email" placeholder="Email" value={email} required/>
         
         <label htmlFor="signup-password"></label>
-        <input type="password" id="signup-password" placeholder="Password"
+        <input onChange={onChange} type="password" id="signup-password" placeholder="Password" value={password}
           required/>
         
         <label htmlFor="name"></label>
-        <input type="text" id="name" placeholder="Full name" required/>
+        <input onChange={onChange} type="text" id="name" placeholder="Full name" value={name} required/>
         
         <label htmlFor="phone"></label>
-        <input type="tel" id="phone" placeholder="phone"/>
+        <input onChange={onChange} type="tel" id="phone" value={phone} placeholder="phone"/>
         
         <button type="submit" value="Sign up"></button>
       </fieldset>
@@ -26,7 +26,11 @@ function AuthForm({ handleAuth }) {
 }
 
 AuthForm.propTypes = {
-  handleAuth: PropTypes.func.isRequired
+  handleAuth: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired
 };
 
 export default AuthForm;

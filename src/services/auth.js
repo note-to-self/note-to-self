@@ -9,15 +9,15 @@ const auth0 = new WebAuth({
 });
 
 export const login = () => {
-  const signup = (email, password, name, phone) => {
-    auth0.signup({
-      email,
-      password,
-      connection: 'Username-Password-Authentication',
-      user_metadata: { name, phone }
-    });
-  };
-  return auth0.authorize(signup);
+  // const signup = (email, password, name, phone) => {
+  //   auth0.signup({
+  //     email,
+  //     password,
+  //     connection: 'Username-Password-Authentication',
+  //     user_metadata: { name, phone }
+  //   });
+  // };
+  return auth0.authorize();
 };
 
 export const handleAuth = () => {

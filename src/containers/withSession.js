@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../../services/auth';
-import { getToken } from '../../selectors/session';
+import { login } from '../services/auth';
+import { getToken } from '../selectors/session';
 
 export const withSession = Component => {
   class WithSession extends React.PureComponent {

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setSession } from '../../actions/session';
-import { getToken } from '../../selectors/session';
-import { ROUTES } from '../../routes';
+import { setSession } from '../actions/session';
+import { getToken } from '../selectors/session';
+import { ROUTES } from '../routes';
 
 class Callback extends React.PureComponent{
     static propTypes = {
