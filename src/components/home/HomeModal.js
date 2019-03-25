@@ -2,8 +2,9 @@ import React from 'react';
 import styles from 'styled-components';
 import homeImage from '../../../assets/images/home-image.jpg';
 import logo from '../../../assets/images/logo.png';
+import Home from '../home/Home';
 
-const HomeContainer = styles.div`
+const HomeContainer = styles.section`
 position: fixed;
 top: 0; 
 left: 0;
@@ -59,9 +60,10 @@ animation-name: fadeIn, fadeOut;
 export default function HomeModal() {
   return (
     <>
-    <HomeContainer>
+    {/* <HomeContainer>
       <img className="logo" src={logo} />
-    </HomeContainer>
+    </HomeContainer> */}
+    <Home/>
     </>
   );
 }

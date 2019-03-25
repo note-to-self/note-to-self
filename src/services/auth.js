@@ -56,3 +56,7 @@ export const signup = (user) => {
   });
 };
 
+
+export const logout = () => {
+  auth0.logout();
+};
