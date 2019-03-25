@@ -18,8 +18,8 @@ export const ROUTES  = {
   },
   AUTHCONTAINER: {
     path: '/auth',
-    component: withSession(AuthContainer),
-    LinkTo: () => '/auth'
+    component: AuthContainer,
+    linkTo: () => '/auth'
   }
 };
 
