@@ -1,14 +1,17 @@
 import React from 'react';
-import HomeModal from '../home/HomeModal';
-import Home from '../home/Home';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { getRoutes } from '../../routes';
 
-
+import 'normalize.css';
 
 export default function App() {
   return (
-    <>
-    <HomeModal/>
-    <Home/>
-    </>
+    <Router>
+     <>
+     <Switch>
+       {getRoutes()}
+     </Switch>
+     </>
+    </Router>
   );
 }
