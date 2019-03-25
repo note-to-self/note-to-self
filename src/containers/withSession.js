@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../services/auth';
 import { getToken } from '../selectors/session';
 import AuthContainer from './AuthContainer';
 // import { Redirect } from 'react-router-dom';
