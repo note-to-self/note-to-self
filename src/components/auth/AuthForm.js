@@ -27,10 +27,10 @@ function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
 
 AuthForm.propTypes = {
   handleAuth: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  email: PropTypes.string,
+  phone: PropTypes.string,
+  password: PropTypes.string,
   onChange: PropTypes.func.isRequired
 };
 
