@@ -5,7 +5,7 @@ const auth0 = new WebAuth({
   domain: process.env.AUTH0_DOMAIN,
   redirectUri: process.env.AUTH0_REDIRECT,
   responseType: 'token id_token',
-  scope: 'openid profile'
+  scope: 'profile openid'
 });
 
 export const login = () => {
@@ -13,18 +13,21 @@ export const login = () => {
 };
 //turn into a callback
 // maybe works?
-export const signup = (email, password, name, phone) => {
+export const signup = (user) => {
   return new Promise((resolve, reject) => {
+    const { email, password, name, phone } = user;
+    console.log(email, password, name, phone);
     auth0.signup({
       email,
+      username: email.replace('@', '_'),
       password,
       connection: 'Username-Password-Authentication',
       user_metadata: { name, phone }
-    },  (err, result) =>{
+    },  (err, token) =>{
       if(err) return reject(err);
+      console.log('RESULT FROM SIGNUP FUNCTION', token);
       return resolve({
-        token: result.idToken,
-        email: result.email
+        token
       });
     });
   });

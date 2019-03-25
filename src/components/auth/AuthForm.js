@@ -7,19 +7,19 @@ function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
       <fieldset>
         <legend>Sign up</legend>
         <label htmlFor="signup-email"></label>
-        <input onChange={onChange} type="email" id="signup-email" placeholder="Email" value={email} required/>
+        <input onChange={onChange} value={email} type="email" id="email" placeholder="Email" required/>
         
         <label htmlFor="signup-password"></label>
-        <input onChange={onChange} type="password" id="signup-password" placeholder="Password" value={password}
+        <input onChange={onChange} value={password} type="password" id="password" placeholder="Password"
           required/>
         
         <label htmlFor="name"></label>
-        <input onChange={onChange} type="text" id="name" placeholder="Full name" value={name} required/>
+        <input onChange={onChange} value={name} type="text" id="name" placeholder="Full name" required/>
         
         <label htmlFor="phone"></label>
-        <input onChange={onChange} type="tel" id="phone" value={phone} placeholder="phone"/>
+        <input onChange={onChange} value={phone} type="tel" id="phone"  placeholder="phone"/>
         
-        <button type="submit" value="Sign up"></button>
+        <button type="submit" value="Sign up">CREAT USER BUTTOn</button>
       </fieldset>
     </form>
   );

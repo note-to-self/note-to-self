@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 // fire an action that fires that signup function from auth
 const mapDispatchToProps = dispatch => ({
   handleAuth(email, password, name, phone, event) {
-    event.preventDispatch();
+    event.preventDefault();
     dispatch(createUser({ email, password, name, phone }));
   },
   onChange({ target }) {
@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
       password: updatePassword,
       phone: updatePhone
     };
-    dispatch(factoryMethod[target.name](target.value));
+    dispatch(factoryMethod[target.id](target.value));
   }
 });
 
