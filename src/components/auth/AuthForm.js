@@ -30,7 +30,8 @@ AuthForm.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired
+  password: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default AuthForm;

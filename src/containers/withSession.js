@@ -7,7 +7,7 @@ import { getToken } from '../selectors/session';
 export const withSession = Component => {
   class WithSession extends React.PureComponent {
         static propTypes = {
-          token: PropTypes.string.isRequired
+          token: PropTypes.string
         }
         componentDidMount() {
           if(!this.props.token) {

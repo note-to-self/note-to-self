@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { handleAuth } from '../services/auth';
+import { handleAuth, signup } from '../services/auth';
 
 export const [
   setSession,
@@ -9,11 +9,15 @@ export const [
   SET_SESSION_REJECTED
 ] = createAction('SET_SESSION', handleAuth);
 
-export const CREATE_USER = 'CREATE_USER';
-export const createUser = (user) => ({
-  type: CREATE_USER,
-  payload: user
-});
+
+export const [
+  createUser,
+  CREATE_USER,
+  CREATE_USER_PENDING,
+  CREATE_USER_FULFILLED,
+  CREATE_USER_REJECTED
+] = createAction('CREATE_USER', signup);
+
 
 export const UPDATE_NAME = 'UPDATE_NAME';
 export const updateName = name => ({

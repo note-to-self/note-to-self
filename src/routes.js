@@ -8,7 +8,7 @@ import AuthContainer from './containers/authContainer';
 export const ROUTES  = {
   HOME: {
     path: '/home',
-    component: Home,
+    component: withSession(Home),
     linkTo: () => '/home'
   },
   CALLBACK: {
@@ -18,7 +18,7 @@ export const ROUTES  = {
   },
   AUTHCONTAINER: {
     path: '/auth',
-    component: withSession(AuthContainer),
+    component: AuthContainer,
     LinkTo: () => '/auth'
   }
 };

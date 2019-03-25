@@ -9,15 +9,25 @@ const auth0 = new WebAuth({
 });
 
 export const login = () => {
-  // const signup = (email, password, name, phone) => {
-  //   auth0.signup({
-  //     email,
-  //     password,
-  //     connection: 'Username-Password-Authentication',
-  //     user_metadata: { name, phone }
-  //   });
-  // };
   return auth0.authorize();
+};
+//turn into a callback
+// maybe works?
+export const signup = (email, password, name, phone) => {
+  return new Promise((resolve, reject) => {
+    auth0.signup({
+      email,
+      password,
+      connection: 'Username-Password-Authentication',
+      user_metadata: { name, phone }
+    },  (err, result) =>{
+      if(err) return reject(err);
+      return resolve({
+        token: result.idToken,
+        email: result.email
+      });
+    });
+  });
 };
 
 export const handleAuth = () => {
