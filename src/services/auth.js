@@ -5,7 +5,7 @@ const auth0 = new WebAuth({
   domain: process.env.AUTH0_DOMAIN,
   redirectUri: process.env.AUTH0_REDIRECT,
   responseType: 'token id_token',
-  scope: 'profile openid'
+  scope: 'openid profile',
 });
 
 export const login = () => {
@@ -13,25 +13,6 @@ export const login = () => {
 };
 //turn into a callback
 // maybe works?
-export const signup = (user) => {
-  return new Promise((resolve, reject) => {
-    const { email, password, name, phone } = user;
-    console.log(email, password, name, phone);
-    auth0.signup({
-      email,
-      username: email.replace('@', '_'),
-      password,
-      connection: 'Username-Password-Authentication',
-      user_metadata: { name, phone }
-    },  (err, token) =>{
-      if(err) return reject(err);
-      console.log('RESULT FROM SIGNUP FUNCTION', token);
-      return resolve({
-        token
-      });
-    });
-  });
-};
 
 export const handleAuth = () => {
   return new Promise((resolve, reject) => {
@@ -54,4 +35,24 @@ export const handleAuth = () => {
   });
 };
 
+export const signup = (user) => {
+  return new Promise((resolve, reject) => {
+    const { email, password, name, phone } = user;
+    console.log(email, password, name, phone);
+    auth0.signup({
+      email,
+      username: email.replace('@', '_'),
+      password,
+      connection: 'Username-Password-Authentication',
+      user_metadata: { name, phone }
+    },  (err, token) =>{
+      console.log('RESULT FROM SIGNUP FUNCTION', token);
+      if(err) return reject(err);
+      auth0.authorize();
+      return resolve({
+        token
+      });
+    });
+  });
+};
 

@@ -15,6 +15,7 @@ class Callback extends React.PureComponent{
       this.props.handleAuth();
     }
     render() {
+      console.log('token', this.props.token);
       if(this.props.token) {
         return <Redirect to={ROUTES.HOME.linkTo()} />;
       }

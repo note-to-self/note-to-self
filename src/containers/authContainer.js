@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import AuthForm from '../components/auth/AuthForm';
 import { getEmail, getPassword, getName, getPhone } from '../selectors/session';
-import { updateEmail, updatePassword, updatePhone, updateName } from '../actions/session';
+import { updateEmail, updatePassword, updatePhone, updateName, setSession } from '../actions/session';
 import { createUser } from '../actions/session';
 
 const mapStateToProps = state => ({
@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => ({
   handleAuth(email, password, name, phone, event) {
     event.preventDefault();
     dispatch(createUser({ email, password, name, phone }));
+    dispatch(setSession());
   },
   onChange({ target }) {
     const factoryMethod = {

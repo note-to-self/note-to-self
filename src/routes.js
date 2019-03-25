@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import Home from './components/Home';
-import AuthContainer from './containers/authContainer';
+import AuthContainer from './containers/AuthContainer';
 
 export const ROUTES  = {
   HOME: {
@@ -18,7 +18,7 @@ export const ROUTES  = {
   },
   AUTHCONTAINER: {
     path: '/auth',
-    component: AuthContainer,
+    component: withSession(AuthContainer),
     LinkTo: () => '/auth'
   }
 };
