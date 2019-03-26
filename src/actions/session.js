@@ -9,7 +9,6 @@ export const [
   SET_SESSION_REJECTED
 ] = createAction('SET_SESSION', handleAuth);
 
-
 export const [
   createUser,
   CREATE_USER,

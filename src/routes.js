@@ -4,6 +4,8 @@ import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
 import AuthContainer from './containers/AuthContainer';
+import LandingContainer from './containers/LandingContainer';
+import LoginContainer from './containers/LoginContainer';
 
 export const ROUTES  = {
   HOME: {
@@ -20,6 +22,16 @@ export const ROUTES  = {
     path: '/auth',
     component: AuthContainer,
     linkTo: () => '/auth'
+  },
+  LOGINCONTAINER: {
+    path: '/login',
+    component: LoginContainer,
+    linkTo: () => '/login'
+  },
+  LANDING: {
+    path: '/',
+    component: LandingContainer,
+    linkTo: () => '/'
   }
 };
 
