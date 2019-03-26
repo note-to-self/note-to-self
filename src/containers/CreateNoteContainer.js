@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
     };
     dispatch(factoryMethod[target.id](target.value));
   },
+  
   handleSubmit(message, time, date, event) {
     event.preventDefault();
     dispatch(createMessage({ date, time, message }));
