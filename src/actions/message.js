@@ -14,6 +14,11 @@ export const updateDate = date => ({
   type: UPDATE_DATE,
   payload: date
 });
+export const UPDATE_PUBLIC = 'UPDATE_PUBLIC';
+export const updatePublic = value => ({
+  type: UPDATE_PUBLIC,
+  payload: value
+});
 
 export const UPDATE_TIME = 'UPDATE_TIME';
 export const updateTime = time => ({
