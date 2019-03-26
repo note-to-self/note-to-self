@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import {
   Link
 } from 'react-router-dom';
+import CreateNoteContainer from '../../containers/CreateNoteContainer';
 
 // const HomeImage = styles.body`
 // @media (min-width: 375px) {
@@ -19,16 +20,9 @@ import {
 export default class Home extends PureComponent {
   static propTypes = {
     logout: PropTypes.func,
-    date: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    public: PropTypes.string.isRequired,
-    message: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired
   };
 
   render() {
-    const { date, time, message, onChange, handleSubmit } = this.props;
     return (
     <>
     <header>
@@ -39,27 +33,7 @@ export default class Home extends PureComponent {
         <Link to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></ Link>
       </nav>
     </header>
-    <main>
-      <section>
-        <form onSubmit={handleSubmit.bind(null, time, date, message, this.props.public)}> 
-          <label> Public
-            <input type="checkbox" value={this.props.public} onChange={onChange} id="public"/>
-          </label>
-          <section>
-            <label> Date
-              <input type="date" value={date} onChange={onChange} id="date" />
-            </label>
-            <label> Time
-              <input type="time" value={time} onChange={onChange} id="time"/>
-            </label> 
-            <label> Message
-              <textarea rows="8" cols="50" value={message} onChange={onChange} id="message"/>
-            </label> 
-          </section>
-          <button onClick={handleSubmit}>Create Note</button>
-        </form>
-      </section>
-    </main>
+    <CreateNoteContainer/>
     </>
     );
   }
