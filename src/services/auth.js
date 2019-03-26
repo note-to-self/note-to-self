@@ -11,8 +11,6 @@ const auth0 = new WebAuth({
 export const login = () => {
   return auth0.authorize();
 };
-//turn into a callback
-// maybe works?
 
 export const handleAuth = () => {
   return new Promise((resolve, reject) => {

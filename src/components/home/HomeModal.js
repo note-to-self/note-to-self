@@ -2,6 +2,11 @@ import React from 'react';
 // import styles from 'styled-components';
 // import homeImage from '../../../assets/images/home-image.jpg';
 import Home from '../home/Home';
+// import React from 'react';
+// import styles from 'styled-components';
+// import homeImage from '../../../assets/images/home-image.jpg';
+// import logo from '../../../assets/images/logo.png';
+// import Home from '../home/Home';
 
 // const HomeContainer = styles.section`
 // position: fixed;
@@ -56,13 +61,13 @@ import Home from '../home/Home';
 //   }
 // `;
 
-export default function HomeModal() {
-  return (
-    <>
-    {/* <HomeContainer>
-      <img className="logo" src={logo} />
-    </HomeContainer> */}
-    <Home/>
-    </>
-  );
-}
+// export default function HomeModal() {
+//   return (
+//     <>
+//     {/* <HomeContainer>
+//       <img className="logo" src={logo} />
+//     </HomeContainer> */}
+//     <Home/>
+//     </>
+//   );
+// }
