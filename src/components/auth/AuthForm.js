@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
   return (
+    <>
     <form onSubmit={handleAuth.bind(null, email, password, name, phone)} id="signup">
       <fieldset>
         <legend>Sign up</legend>
@@ -22,6 +23,7 @@ function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
         <button type="submit" value="Sign up">CREAT USER BUTTOn</button>
       </fieldset>
     </form>
+</>
   );
 }
 

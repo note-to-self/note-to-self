@@ -1,14 +1,16 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { withSession } from './containers/withSession';
+// import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
-import Home from './components/Home';
+import HomeContainer from './containers/HomeContainer';
 import AuthContainer from './containers/AuthContainer';
+import LandingContainer from './containers/LandingContainer';
+import LoginContainer from './containers/LoginContainer';
 
 export const ROUTES  = {
   HOME: {
     path: '/home',
-    component: withSession(Home),
+    component: HomeContainer,
     linkTo: () => '/home'
   },
   CALLBACK: {
@@ -20,6 +22,16 @@ export const ROUTES  = {
     path: '/auth',
     component: AuthContainer,
     linkTo: () => '/auth'
+  },
+  LOGINCONTAINER: {
+    path: '/login',
+    component: LoginContainer,
+    linkTo: () => '/login'
+  },
+  LANDING: {
+    path: '/',
+    component: LandingContainer,
+    linkTo: () => '/'
   }
 };
 
