@@ -1,10 +1,10 @@
-import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_PUBLIC } from '../actions/message';
+import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_PUBLIC_CHOICE } from '../actions/message';
 
 const initialState = {
   date: '',
   time: '',
   message: '',
-  public: ''
+  publicChoice: ''
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -31,10 +31,10 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         time: payload
       };
-    case UPDATE_PUBLIC: 
+    case UPDATE_PUBLIC_CHOICE: 
       return {
         ...state,
-        public: payload
+        publicChoice: payload
       };
     default:
       return state;

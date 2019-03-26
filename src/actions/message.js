@@ -14,9 +14,9 @@ export const updateDate = date => ({
   type: UPDATE_DATE,
   payload: date
 });
-export const UPDATE_PUBLIC = 'UPDATE_PUBLIC';
-export const updatePublic = value => ({
-  type: UPDATE_PUBLIC,
+export const UPDATE_PUBLIC_CHOICE = 'UPDATE_PUBLIC_CHOICE';
+export const updatePublicChoice = value => ({
+  type: UPDATE_PUBLIC_CHOICE,
   payload: value
 });
 
