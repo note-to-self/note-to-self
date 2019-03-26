@@ -4,7 +4,6 @@ import React, { PureComponent } from 'react';
 import 'normalize.css';
 import PropTypes from 'prop-types';
 import 'normalize.css';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
@@ -19,16 +18,7 @@ import { Link } from 'react-router-dom';
 // `;
 export default class Home extends PureComponent {
   static propTypes = {
-    logOut: PropTypes.func
-  };
-
-  render() {
-    return (
-    <>
-    <header>
-      {/* <button type="button" onClick={logOut}> LOGOUT </button> */}
-    </header>
-    logout: PropTypes.func,
+    logOut: PropTypes.func,
     date: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     public: PropTypes.string.isRequired,
@@ -36,6 +26,7 @@ export default class Home extends PureComponent {
     onChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired
   };
+
 
   render() {
     const { date, time, message, onChange, handleSubmit } = this.props;
@@ -46,7 +37,7 @@ export default class Home extends PureComponent {
         <Link to='/home'> HOME </ Link>
         <Link to='/auth'> AUTH </ Link>
         <Link to='/login'> LOGIN </ Link>
-        <Link to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></ Link>
+        <Link to='/auth'><button type="button" onClick={this.props.logOut}>LOGOUT</button></ Link>
       </nav>
     </header>
     <main>

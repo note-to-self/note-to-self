@@ -14,12 +14,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout() {
     dispatch(logOutUser());
-  }
-});
-
-export default connect(
-  null, 
   },
+
   onChange({ target }) {
     const factoryMethod = {
       date: updateDate,
@@ -32,7 +28,7 @@ export default connect(
   handleSubmit(message, time, date, event) {
     event.preventDefault();
     dispatch(createMessage({ date, time, message }));
-  },
+  }
 });
 
 export default connect(

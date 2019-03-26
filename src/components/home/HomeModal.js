@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 // import styles from 'styled-components';
 // import homeImage from '../../../assets/images/home-image.jpg';
-import Home from '../home/Home';
+// import Home from '../home/Home';
 // import React from 'react';
 // import styles from 'styled-components';
 // import homeImage from '../../../assets/images/home-image.jpg';
