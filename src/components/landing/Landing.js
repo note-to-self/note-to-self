@@ -25,7 +25,15 @@ const HomeImage = styles.main`
   display: grid;
   grid-row-template: 33% 33% 33%
   justify-content: center;
-}`;
+}
+@media (min-width: 700px) {
+  background-image: url(${homeImage}); 
+  height: 100vh;
+  background-size: 50vw 100vh;
+  background-color:  #47B1CD
+}
+
+`;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
