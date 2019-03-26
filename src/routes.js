@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { withSession } from './containers/withSession';
+// import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
 import AuthContainer from './containers/AuthContainer';
