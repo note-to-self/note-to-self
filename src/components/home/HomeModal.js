@@ -1,6 +1,10 @@
 // import React from 'react';
 // import styles from 'styled-components';
 // import homeImage from '../../../assets/images/home-image.jpg';
+// import Home from '../home/Home';
+// import React from 'react';
+// import styles from 'styled-components';
+// import homeImage from '../../../assets/images/home-image.jpg';
 // import logo from '../../../assets/images/logo.png';
 // import Home from '../home/Home';
 

@@ -3,9 +3,9 @@ import React, { PureComponent } from 'react';
 // import homeImage from '../../../assets/images/home-image.jpg';
 import 'normalize.css';
 import PropTypes from 'prop-types';
-import {
-  Link
-} from 'react-router-dom';
+import 'normalize.css';
+import { Link } from 'react-router-dom';
+
 
 // const HomeImage = styles.body`
 // @media (min-width: 375px) {
@@ -18,7 +18,7 @@ import {
 // `;
 export default class Home extends PureComponent {
   static propTypes = {
-    logout: PropTypes.func,
+    logOut: PropTypes.func,
     date: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     public: PropTypes.string.isRequired,
@@ -26,6 +26,7 @@ export default class Home extends PureComponent {
     onChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired
   };
+
 
   render() {
     const { date, time, message, onChange, handleSubmit } = this.props;
@@ -36,7 +37,7 @@ export default class Home extends PureComponent {
         <Link to='/home'> HOME </ Link>
         <Link to='/auth'> AUTH </ Link>
         <Link to='/login'> LOGIN </ Link>
-        <Link to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></ Link>
+        <Link to='/auth'><button type="button" onClick={this.props.logOut}>LOGOUT</button></ Link>
       </nav>
     </header>
     <main>
