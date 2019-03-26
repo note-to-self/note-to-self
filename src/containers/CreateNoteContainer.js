@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   handleSubmit(message, time, date, event) {
     event.preventDefault();
     dispatch(createMessage({ date, time, message }));
-  },
+  }
 });
 
 export default connect(
