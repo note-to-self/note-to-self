@@ -1,63 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`authform tests matches a snapshot 1`] = `
-<form
-  id="signup"
-  onSubmit={[Function]}
->
-  <fieldset>
-    <legend>
-      Sign up
-    </legend>
-    <label
-      htmlFor="signup-email"
-    />
-    <input
-      id="email"
-      onChange={[MockFunction]}
-      placeholder="Email"
-      required={true}
-      type="email"
-      value="email"
-    />
-    <label
-      htmlFor="signup-password"
-    />
-    <input
-      id="password"
-      onChange={[MockFunction]}
-      placeholder="Password"
-      required={true}
-      type="password"
-      value="password"
-    />
-    <label
-      htmlFor="name"
-    />
-    <input
-      id="name"
-      onChange={[MockFunction]}
-      placeholder="Full name"
-      required={true}
-      type="text"
-      value="name"
-    />
-    <label
-      htmlFor="phone"
-    />
-    <input
-      id="phone"
-      onChange={[MockFunction]}
-      placeholder="phone"
-      type="tel"
-      value="phone"
-    />
-    <button
-      type="submit"
-      value="Sign up"
-    >
-      CREAT USER BUTTOn
-    </button>
-  </fieldset>
-</form>
+<Fragment>
+  <form
+    id="signup"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <legend>
+        Sign up
+      </legend>
+      <label
+        htmlFor="signup-email"
+      />
+      <input
+        id="email"
+        onChange={[MockFunction]}
+        placeholder="Email"
+        required={true}
+        type="email"
+        value="email"
+      />
+      <label
+        htmlFor="signup-password"
+      />
+      <input
+        id="password"
+        onChange={[MockFunction]}
+        placeholder="Password"
+        required={true}
+        type="password"
+        value="password"
+      />
+      <label
+        htmlFor="name"
+      />
+      <input
+        id="name"
+        onChange={[MockFunction]}
+        placeholder="Full name"
+        required={true}
+        type="text"
+        value="name"
+      />
+      <label
+        htmlFor="phone"
+      />
+      <input
+        id="phone"
+        onChange={[MockFunction]}
+        placeholder="phone"
+        type="tel"
+        value="phone"
+      />
+      <button
+        type="submit"
+        value="Sign up"
+      >
+        CREAT USER BUTTOn
+      </button>
+    </fieldset>
+  </form>
+</Fragment>
 `;

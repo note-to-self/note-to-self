@@ -6,6 +6,7 @@ import AuthForm from './AuthForm';
 describe('authform tests', () => {
   let wrapper;
   let createUser;
+  
   beforeEach(() => {
     createUser = jest.fn();
     wrapper = shallow(
