@@ -57,6 +57,10 @@ align-self: center;
 const StyledImage = styles.img `
   justify-self: center;
 `;
+const StyledLogo = styles.img `
+  margin-top: 1em;
+  justify-self: center;
+`;
 
 export default class Landing extends React.PureComponent {
   render() {
@@ -64,7 +68,7 @@ export default class Landing extends React.PureComponent {
       <>
         {/* <LandingModal/> */}
         <HomeImage>
-          <StyledImage src={lotusIcon}/>
+          <StyledLogo src={lotusIcon}/>
           <StyledImage src={logo}/>
           <StyledDiv>
             <StyledLink to='/auth'> Sign-up </ StyledLink>
