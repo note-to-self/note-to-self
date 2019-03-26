@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import styles from 'styled-components';
 import { slide as Menu } from 'react-burger-menu';
 import openIcon from '../../../assets/images/menu.png';
+import lotus from '../../../assets/images/lotus.png';
 import PropTypes from 'prop-types';
 
 const OpenIcon = styles.img`
@@ -39,16 +40,29 @@ const DivStyle = styles.div`
   justify-content: flex-end;
 `;
 
+const Lotus = styles.img`
+  height: 6vh;
+  width: 10vw;
+  padding: 1em;
+`;
+
+const HeaderStyle = styles.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 
 export default class Header extends PureComponent {
   static propTypes = {
     logout: PropTypes.func,
+    profilePicture: PropTypes.string
   };
 
   render() {
     return (
-      <header>
+      <>
+      <HeaderStyle>
         <DivStyle>
           <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
             <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
@@ -57,7 +71,9 @@ export default class Header extends PureComponent {
             <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>
-      </header>
+        {!this.props.profilePicture ? <Lotus src={lotus} /> : <img src={this.props.profilePicture} /> }
+      </HeaderStyle>
+      </>
     );
   }
 }

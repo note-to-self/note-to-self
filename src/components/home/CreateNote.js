@@ -32,7 +32,7 @@ const InputStyle = styles.input`
 `;
 
 const FormContainer = styles.div`
-  padding-top: 7em;
+  padding-top: 5em;
   textarea {
     position: relative;
     margin: 2em 0 0 0;
