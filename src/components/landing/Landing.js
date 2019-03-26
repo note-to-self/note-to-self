@@ -7,7 +7,7 @@ import styles from 'styled-components';
 import styled from 'styled-components';
 import lotusIcon from '../../../assets/images/lotusIcon.png';
 import logo from '../../../assets/images/logo.png';
-// import LandingModal from '../home/HomeModal';
+import LandingModal from '../home/HomeModal';
 
 
 
@@ -22,9 +22,6 @@ const HomeImage = styles.main`
   background-size: 100vw 100vh;
   z-index: 99
   text-align: center;
-  display: grid;
-  grid-row-template: 33% 33% 33%
-  justify-content: center;
 }
 @media (min-width: 700px) {
   background-image: url(${homeImage}); 
@@ -36,29 +33,32 @@ const HomeImage = styles.main`
 `;
 
 const StyledLink = styled(Link)`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+  font-family: 'Muli', sans-serif;
   text-decoration: none;
-  color: black;
-  font-size: 2em;
+  color: #47B1CD;
+  font-size: 1.3em;
   font-weight: bold;
   border: 1px solid #47B1CD;
   border-radius: .3em;
-  background-color: rgba(255, 255, 255, 0.57);
-  margin: .6em;
-  padding-right: .5em;
-  padding-left: .5em;
-  
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: .8em .5em .5em .5em;
+  width: 80%; 
+  z-index: 1;
 `;
 
 const StyledDiv = styles.div`
-color: 47B1CD;
-align-self: end;
-align-self: center;
+  margin-top: 5em;
+  display: grid;
+  grid-row-gap: 2em;
+  grid-template-rows: 50% 50%;
+  margin-left: 2em;
 `;
-const StyledImage = styles.img `
-  justify-self: center;
-`;
+
 const StyledLogo = styles.img `
-  margin-top: 1em;
+  margin-top: 2em;
+  width: 20vw;
+  height: 10vh;
   justify-self: center;
 `;
 
@@ -66,10 +66,9 @@ export default class Landing extends React.PureComponent {
   render() {
     return (
       <>
-        {/* <LandingModal/> */}
+        <LandingModal/>
         <HomeImage>
           <StyledLogo src={lotusIcon}/>
-          <StyledImage src={logo}/>
           <StyledDiv>
             <StyledLink to='/auth'> Sign-up </ StyledLink>
             <StyledLink to='/login'> Sign-in </ StyledLink>
