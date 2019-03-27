@@ -7,13 +7,20 @@ export const [
   CREATE_MESSAGE_PENDING,
   CREATE_MESSAGE_FULFILLED,
   CREATE_MESSAGE_REJECTED
-] = createAction('CREATE_MESSAGE', createMessage);
+] = createAction('CREATE_MESSAGE', postNote);
   
 
 export const UPDATE_DATE = 'UPDATE_DATE';
 export const updateDate = date => ({
   type: UPDATE_DATE,
   payload: date
+});
+
+
+export const UPDATE_PRIVATE = 'UPDATE_PRIVATE';
+export const updatePrivate = value => ({
+  type: UPDATE_PRIVATE,
+  payload: value
 });
 
 export const UPDATE_TIME = 'UPDATE_TIME';
