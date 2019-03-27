@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
-import { updateDate, updateTime, updateMessage, createMessage, updatePublicChoice } from '../actions/message';
-import { getDate, getTime, getMessage, getPublicChoice } from '../selectors/message';
+import { updateDate, updateTime, updateMessage, createMessage, updateRepeat, updateRepeatDay, updateRepeatTime } from '../actions/message';
+import { getDate, getTime, getMessage, getRepeat, getRepeatDay, getRepeatTime } from '../selectors/message';
 import CreateNote from '../components/home/CreateNote';
 
 const mapStateToProps = state => ({
   date: getDate(state),
   time: getTime(state),
   message: getMessage(state),
-  publicChoice: getPublicChoice(state)
+  repeat: getRepeat(state),
+  repeatDay: getRepeatDay(state),
+  repeatTime: getRepeatTime(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -16,14 +18,16 @@ const mapDispatchToProps = dispatch => ({
       date: updateDate,
       time: updateTime,
       message: updateMessage,
-      publicChoice: updatePublicChoice
+      repeat: updateRepeat,
+      repeatDay: updateRepeatDay,
+      repeatTime: updateRepeatTime
     };
     dispatch(factoryMethod[target.id](target.value));
   },
   
-  handleSubmit(message, time, date, event) {
+  handleSubmit(message, time, date, event, repeat, repeatDay, repeatTime) {
     event.preventDefault();
-    dispatch(createMessage({ date, time, message }));
+    dispatch(createMessage({ date, time, message, repeat, repeatDay, repeatTime }));
   }
 });
 

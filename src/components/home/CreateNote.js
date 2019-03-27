@@ -43,10 +43,10 @@ const FormContainer = styles.div`
 `;
 
 
-export default function CreateNote({ handleSubmit, onChange, time, date, message, publicChoice }) {
+export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay }) {
   return (
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message, publicChoice)}> 
+      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message)}> 
         {/* <CheckboxStyle> Public
           <InputStyle type="checkbox" id="public" value={publicChoice} onChange={onChange} />
           <span></span>
@@ -59,10 +59,19 @@ export default function CreateNote({ handleSubmit, onChange, time, date, message
             <InputStyle type="time" value={time} onChange={onChange} id="time"/>
           </LabelStyle> 
           <LabelStyle> Message
-            <textarea rows="8" cols="50" value={message} onChange={onChange} id="message"/>
+            <textarea value={message} onChange={onChange} id="message"/>
+          </LabelStyle> 
+          <LabelStyle> Reoccuring
+            <input type="checkbox" value={repeat} onChange={onChange} id="repeat"/>
+          </LabelStyle> 
+          <LabelStyle> Repeat Time
+            <input type="time" value={repeatTime} onChange={onChange} id="repeatTime"/>
+          </LabelStyle> 
+          <LabelStyle> Repeat Day
+            <input type="date" value={repeatDay} onChange={onChange} id="repeatDay"/>
           </LabelStyle> 
         </section>
-        <button onClick={handleSubmit}>Create Note</button>
+        <button onClick="submit">Create Note</button>
       </FormStyle>
     </FormContainer>
   );
@@ -71,9 +80,11 @@ export default function CreateNote({ handleSubmit, onChange, time, date, message
 CreateNote.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  publicChoice: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  repeat: PropTypes.bool,
+  repeatTime: PropTypes.string,
+  repeatDay: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired
 };
 
