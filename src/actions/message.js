@@ -1,4 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
+import { postNote } from '../services/herokuApi';
 
 export const [
   createMessage,
@@ -6,7 +7,7 @@ export const [
   CREATE_MESSAGE_PENDING,
   CREATE_MESSAGE_FULFILLED,
   CREATE_MESSAGE_REJECTED
-] = createAction('CREATE_MESSAGE', createMessage);
+] = createAction('CREATE_MESSAGE', postNote);
   
 
 export const UPDATE_DATE = 'UPDATE_DATE';

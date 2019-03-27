@@ -43,10 +43,10 @@ const FormContainer = styles.div`
 `;
 
 
-export default function CreateNote({ handleSubmit, onChange, time, date, message, publicChoice }) {
+export default function CreateNote({ handleSubmit, onChange, time, date, message }) {
   return (
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message, publicChoice)}> 
+      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message )}> 
         {/* <CheckboxStyle> Public
           <InputStyle type="checkbox" id="public" value={publicChoice} onChange={onChange} />
           <span></span>
@@ -62,7 +62,7 @@ export default function CreateNote({ handleSubmit, onChange, time, date, message
             <textarea rows="8" cols="50" value={message} onChange={onChange} id="message"/>
           </LabelStyle> 
         </section>
-        <button onClick={handleSubmit}>Create Note</button>
+        <button onClick="submit">Create Note</button>
       </FormStyle>
     </FormContainer>
   );
@@ -71,7 +71,6 @@ export default function CreateNote({ handleSubmit, onChange, time, date, message
 CreateNote.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  publicChoice: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired
