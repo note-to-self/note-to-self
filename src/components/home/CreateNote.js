@@ -46,7 +46,7 @@ const FormContainer = styles.div`
 export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay }) {
   return (
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message)}> 
+      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message, repeat, repeatTime, repeatDay)}> 
         {/* <CheckboxStyle> Public
           <InputStyle type="checkbox" id="public" value={publicChoice} onChange={onChange} />
           <span></span>
