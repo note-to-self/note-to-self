@@ -1,1 +1,1 @@
-export const getSearchTerm = state => state.search.getSearchTerm;
+export const getSearchTerm = state => state.search.searchTerm;
