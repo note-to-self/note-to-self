@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList } from '../../selectors/journal';
-import Search from '../search/Search';
-import JournalList from './JournalList';
-import { updateCheckbox, deleteNote } from '../../actions/journal';
-import { getSearchTerm } from '../../selectors/search';
-import { updateSearchTerm } from '../../actions/search';
+import { getJournalList } from '../selectors/journal';
+import Search from '../components/search/Search';
+import JournalList from '../components/journal/JournalList';
+import { updateCheckbox, deleteNote } from '../actions/journal';
+import { getSearchTerm } from '../selectors/search';
+import { updateSearchTerm } from '../actions/search';
 
 class JournalPage extends PureComponent {
   static propTypes = {
