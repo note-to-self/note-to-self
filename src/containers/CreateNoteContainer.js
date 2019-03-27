@@ -1,33 +1,42 @@
 import { connect } from 'react-redux';
-import { updateDate, updateTime, updateMessage, createMessage, updateRepeat, updateRepeatDay, updateRepeatTime } from '../actions/message';
-import { getDate, getTime, getMessage, getRepeat, getRepeatDay, getRepeatTime } from '../selectors/message';
+import { updateDate, updateTime, updateMessage, createMessage, updateRepeat, updateDaily, updateWeekly, updatePrivateMessage } from '../actions/message';
+import { getDate, getTime, getMessage, getRepeat, getDaily, getPrivateMessage, getWeekly } from '../selectors/message';
 import CreateNote from '../components/home/CreateNote';
+
 
 const mapStateToProps = state => ({
   date: getDate(state),
   time: getTime(state),
-  message: getMessage(state),
+  privateMessage: getPrivateMessage(state),
+  body: getMessage(state),
   repeat: getRepeat(state),
-  repeatDay: getRepeatDay(state),
-  repeatTime: getRepeatTime(state)
+  daily: getDaily(state),
+  weekly: getWeekly(state)
 });
 
 const mapDispatchToProps = dispatch => ({
+  handleChecked({ target }) {
+    const checkedMethods = {
+      privateMessage: updatePrivateMessage,
+      repeat: updateRepeat,
+      daily: updateDaily,
+      weekly: updateWeekly
+    };
+    dispatch(checkedMethods[target.id](target.checked));
+  },
   onChange({ target }) {
     const factoryMethod = {
       date: updateDate,
       time: updateTime,
-      message: updateMessage,
-      repeat: updateRepeat,
-      repeatDay: updateRepeatDay,
-      repeatTime: updateRepeatTime
+      message: updateMessage
     };
+    console.log('target', target.checked);
     dispatch(factoryMethod[target.id](target.value));
   },
   
-  handleSubmit(message, time, date, event, repeat, repeatDay, repeatTime) {
+  handleSubmit(body, time, date, event, repeat, repeatDay, repeatTime, privateMessage) {
     event.preventDefault();
-    dispatch(createMessage({ date, time, message, repeat, repeatDay, repeatTime }));
+    dispatch(createMessage({ date, time, body, repeat, repeatDay, repeatTime, privateMessage }));
   }
 });
 

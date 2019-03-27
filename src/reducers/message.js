@@ -1,13 +1,15 @@
 
-import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_REPEAT, UPDATE_REPEAT_DAY, UPDATE_REPEAT_TIME  } from '../actions/message';
+
+import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_REPEAT, UPDATE_DAILY, UPDATE_WEEKLY, UPDATE_PRIVATE  } from '../actions/message';
 
 const initialState = {
   date: '',
   time: '',
-  message: '',
+  privateMessage: false,
+  body: '',
   repeat: false,
-  repeatTime: '',
-  repeatDay: ''
+  daily: false,
+  weekly: false,
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -15,7 +17,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case CREATE_MESSAGE:
       return {
         ...state,
-        message: payload.message,
+        body: payload.body,
         date: payload.date,
         time: payload.time,
       };
@@ -24,10 +26,15 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         date: payload
       };
+    case UPDATE_PRIVATE:
+      return {
+        ...state,
+        privateMessage: payload
+      };
     case UPDATE_MESSAGE:
       return {
         ...state,
-        message: payload
+        body: payload
       };
     case UPDATE_TIME: 
       return {
@@ -39,15 +46,15 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         repeat: payload
       };
-    case UPDATE_REPEAT_DAY: 
+    case UPDATE_DAILY: 
       return {
         ...state,
-        repeatDay: payload
+        daily: payload
       };
-    case UPDATE_REPEAT_TIME: 
+    case UPDATE_WEEKLY: 
       return {
         ...state,
-        repeatTime: payload
+        weekly: payload
       };
     default:
       return state;

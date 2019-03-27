@@ -5,7 +5,8 @@ export const postNote = note => {
   return fetch('https://note-to-self-server.herokuapp.com/notes', {
     method: 'POST',
     headers : {
-      Authorization: `Bearer ${getToken(store.getState())}`
+      Authorization: `Bearer ${getToken(store.getState())}`,
+      'Content-Type': 'application-json',
     },
     body: note ? JSON.stringify(note) : null
       .then(res => [res.ok, res.json()])

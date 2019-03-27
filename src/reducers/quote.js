@@ -1,7 +1,7 @@
 import { FETCH_QUOTE } from '../actions/quote';
 
 const initialState =  {
-  quote: ''
+  quote: {}
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -9,7 +9,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case FETCH_QUOTE:
       return {
         ...state,
-        quote: payload.quote
+        quote: payload
       };
     default:
       return state;
