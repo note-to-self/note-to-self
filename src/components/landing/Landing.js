@@ -6,7 +6,6 @@ import {
 import styles from 'styled-components';
 import styled from 'styled-components';
 import lotusIcon from '../../../assets/images/lotusIcon.png';
-import logo from '../../../assets/images/logo.png';
 import LandingModal from '../home/HomeModal';
 
 
