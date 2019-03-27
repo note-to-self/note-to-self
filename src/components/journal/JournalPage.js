@@ -13,11 +13,12 @@ class JournalPage extends PureComponent {
     journalList: PropTypes.array,
     handleSubmit: PropTypes.func,
     handleCheckbox: PropTypes.func,
+    handleChange: PropTypes.func.isRequired,
     searchTerm: PropTypes.string.isRequired
   }
 
   render() {
-    const { journalList, handleCheckbox, handleSubmit, searchTerm } = this.props;
+    const { journalList, handleCheckbox, handleSubmit, searchTerm, handleChange } = this.props;
     return (
       <>
       <header>
@@ -28,6 +29,7 @@ class JournalPage extends PureComponent {
         <Search 
           handleSubmit={handleSubmit}
           searchTerm={searchTerm}
+          onChange={handleChange}
         />
         <ul>
           <li>My Notes</li>
@@ -58,7 +60,7 @@ const mapDispatchToProps = dispatch => ({
   handleCheckbox({ target }) {
     dispatch(updateCheckbox(target.value));
   },
-  onChange({ target }) {
+  handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
   }
 });
