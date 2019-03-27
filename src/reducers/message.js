@@ -1,9 +1,11 @@
 
-import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_REPEAT, UPDATE_REPEAT_DAY, UPDATE_REPEAT_TIME  } from '../actions/message';
+
+import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_REPEAT, UPDATE_REPEAT_DAY, UPDATE_REPEAT_TIME, UPDATE_PRIVATE  } from '../actions/message';
 
 const initialState = {
   date: '',
   time: '',
+  privateMessage: true,
   message: '',
   repeat: false,
   repeatTime: '',
@@ -23,6 +25,11 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         date: payload
+      };
+    case UPDATE_PRIVATE:
+      return {
+        ...state,
+        private: payload
       };
     case UPDATE_MESSAGE:
       return {

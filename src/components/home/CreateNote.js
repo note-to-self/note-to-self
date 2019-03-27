@@ -42,16 +42,18 @@ const FormContainer = styles.div`
   }
 `;
 
-
-export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay }) {
+export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay, privateMessage }) {
   return (
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message)}> 
+      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message, repeat, repeatTime, repeatDay, privateMessage)}> 
         {/* <CheckboxStyle> Public
           <InputStyle type="checkbox" id="public" value={publicChoice} onChange={onChange} />
           <span></span>
         </CheckboxStyle> */}
         <section>
+          <LabelStyle> Private Message (public messages are shared anonymously)
+            <InputStyle type="checkbox" value={privateMessage} onChange={onChange} id="privateMessage" />
+          </LabelStyle>
           <LabelStyle> Date
             <InputStyle type="date" value={date} onChange={onChange} id="date" />
           </LabelStyle>
@@ -80,6 +82,7 @@ export default function CreateNote({ handleSubmit, onChange, time, date, message
 CreateNote.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
+  privateMessage: PropTypes.string,
   message: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   repeat: PropTypes.bool,

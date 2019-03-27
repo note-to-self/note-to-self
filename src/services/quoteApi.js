@@ -1,5 +1,5 @@
 export const getQuote = () => {
-  return fetch('https://cors-anywhere.herokuapp.com/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1', {
+  return fetch('https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json', {
     headers: {
       origin: null
     }
