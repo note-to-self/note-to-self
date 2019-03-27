@@ -28,15 +28,15 @@ const mapDispatchToProps = dispatch => ({
     const factoryMethod = {
       date: updateDate,
       time: updateTime,
-      message: updateMessage
+      body: updateMessage
     };
-    console.log('target', target.checked);
     dispatch(factoryMethod[target.id](target.value));
   },
   
-  handleSubmit(body, time, date, event, repeat, repeatDay, repeatTime, privateMessage) {
+  handleSubmit(body, time, date, repeat, weekly, daily, privateMessage, event) {
+
     event.preventDefault();
-    dispatch(createMessage({ date, time, body, repeat, repeatDay, repeatTime, privateMessage }));
+    dispatch(createMessage({ date, time, body, repeat, weekly, daily, privateMessage }));
   }
 });
 

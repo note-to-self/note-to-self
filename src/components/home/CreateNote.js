@@ -18,7 +18,7 @@ const FormStyle = styles.form`
     color: white;
   }
   input, textarea {
-    color: white;
+    color: black;
   }
 `;
 
@@ -45,7 +45,7 @@ const FormContainer = styles.div`
 export default function CreateNote({ handleSubmit, onChange, time, date, body, repeat, weekly, daily, privateMessage, handleChecked }) {
   return (
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, event, repeat, weekly, daily, privateMessage)}>
+      <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, repeat, weekly, daily, privateMessage)}>
         <section>
           <LabelStyle> Private Message
             <InputStyle type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
@@ -57,7 +57,7 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, r
             <InputStyle type="time" value={time} onChange={onChange} id="time"/>
           </LabelStyle> 
           <LabelStyle> Message
-            <textarea value={body} onChange={onChange} id="message"/>
+            <textarea value={body} onChange={onChange} id="body"/>
           </LabelStyle> 
           <LabelStyle> Reoccuring
             <input type="checkbox" value={repeat} onChange={handleChecked} id="repeat"/>
