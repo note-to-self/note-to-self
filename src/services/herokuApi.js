@@ -31,3 +31,18 @@ export const getPublicNotes = () => {
       return json;
     });
 };
+
+export const getUserNotes = id => {
+  return fetch(`${process.env.API_URL}/notes/user/${id}`, {
+    method: 'GET',
+    headers : {
+      Authorization: `Bearer ${getToken(store.getState())}`,
+      'Content-Type': 'application-json',
+    }
+  })
+    .then(res => [res.ok, res.json()])
+    .then(([ok, json]) => {
+      if(!ok) throw json;
+      return json;
+    });
+};
