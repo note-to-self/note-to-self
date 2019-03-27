@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateDate, updateTime, updateMessage, createMessage, updatePublicChoice } from '../actions/message';
+import { updateDate, updateTime, updateMessage, createMessage } from '../actions/message';
 import { getDate, getTime, getMessage } from '../selectors/message';
 import CreateNote from '../components/home/CreateNote';
 
