@@ -2,18 +2,6 @@
 
 exports[`Note snapshot matches a snapshot 1`] = `
 <section>
-  <form>
-    <label
-      htmlFor="delete"
-    >
-      delete
-    </label>
-    <input
-      name="delete"
-      type="checkbox"
-      value="delete"
-    />
-  </form>
   <h3>
     You got this!
   </h3>
