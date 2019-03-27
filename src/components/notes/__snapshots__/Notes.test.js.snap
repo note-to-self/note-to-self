@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notes snapshot matches a snapshot 1`] = `
+<ul>
+  <li>
+    You have got this
+  </li>
+</ul>
+`;
