@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Note from '../notes/Note';
 
-export default function JournalList({ journalList }) {
+export default function JournalList({ journalList, handleSubmit, handleCheckbox }) {
   const list = journalList.map(note => {
     const repeat = note.repeat.weekly ? 'weekly' : 'daily';
     <li>
@@ -11,6 +11,8 @@ export default function JournalList({ journalList }) {
         schedule={repeat}
         checkboxLabel="Delete Note"
         checkboxValue={false}
+        handleCheckbox={handleCheckbox}
+        handleSubmit={handleSubmit}
       />
     </li>;
   });
@@ -21,5 +23,7 @@ export default function JournalList({ journalList }) {
 }
 
 JournalList.propTypes = {
-  journalList: PropTypes.array
+  journalList: PropTypes.array.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleCheckbox: PropTypes.func.isRequired
 };
