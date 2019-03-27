@@ -8,7 +8,7 @@ import LandingContainer from './containers/LandingContainer';
 import LoginContainer from './containers/LoginContainer';
 
 export const ROUTES  = {
-  HOME: { 
+  HOME: {
     path: '/home',
     component: HomeContainer,
     linkTo: () => '/home'

@@ -7,7 +7,7 @@ export const [
   CREATE_MESSAGE_PENDING,
   CREATE_MESSAGE_FULFILLED,
   CREATE_MESSAGE_REJECTED
-] = createAction('CREATE_MESSAGE', postNote);
+] = createAction('CREATE_MESSAGE', createMessage);
   
 
 export const UPDATE_DATE = 'UPDATE_DATE';
@@ -46,3 +46,4 @@ export const updateRepeatDay = repeatDay => ({
   type: UPDATE_REPEAT_DAY,
   payload: repeatDay
 });
+
