@@ -5,7 +5,7 @@ import { CREATE_MESSAGE, UPDATE_DATE, UPDATE_MESSAGE, UPDATE_TIME, UPDATE_REPEAT
 const initialState = {
   date: '',
   time: '',
-  privateMessage: true,
+  privateMessage: false,
   message: '',
   repeat: false,
   repeatTime: '',
@@ -29,7 +29,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case UPDATE_PRIVATE:
       return {
         ...state,
-        private: payload
+        privateMessage: payload
       };
     case UPDATE_MESSAGE:
       return {

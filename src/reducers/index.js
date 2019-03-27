@@ -6,7 +6,6 @@ import search from './search';
 
 import quote from './quote';
 
-import quote from './quote';
 
 export default combineReducers({
   session,

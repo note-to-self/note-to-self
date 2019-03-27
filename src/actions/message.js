@@ -17,7 +17,7 @@ export const updateDate = date => ({
 });
 
 export const UPDATE_PRIVATE = 'UPDATE_PRIVATE';
-export const updatePrivate = value => ({
+export const updatePrivateMessage = value => ({
   type: UPDATE_PRIVATE,
   payload: value
 });

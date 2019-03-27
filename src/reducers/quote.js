@@ -1,7 +1,7 @@
 import { FETCH_QUOTE } from '../actions/quote';
 
 const initialState =  {
-  quote: ''
+  quote: {}
 };
 
 export default function reducer(state = initialState, { type, payload }) {

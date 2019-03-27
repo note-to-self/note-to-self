@@ -42,17 +42,13 @@ const FormContainer = styles.div`
   }
 `;
 
-export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay, privateMessage }) {
+export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay, privateMessage, handleChecked }) {
   return (
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message, repeat, repeatTime, repeatDay, privateMessage)}> 
-        {/* <CheckboxStyle> Public
-          <InputStyle type="checkbox" id="public" value={publicChoice} onChange={onChange} />
-          <span></span>
-        </CheckboxStyle> */}
+      <FormStyle onSubmit={handleSubmit.bind(null, time, date, message, repeat, repeatTime, repeatDay, privateMessage)}>
         <section>
-          <LabelStyle> Private Message (public messages are shared anonymously)
-            <InputStyle type="checkbox" value={privateMessage} onChange={onChange} id="privateMessage" />
+          <LabelStyle> Private Message
+            <InputStyle type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
           </LabelStyle>
           <LabelStyle> Date
             <InputStyle type="date" value={date} onChange={onChange} id="date" />
@@ -64,7 +60,7 @@ export default function CreateNote({ handleSubmit, onChange, time, date, message
             <textarea value={message} onChange={onChange} id="message"/>
           </LabelStyle> 
           <LabelStyle> Reoccuring
-            <input type="checkbox" value={repeat} onChange={onChange} id="repeat"/>
+            <input type="checkbox" value={repeat} onChange={handleChecked} id="repeat"/>
           </LabelStyle> 
           <LabelStyle> Repeat Time
             <input type="time" value={repeatTime} onChange={onChange} id="repeatTime"/>
@@ -85,6 +81,7 @@ CreateNote.propTypes = {
   privateMessage: PropTypes.string,
   message: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  handleChecked: PropTypes.func,
   repeat: PropTypes.bool,
   repeatTime: PropTypes.string,
   repeatDay: PropTypes.string,
