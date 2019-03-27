@@ -3,7 +3,6 @@ import { UPDATE_CHECKBOX, DELETE_NOTE } from '../actions/journal';
 const initialState = {
   journalList: [],
   favorites: [],
-  filterTerm: '',
   isChecked: false
 };
 
