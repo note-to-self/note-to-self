@@ -23,12 +23,4 @@ describe('authform tests', () => {
   it('matches a snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
-  it('calls the createUser function on sumbit', () => {
-    wrapper.find('form').simulate('submit', {
-      preventDefault: jest.fn()
-    });
-
-    expect(createUser).toHaveBeenCalled();
-  });
 });

@@ -42,7 +42,7 @@ const DivStyle = styles.div`
 
 const Lotus = styles.img`
   height: 6vh;
-  width: 10vw;
+  width: 12vw;
   padding: 1em;
 `;
 
