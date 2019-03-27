@@ -7,6 +7,7 @@ import styles from 'styled-components';
 import styled from 'styled-components';
 import lotusIcon from '../../../assets/images/lotusIcon.png';
 import LandingModal from '../home/HomeModal';
+import QuoteContainer from '../../containers/QuoteContainer';
 
 
 
@@ -72,6 +73,7 @@ export default class Landing extends React.PureComponent {
             <StyledLink to='/auth'> Sign-up </ StyledLink>
             <StyledLink to='/login'> Sign-in </ StyledLink>
           </StyledDiv>
+          <QuoteContainer />
         </HomeImage>
       </>
     );
