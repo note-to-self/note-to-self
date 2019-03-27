@@ -42,7 +42,6 @@ const FormContainer = styles.div`
   }
 `;
 
-
 export default function CreateNote({ handleSubmit, onChange, time, date, message, repeat, repeatTime, repeatDay, privateMessage }) {
   return (
     <FormContainer className="container">

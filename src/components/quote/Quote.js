@@ -38,7 +38,7 @@ export default function Quote({ quote }) {
 }
 
 Quote.propTypes = {
-  quote: PropTypes.object
+  quote: PropTypes.string
 };
 
 

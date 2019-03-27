@@ -16,7 +16,6 @@ export const updateDate = date => ({
   payload: date
 });
 
-
 export const UPDATE_PRIVATE = 'UPDATE_PRIVATE';
 export const updatePrivate = value => ({
   type: UPDATE_PRIVATE,
@@ -34,7 +33,6 @@ export const updateMessage = message => ({
   type: UPDATE_MESSAGE,
   payload: message
 });
-
 
 export const UPDATE_REPEAT = 'UPDATE_REPEAT';
 export const updateRepeat = value => ({
