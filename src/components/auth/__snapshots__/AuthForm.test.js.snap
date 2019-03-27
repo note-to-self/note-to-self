@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authform tests matches a snapshot 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.img
+      src=""
+    />
+    <styled.form
+      id="signup"
+      onSubmit={[Function]}
+    >
+      <styled.div>
+        <styled.label
+          htmlFor="signup-email"
+        >
+          Email: 
+        </styled.label>
+        <styled.input
+          id="email"
+          onChange={[MockFunction]}
+          required={true}
+          type="email"
+          value="email"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.label
+          htmlFor="signup-password"
+        >
+          Password: 
+        </styled.label>
+        <styled.input
+          id="password"
+          onChange={[MockFunction]}
+          required={true}
+          type="password"
+          value="password"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.label
+          htmlFor="name"
+        >
+          Name: 
+        </styled.label>
+        <styled.input
+          id="name"
+          onChange={[MockFunction]}
+          required={true}
+          type="text"
+          value="name"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.label
+          htmlFor="phone"
+        >
+          Phone: 
+        </styled.label>
+        <styled.input
+          id="phone"
+          onChange={[MockFunction]}
+          type="tel"
+          value="phone"
+        />
+      </styled.div>
+      <styled.button
+        type="submit"
+        value="Sign up"
+      >
+        Sign Up
+      </styled.button>
+    </styled.form>
+  </styled.div>
+</Fragment>
+`;
