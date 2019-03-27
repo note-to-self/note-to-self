@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Quote({ quote }) {
   return (
-    <h3>{quote}</h3>
+    <h3>{quote.quoteText}</h3>
   );
 }
 

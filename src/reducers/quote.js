@@ -9,7 +9,7 @@ export default function reducer(state = initialState, { type, payload }) {
     case FETCH_QUOTE:
       return {
         ...state,
-        quote: payload.quote
+        quote: payload
       };
     default:
       return state;
