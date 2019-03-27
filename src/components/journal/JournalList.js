@@ -7,6 +7,8 @@ export default function JournalList({ journalList, handleSubmit, handleCheckbox 
     const repeat = note.repeat.weekly ? 'weekly' : 'daily';
     <li>
       <Note 
+        key={note._id}
+        id={note._id}
         body={note.body}
         schedule={repeat}
         checkboxLabel="Delete Note"
