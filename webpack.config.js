@@ -19,7 +19,7 @@ module.exports = {
     new CopyPlugin([{
       from: 'public'
     }]),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanPlugin('./dist')
   ],
