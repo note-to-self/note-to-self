@@ -3,12 +3,12 @@ import { Route } from 'react-router-dom';
 // import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
-import AuthContainer from './containers/AuthContainer';
+import AuthContainer from './containers/authContainer';
 import LandingContainer from './containers/LandingContainer';
 import LoginContainer from './containers/LoginContainer';
 
 export const ROUTES  = {
-  HOME: {
+  HOME: { 
     path: '/home',
     component: HomeContainer,
     linkTo: () => '/home'
