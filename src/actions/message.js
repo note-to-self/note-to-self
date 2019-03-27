@@ -40,15 +40,15 @@ export const updateRepeat = value => ({
   payload: value
 });
 
-export const UPDATE_REPEAT_TIME = 'UPDATE_REPEAT_TIME';
-export const updateRepeatTime = repeatTime => ({
-  type: UPDATE_REPEAT_TIME,
-  payload: repeatTime
+export const UPDATE_DAILY = 'UPDATE_DAILY';
+export const updateDaily = value => ({
+  type: UPDATE_DAILY,
+  payload: value
 });
 
-export const UPDATE_REPEAT_DAY = 'UPDATE_REPEAT_DAY';
-export const updateRepeatDay = repeatDay => ({
-  type: UPDATE_REPEAT_DAY,
-  payload: repeatDay
+export const UPDATE_WEEKLY = 'UPDATE_WEEKLY';
+export const updateWeekly = value => ({
+  type: UPDATE_WEEKLY,
+  payload: value
 });
 
