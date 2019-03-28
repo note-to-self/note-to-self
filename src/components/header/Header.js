@@ -178,7 +178,6 @@ const HeaderStyle = styles.header`
 }
 `;
 
-
 export default class Header extends PureComponent {
   static propTypes = {
     logout: PropTypes.func,
