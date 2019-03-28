@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
-import Search from '../search/Search';
-import { getSearchTerm } from '../../selectors/search';
-import { updateSearchTerm } from '../../actions/search';
-import { getCommunityList } from '../../selectors/community';
+import Search from '../components/search/Search';
+import { getSearchTerm } from '../selectors/search';
+import { updateSearchTerm } from '../actions/search';
+import { getPublicNotes } from '../selectors/community';
 import PropTypes from 'prop-types';
-import CommunityList from './CommunityList';
-import { updateCheckbox } from '../../actions/community';
+import CommunityList from '../components/community/CommunityList';
+import { updateCheckbox } from '../actions/community';
 
 
 class CommunityPage extends PureComponent {
@@ -16,14 +16,19 @@ class CommunityPage extends PureComponent {
     searchTerm: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func
+  };
+
+  componentDidMount() {
+    this.props.fetch();
   }
+
   render() {
     const { communityList, handleCheckbox, searchTerm, handleChange, handleSubmit } = this.props;
     return (
       <>
       <header>
         <h1>Community Messages</h1>
-        <h2>Like any specific message? Save to your favorites and send.</h2>
+        <h2>Inspired by a message? Check to save</h2>
       </header>
       <main>
         <Search
@@ -45,18 +50,21 @@ class CommunityPage extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  communityList: getCommunityList(state),
+  communityList: getPublicNotes(state),
   searchTerm: getSearchTerm(state)
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetch() {
+    dispatch(fetchNotes());
+  },
   handleSubmit(event) {
     event.preventDefault();
   },
   handleCheckbox({ target }) {
     dispatch(updateCheckbox(target.value));
   },
-  handleChange({ target }) {
+  onChange({ target }) {
     dispatch(updateSearchTerm(target.value));
   }
 });

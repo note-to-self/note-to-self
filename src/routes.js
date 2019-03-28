@@ -7,6 +7,7 @@ import AuthContainer from './containers/authContainer';
 import LandingContainer from './containers/LandingContainer';
 import LoginContainer from './containers/LoginContainer';
 import JournalPage from './containers/JournalPage';
+import CommunityPage from './containers/CommunityPage';
 
 export const ROUTES  = {
   HOME: {
@@ -38,6 +39,11 @@ export const ROUTES  = {
     path: '/journal',
     component: JournalPage,
     linkTo: () => '/journal'
+  },
+  COMMUNITY: {
+    path: '/community',
+    component: CommunityPage,
+    linkTo: () => '/community'
   }
 };
 
