@@ -42,10 +42,12 @@ const FormContainer = styles.div`
   }
 `;
 
-export default function CreateNote({ handleSubmit, onChange, time, date, body, repeat, weekly, daily, privateMessage, handleChecked }) {
+export default function CreateNote({ handleSubmit, onChange, time, date, body, isRepeated, weekly, daily, privateMessage, handleChecked }) {
+  console.log(daily, weekly, privateMessage);
   return (
+
     <FormContainer className="container">
-      <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, repeat, weekly, daily, privateMessage)}>
+      <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, isRepeated, weekly, daily, privateMessage)}>
         <section>
           <LabelStyle> Private Message
             <InputStyle type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
@@ -60,12 +62,12 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, r
             <textarea value={body} onChange={onChange} id="body"/>
           </LabelStyle> 
           <LabelStyle> Reoccuring
-            <input type="checkbox" value={repeat} onChange={handleChecked} id="repeat"/>
+            <input type="checkbox" value={isRepeated} onChange={handleChecked} id="isRepeated"/>
           </LabelStyle>
-          {repeat && <LabelStyle> Daily
+          {isRepeated && <LabelStyle> Daily
             <input type="checkbox" value={daily} onChange={handleChecked}  id="daily"/>
           </LabelStyle>}
-          {repeat && <LabelStyle> Weekly
+          {isRepeated && <LabelStyle> Weekly
             <input type="checkbox" value={weekly} onChange={handleChecked}  id="weekly"/>
           </LabelStyle> }
         </section>
@@ -82,7 +84,7 @@ CreateNote.propTypes = {
   body: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   handleChecked: PropTypes.func,
-  repeat: PropTypes.bool,
+  isRepeated: PropTypes.bool,
   weekly: PropTypes.bool,
   daily: PropTypes.bool,
   handleSubmit: PropTypes.func.isRequired

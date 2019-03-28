@@ -34,12 +34,17 @@ export const updateMessage = message => ({
   payload: message
 });
 
-export const UPDATE_REPEAT = 'UPDATE_REPEAT';
-export const updateRepeat = value => ({
-  type: UPDATE_REPEAT,
+// export const UPDATE_REPEAT = 'UPDATE_REPEAT';
+// export const updateRepeat = value => ({
+//   type: UPDATE_REPEAT,
+//   payload: value
+// });
+
+export const UPDATE_IS_REPEATED = 'UPDATE_IS_REPEATED';
+export const updateIsRepeated = value => ({
+  type: UPDATE_IS_REPEATED,
   payload: value
 });
-
 export const UPDATE_DAILY = 'UPDATE_DAILY';
 export const updateDaily = value => ({
   type: UPDATE_DAILY,
