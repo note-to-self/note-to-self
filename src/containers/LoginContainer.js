@@ -8,12 +8,30 @@ import {
 } from 'react-router-dom';
 
 const Lotus = styles.img`
+@media (min-width: 375px) {
   display: block;
   margin-left: auto;
   margin-right: auto
   position: fixed;
   top: 35%;
   left: 22%;
+}
+@media (min-width: 700px) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+  position: fixed;
+  top: 30%;
+  left: 42%;
+}
+@media (min-width: 1400px) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+  position: fixed;
+  top: 30%;
+  left: 42%;
+}
 `;
 export class LoginContainer extends React.PureComponent {
 
@@ -24,7 +42,7 @@ export class LoginContainer extends React.PureComponent {
   render() {
     return (
       <>
-      <Lotus src={lotus} /><Link to='/auth'> </Link>
+        <Lotus src={lotus} /><Link to='/auth'> </Link>
       </>
     );
   }

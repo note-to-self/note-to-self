@@ -12,6 +12,11 @@ const HomeImage = styles.div`
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (min-width: 700px) {
+  height: 100vh;
+  background-size: 50vw 100vh;
+  background-color:  #47B1CD;
+}
 `;
 
 const FormStyles = styles.form`
@@ -37,6 +42,7 @@ const LabelAuth = styles.label`
 `;
 
 const FormDiv = styles.div`
+@media (min-width: 375px) {
   color: #568697;
   background-color: rgba(255, 255, 255, 0.9);
   width: 80%;
@@ -44,6 +50,13 @@ const FormDiv = styles.div`
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 1em;
+}
+@media (min-width: 700px) {
+  width: 40%;
+}
+@media (min-width: 1400px) {
+  width: 30%;
+}
 `;
 const InputAuth = styles.input`
 @media (min-width: 375px) {
@@ -58,18 +71,34 @@ const InputAuth = styles.input`
   width: 80%;
   color: #568697;
 }
+@media (min-width: 700px) 
+  width: 50%;
+}
+@media (min-width: 1400px) 
+  vertical-align: 20px;
+  width: 20%;
+}
 `;
 
 const StyledLogo = styles.img `
+@media (min-width: 375px) {
   padding-top: 1em;
   width: 20vw;
   height: 10vh;
   margin-right: auto;
   margin-left: auto;
   display: block
+}
+@media (min-width: 700px) {
+  width: 10vw;
+}
+@media (min-width: 1400px) {
+  width: 7vw;
+}
 `;
 
 const AuthButton = styles.button`
+@media (min-width: 375px) {
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -81,6 +110,17 @@ const AuthButton = styles.button`
   border-radius: 10px;
   font-family: 'Muli', sans-serif;
   color: #568697;
+}
+@media (min-width: 700px) {
+  margin-top: 4em;
+  font-size: 1.2em;
+  width: 40%;
+}
+@media (min-width: 700px) {
+  margin-top: 4em;
+  font-size: 1.2em;
+  width: 30%;
+}
 `;
 
 function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
