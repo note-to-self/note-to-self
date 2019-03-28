@@ -5,6 +5,7 @@ import {
   getPhone,
 } from './session';
 
+
 describe('authForm selectors', () => {
   let state = {
     session: {
