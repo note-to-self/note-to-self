@@ -4,11 +4,14 @@ import styles from 'styled-components';
 
 const QuoteStyle = styles.div`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-@media (min-width: 700px) {  
+@media (min-width: 375px) {  
   font-family: 'Muli', sans-serif;
   font-size: 1em;
   padding: 1em;
   letter-spacing: .04em;
+}
+@media (min-width: 700px) {  
+  font-size: 1.5em;
 }
 `;
 
@@ -27,7 +30,7 @@ const QuoteContainer = styles.div`
 @media (min-width: 700px) {
   position: absolute;
   color: #47B1CD;
-  line-height: 1em;
+  line-height: 2em;
   bottom: 10%;
   background-color: rgba(255, 255, 255, 0.8);
   display: block
