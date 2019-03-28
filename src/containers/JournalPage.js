@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { getJournalList, getFavorites } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
-import { deleteNote } from '../actions/journal';
+import Favorites from '../components/journal/Favorites';
+import { deleteNote, fetchFaves } from '../actions/journal';
 import { getSearchTerm } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 
@@ -12,13 +13,14 @@ class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
     favorites: PropTypes.array,
-    handleSubmit: PropTypes.func,
+    handleDelete: PropTypes.func,
     handleChange: PropTypes.func,
+    handleUnfavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired
   }
 
   render() {
-    const { journalList, handleSubmit, handleChange, searchTerm, } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
     return (
       <>
       <header>
@@ -27,7 +29,6 @@ class JournalPage extends PureComponent {
       </header>
       <main>
         <Search 
-          handleSubmit={handleSubmit}
           searchTerm={searchTerm}
           handleChange={handleChange}
         />
@@ -37,12 +38,12 @@ class JournalPage extends PureComponent {
         </ul>
         <JournalList 
           journalList={journalList}
-          handleSubmit={handleSubmit}
+          handleDelete={handleDelete}
         />
-        {/* <Favorites 
+        <Favorites 
           favorites={favorites}
-          handleSubmit={handleSubmit}
-        /> */}
+          handleUnfavorite={handleUnfavorite}
+        />
       </main>
       </>
     );
@@ -56,9 +57,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit(id, event) {
+  handleDelete(id, event) {
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
+  },
+  handleUnfavorite(id, event) {
+    event.preventDefault();
+    dispatch(fetchFaves(id));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));

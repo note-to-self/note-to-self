@@ -5,9 +5,8 @@ import Note from '../notes/Note';
 export default function JournalList({ journalList, handleSubmit }) {
   const list = journalList.map(note => {
     const repeat = note.repeat.weekly ? 'weekly' : 'daily';
-    <li>
+    <li key={note._id}>
       <Note 
-        key={note._id}
         _id={note._id}
         body={note.body}
         schedule={repeat}
