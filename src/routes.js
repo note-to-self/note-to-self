@@ -5,6 +5,7 @@ import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
 import AuthContainer from './containers/AuthContainer';
 import LandingContainer from './containers/LandingContainer';
+import CommunityPage from './containers/CommunityPage';
 import LoginContainer from './containers/LoginContainer';
 import JournalPage from './containers/JournalPage';
 
@@ -42,7 +43,7 @@ export const ROUTES  = {
   COMMUNITYPAGE: {
     path: '/community',
     component: withSession(CommunityPage),
-    linkTo: () => '/Community'
+    linkTo: () => '/community'
   }
 };
 

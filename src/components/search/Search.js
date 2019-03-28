@@ -53,7 +53,7 @@ const Button = styles.button`
   color: #568697;
 `;
 
-export default function Search({ onChange, searchTerm }) {
+export default function Search({ onChange, searchTerm, handleSubmit }) {
   return (
     <>
       <FormStyles onSubmit={handleSubmit}>
@@ -70,4 +70,5 @@ export default function Search({ onChange, searchTerm }) {
 Search.propTypes = {
   searchTerm: PropTypes.string,
   onChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
 };

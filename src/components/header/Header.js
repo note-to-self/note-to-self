@@ -193,7 +193,6 @@ export default class Header extends PureComponent {
       <>  
       <HeaderStyle>
         <DivStyle>
-<<<<<<< HEAD
           <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
             <NavStyles id="home" className="menu-item" to='/home'> HOME </NavStyles>
             <NavStyles id="journal" className="menu-item" to='/journal'> JOURNAL </NavStyles>
@@ -201,13 +200,6 @@ export default class Header extends PureComponent {
             <NavStyles id="auth" className="menu-item" to='/auth'> AUTH </NavStyles>
             <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles>
             <NavStyles id="auth" className="menu-item" to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
-=======
-          <Menu customBurgerIcon={ <OpenIcon style="width: 0" src={openIcon}/> }>
-            <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'> AUTH </NavStyles>
-            <NavStyles id="login" className="menu-item" href='/login'> LOGIN </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
->>>>>>> 4e321417b30ddb3d1f250b61ae809d6eaaba8f8a
           </Menu>
         </DivStyle>
         {this.props.profilePicture ? <a href="/home"><ProfilePic src={this.props.profilePicture} /></a>  : <Lotus src={lotus} /> }
