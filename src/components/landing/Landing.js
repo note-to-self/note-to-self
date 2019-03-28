@@ -130,6 +130,7 @@ const StyledLogo = styles.img `
 }
 `;
 
+
 export default class Landing extends React.PureComponent {
   render() {
     return (

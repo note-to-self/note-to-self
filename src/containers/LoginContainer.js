@@ -43,6 +43,7 @@ const Lotus = styles.img`
   left: 45%;
 }
 `;
+
 export class LoginContainer extends React.PureComponent {
 
   componentDidMount() {
