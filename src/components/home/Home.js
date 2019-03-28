@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import CreateNoteContainer from '../../containers/CreateNoteContainer';
 import HeaderContainer from '../../containers/HeaderContainer';
 
+
 const HomeMain = styles.div`
 @media (min-width: 700px) {
   height: 100vh;

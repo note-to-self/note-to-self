@@ -1,17 +1,27 @@
-import { UPDATE_CHECKBOX, DELETE_NOTE } from '../actions/journal';
+import { DELETE_NOTE, FETCH_JOURNAL_LIST } from '../actions/journal';
+import { UPDATE_FAVES, FETCH_FAVES } from '../actions/favorites';
 
 const initialState = {
   journalList: [],
   favorites: [],
-  isChecked: false
 };
 
 export default function reducer(state = initialState, { type, payload }) {
   switch(type) {
-    case UPDATE_CHECKBOX:
+    case FETCH_JOURNAL_LIST:
       return {
         ...state,
-        isChecked: payload
+        journalList: payload
+      };
+    case FETCH_FAVES:
+      return {
+        ...state,
+        favorites: payload
+      };
+    case UPDATE_FAVES:
+      return {
+        ...state,
+        favorites: payload
       };
     case DELETE_NOTE:
       return state;

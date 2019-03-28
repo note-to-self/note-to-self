@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Note({ body, handleSubmit, schedule, checkboxLabel, checkboxValue, handleCheckbox, _id }) {
+export default function Note({ body, handleDelete, schedule, buttonLabel, _id }) {
   return (
     <section>
-      {handleSubmit && <form onSubmit={handleSubmit.bind(null, _id)}>
-        <label htmlFor={checkboxLabel}>{checkboxLabel}</label>
-        <input onChange={handleCheckbox} type="checkbox" name={checkboxLabel} value={checkboxValue}/>
-        <button>{checkboxLabel}</button>
+      {handleDelete && <form onSubmit={handleDelete.bind(null, { _id, body })}>
+        <button>{buttonLabel}</button>
       </form>}
       <h3>{body}</h3>
       {schedule && <p>This is a {schedule} affirmation.</p>}
@@ -17,12 +15,8 @@ function Note({ body, handleSubmit, schedule, checkboxLabel, checkboxValue, hand
 
 Note.propTypes = {
   body: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func,
+  handleDelete: PropTypes.func,
   schedule: PropTypes.string,
-  checkboxLabel: PropTypes.string,
-  checkboxValue: PropTypes.bool,
-  handleCheckbox: PropTypes.func,
+  buttonLabel: PropTypes.string,
   _id: PropTypes.string.isRequired
 };
-
-export default Note;

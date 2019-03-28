@@ -1,11 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { deleteRequest } from '../services/herokuApi';
-
-export const UPDATE_CHECKBOX = 'UPDATE_CHECKBOX';
-export const updateCheckbox = status => ({
-  type: UPDATE_CHECKBOX,
-  payload: status
-});
+import { deleteRequest, getUserNotes } from '../services/herokuApi';
 
 export const [
   deleteNote,
@@ -14,3 +8,11 @@ export const [
   DELETE_NOTE_FULFILLED,
   DELETE_NOTE_REJECTED
 ] = createAction('DELETE_NOTE', deleteRequest);
+
+export const [
+  fetchJournalList,
+  FETCH_JOURNAL_LIST,
+  FETCH_JOURNAL_LIST_PENDING,
+  FETCH_JOURNAL_LIST_FULFILLED,
+  FETCH_JOURNAL_LIST_REJECTED
+] = createAction('FETCH_JOURNAL_LIST', getUserNotes);
