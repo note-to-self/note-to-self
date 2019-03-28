@@ -5,6 +5,7 @@ import styles from 'styled-components';
 
 const FormStyle = styles.form`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+@media (max-width: 414px) {
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
   color: white;
@@ -19,19 +20,34 @@ const FormStyle = styles.form`
   }
   input, textarea {
     color: black;
+@media (min-width: 700px) {
+  width: 70%;
+  margin-top: 0;
+  button {
+    color: black;
+    border-style: none;
   }
+  input, textarea {
+    color: black;
+  }
+}
 `;
 
 const LabelStyle = styles.label`
+@media (max-width: 414px) {
   display: block;
   padding: 1em 0 1em 0;
+]
 `;
 
 const InputStyle = styles.input`
+@media (max-width: 414px) {
   padding: 1em
+}
 `;
 
 const FormContainer = styles.div`
+@media (max-width: 414px) {
   padding-top: 5em;
   textarea {
     position: relative;
@@ -39,6 +55,10 @@ const FormContainer = styles.div`
     width: 250px;
     height: 100px;
     background: transparent;
+  }
+}
+@media (min-width: 700px) {
+  box-shadow: 1pt 1pt 1pt grey;
   }
 `;
 

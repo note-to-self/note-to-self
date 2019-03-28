@@ -7,11 +7,30 @@ import CreateNoteContainer from '../../containers/CreateNoteContainer';
 import HeaderContainer from '../../containers/HeaderContainer';
 
 
+const HomeMain = styles.div`
+@media (min-width: 700px) {
+  height: 100vh;
+  background-size: 50vw 100vh;
+  background-color:  white;
+}
+
+`;
 
 const HomeImage = styles.div`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   background-image: url(${homeImage}); 
   height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 700px) {
+  background-image: url(${homeImage}); 
+  height: 30vh;
+  width: 40vw;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,20 +49,12 @@ export default class Home extends PureComponent {
   render() {
     return (  
     <>
-    <HomeImage>
-      <HeaderContainer />
-      {/* <header>
-        <DivStyle>
-          <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
-            <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'> AUTH </NavStyles>
-            <NavStyles id="loginin" className="menu-item" href='/loginin'> LOGIN </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
-          </Menu>
-        </DivStyle>
-      </header> */}
-      <CreateNoteContainer/>
-    </HomeImage>
+    <HomeMain>
+      <HomeImage>
+        <HeaderContainer />
+        <CreateNoteContainer/>
+      </HomeImage>
+    </HomeMain>
     </>
     );
   }

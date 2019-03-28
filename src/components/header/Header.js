@@ -11,7 +11,14 @@ const OpenIcon = styles.img`
   padding: 1em;
   display: flex;
   width: 50%;
-}`;
+}
+@media (min-width: 700px) {
+  height: 7vh;
+  padding: 1em;
+  display: flex;
+  width: 30%;
+}
+`;
 
 const NavStyles = styles.a`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -31,19 +38,60 @@ const NavStyles = styles.a`
    color: white;
    font-weight: 700;
  }
-}`;
+}
+@media (min-width: 700px) {
+  text-decoration: none;
+  width: 50%;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 2em 1em .3em 1em;
+  text-align: center;
+   button {
+    background: transparent;
+    border-style: none;
+    font-weight: 700;
+  }
+ }
+`;
 const DivStyle = styles.div`
+@media (min-width: 375px) {
   height: 10vh;
   width: 10vw;
   position: relative;
   display: flex;
   justify-content: flex-end;
+}
+@media (min-width: 700px) {
+  height: 10vh;
+  width: 10vw;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
 `;
 
 const Lotus = styles.img`
+@media (min-width: 375px) {
   height: 6vh;
   width: 12vw;
   padding: 1em;
+}
+@media (min-width: 700px) {
+  width: 10vw;
+  margin-right: 10%;
+}
+`;
+
+const ProfilePic = styles.img`
+@media (min-width: 375px) {
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
+}
+@media (min-width: 700px) {
+  width: 8vw;
+  margin-right: 10%;
+}
 `;
 
 const ProfilePic = styles.img`
@@ -54,9 +102,16 @@ const ProfilePic = styles.img`
 `;
 
 const HeaderStyle = styles.header`
+@media (min-width: 375px) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (min-width: 700px) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 `;
 
 
