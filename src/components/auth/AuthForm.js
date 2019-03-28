@@ -100,6 +100,7 @@ const FormDiv = styles.div`
   width: 32%;
 }
 `;
+
 const InputAuth = styles.input`
 @media (max-width: 414px) {
   margin-left: .2em;
