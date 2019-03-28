@@ -45,6 +45,7 @@ const FormDiv = styles.div`
   margin-left: auto;
   padding-bottom: 1em;
 `;
+
 const InputAuth = styles.input`
 @media (min-width: 375px) {
   margin-left: .2em;
