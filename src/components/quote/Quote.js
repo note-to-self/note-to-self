@@ -21,6 +21,7 @@ const QuoteStyle = styles.div`
 }
 @media (min-width: 1500px) {  
   font-size: 2em;
+  line-height: 1em;
 }
 `;
 
@@ -60,7 +61,6 @@ const QuoteContainer = styles.div`
   background-color: rgba(255, 255, 255, 0.8);
   display: block
   margin-right: auto;
-  margin-left: 25%;
   width: 50%;
 }
 `;
@@ -75,15 +75,11 @@ const QuoteAuthor = styles.div`
 @media (min-width: 1000px) {
   font-family: 'Muli', sans-serif;
   font-weight: 300;
+  margin-top: 1em;
   color: #47B1CD;
 }
-@media (min-width: 1000px) {
-  font-size: 1.2em;
-  font-weight: 300;
-}
-@media (min-width: 2000px) {
-  font-size: 1.8em;
-  margin-top: 1em;
+@media (min-width: 1600px) {
+  font-size: 2em;
   font-weight: 300;
 }
 `;

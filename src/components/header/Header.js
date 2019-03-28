@@ -100,14 +100,12 @@ const NavStyles = styles.a`
 const DivStyle = styles.div`
 @media (max-width: 414px) {
   height: 10vh;
-  width: 10vw;
   position: relative;
   display: flex;
   justify-content: flex-end;
 }
 @media (min-width: 414px) {
   height: 10vh;
-  width: 10vw;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -115,11 +113,9 @@ const DivStyle = styles.div`
 
 @media (min-width: 700px) {
   height: 15vh;
-  width: 10vw;
 }
 @media (min-width: 920px) {
   height: 20vh;
-  width: 10vw;
 }
 `;
 

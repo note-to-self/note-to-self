@@ -86,10 +86,14 @@ const FormStyle = styles.form`
 }
 
 @media (min-width: 925px) {
-  height: 110vh;
-}
-@media (min-width: 925px) {
   height: 120vh;
+  button {
+    font-size: 2em;
+    padding: 1.5;
+  }
+}
+@media (min-width: 1500px) {
+  height: 150vh;
   button {
     font-size: 2em;
     padding: 1.5;
@@ -163,6 +167,21 @@ const FormContainer = styles.div`
 }
 `;
 
+
+const InputLabel = styles.input`
+  zoom: 1.5;
+  transform: scale(1);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -moz-transform: scale(2);
+  transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+`;
 export default function CreateNote({ handleSubmit, onChange, time, date, body, isRepeated, weekly, daily, privateMessage, handleChecked }) {
   console.log(daily, weekly, privateMessage);
   return (
@@ -171,7 +190,8 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, i
       <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, isRepeated, weekly, daily, privateMessage)}>
         <section>
           <LabelStyle> Private Message
-            <InputStyle type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
+            <InputLabel type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
+            <label className="checkboxOne"></label>
           </LabelStyle>
           <LabelStyle> Date
             <InputStyle type="date" value={date} onChange={onChange} id="date" />
@@ -183,13 +203,13 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, i
             <textarea value={body} onChange={onChange} id="body"/>
           </LabelStyle> 
           <LabelStyle> Reoccuring
-            <input type="checkbox" value={isRepeated} onChange={handleChecked} id="isRepeated"/>
+            <InputLabel type="checkbox" value={isRepeated} onChange={handleChecked} id="isRepeated"/>
           </LabelStyle>
           {isRepeated && <LabelStyle> Daily
-            <input type="checkbox" value={daily} onChange={handleChecked}  id="daily"/>
+            <InputLabel type="checkbox" value={daily} onChange={handleChecked}  id="daily"/>
           </LabelStyle>}
           {isRepeated && <LabelStyle> Weekly
-            <input type="checkbox" value={weekly} onChange={handleChecked}  id="weekly"/>
+            <InputLabel type="checkbox" value={weekly} onChange={handleChecked}  id="weekly"/>
           </LabelStyle> }
           <button type="submit">Create Note</button>
         </section>
