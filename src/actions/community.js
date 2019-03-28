@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { deleteRequest } from '../services/herokuApi';
+// import { getNotes } from //need to create service to render unprovide messages
 
 export const UPDATE_CHECKBOX = 'UPDATE_CHECKBOX';
 export const updateCheckbox = status => ({
@@ -8,9 +8,9 @@ export const updateCheckbox = status => ({
 });
 
 export const [
-  deleteNote,
-  DELETE_NOTE,
-  DELETE_NOTE_PENDING,
-  DELETE_NOTE_FULFILLED,
-  DELETE_NOTE_REJECTED
-] = createAction('DELETE_NOTE', deleteRequest);
+  fetchNotes, 
+  FETCH_NOTES,
+  FETCH_NOTES_PENDING,
+  FETCH_NOTES_FULFILLED,
+  FETCH_NOTES_ERROR
+] = createAction('FETCH_NOTES');

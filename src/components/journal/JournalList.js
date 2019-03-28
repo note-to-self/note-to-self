@@ -8,7 +8,7 @@ export default function JournalList({ journalList, handleSubmit, handleCheckbox 
     <li>
       <Note 
         key={note._id}
-        id={note._id}
+        _id={note._id}
         body={note.body}
         schedule={repeat}
         checkboxLabel="Delete Note"
