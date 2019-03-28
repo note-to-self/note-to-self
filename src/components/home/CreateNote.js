@@ -66,13 +66,6 @@ const FormStyle = styles.form`
     margin-top: 4em
     background: #D7D6D6;
     font-family: 'Muli', sans-serif;
-    color: #316f7f;
-    width: 70%;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 1em;
-    box-shadow: 1pt 1pt 1pt #9BB7C3;
     letter-spacing: .02em;
     button {
       margin-top: 2em;
@@ -91,6 +84,17 @@ const FormStyle = styles.form`
     border: 1pt solid #316f7f;
   }
 }
+
+@media (min-width: 925px) {
+  height: 110vh;
+}
+@media (min-width: 925px) {
+  height: 120vh;
+  button {
+    font-size: 2em;
+    padding: 1.5;
+  }
+}
 `;
 
 const LabelStyle = styles.label`
@@ -101,6 +105,12 @@ const LabelStyle = styles.label`
 @media (min-width: 414px) {
   display: block;
   padding: 1em 0 1em 0;
+}
+@media (min-width: 925px) {
+  font-size: 1.2em;
+}
+@media (min-width: 1600px) {
+  font-size: 2em;
 }
 `;
 
@@ -134,10 +144,23 @@ const FormContainer = styles.div`
     background: transparent;
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 925px) {
   padding-top: 0;
   box-shadow: 1pt 1pt 1pt grey;
+  textarea {
+    position: relative;
+    margin: 2em 0 0 1.5em;
+    width: 300px;
+    height: 200px;
+    background: transparent;
   }
+  }
+@media (min-width: 1600px) {
+    textarea {
+      width: 80%;
+      height: 30vh;
+  }
+}
 `;
 
 export default function CreateNote({ handleSubmit, onChange, time, date, body, isRepeated, weekly, daily, privateMessage, handleChecked }) {

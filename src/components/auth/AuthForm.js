@@ -20,13 +20,10 @@ const HomeImage = styles.div`
   background-size: cover;
 }
 @media (min-width: 1000px) {
-  background-image: url(${homeImage});
+  background-image: url(${homeImage}); 
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-size: 50vw 100vh;
-  background-color:  #47B1CD;
+  background-color:  #47B1CD
 }
 `;
 
@@ -157,8 +154,8 @@ const StyledLogo = styles.img `
 @media (min-width: 1000px) {
   width: 10vw;
 }
-@media (min-width: 1500px) {
-  width: 8vw;
+@media (min-width: 1600px) {
+  width: 5rem;
 }
 @media (min-width: 2000px) {
   width: 7vw;
@@ -203,7 +200,6 @@ const AuthButton = styles.button`
   width: 40%;
 }
 @media (min-width: 1500px) {
-  margin-top: 5em;
   font-size: 1.2em;
   width: 32%;
 }
