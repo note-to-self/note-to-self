@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getToken } from '../selectors/session';
 import AuthContainer from './AuthContainer';
 // import { Redirect } from 'react-router-dom';
-import { ROUTES } from '../routes';
+// import { ROUTES } from '../routes';
 import { login } from '../services/auth';
 
 
