@@ -8,7 +8,7 @@ import Favorites from '../components/journal/Favorites';
 import Header from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
 import { fetchFaves, updateFaves } from '../actions/favorites';
-import { getSearchTerm } from '../selectors/search';
+import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 import styles from 'styled-components';
 import { getUserId } from '../selectors/session';
@@ -74,7 +74,7 @@ class JournalPage extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  journalList: getJournalList(state),
+  journalList: getFiltered(state, getJournalList(state)),
   favorites: getFavorites(state),
   searchTerm: getSearchTerm(state),
   userId: getUserId(state)

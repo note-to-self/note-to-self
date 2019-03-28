@@ -1,8 +1,7 @@
-import { FETCH_NOTES, UPDATE_CHECKBOX } from '../actions/community';
+import { FETCH_NOTES } from '../actions/community';
 
 const initialState = {
-  notes: [],
-  isChecked: false
+  notes: []
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -11,11 +10,6 @@ export default function reducer(state = initialState, { type, payload }) {
       return { 
         ...state, 
         notes: payload
-      };
-    case UPDATE_CHECKBOX:
-      return {
-        ...state,
-        isChecked: payload
       };
     default: 
       return state;

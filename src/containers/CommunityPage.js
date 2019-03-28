@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import Search from '../components/search/Search';
-import { getSearchTerm } from '../selectors/search';
+import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 import { getPublicNotes } from '../selectors/community';
 import PropTypes from 'prop-types';
 import CommunityList from '../components/community/CommunityList';
-import { updateCheckbox } from '../actions/community';
+import { updateFaves } from '../actions/favorites';
+import { fetchNotes } from '../actions/community';
 
 
 class CommunityPage extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func,
     communityList: PropTypes.array,
-    handleCheckbox: PropTypes.func,
+    handleFavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func
@@ -24,7 +25,7 @@ class CommunityPage extends PureComponent {
   }
 
   render() {
-    const { communityList, handleCheckbox, searchTerm, handleChange, handleSubmit } = this.props;
+    const { communityList, handleFavorite, searchTerm, handleChange, handleSubmit } = this.props;
     return (
       <>
       <header>
@@ -40,8 +41,7 @@ class CommunityPage extends PureComponent {
         <ul>
           <CommunityList
             communityList={communityList}
-            handleCheckbox={handleCheckbox}
-            handleSubmit={handleSubmit}
+            handleFavorite={handleFavorite}
           />
         </ul>
       </main>
@@ -51,21 +51,22 @@ class CommunityPage extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  communityList: getPublicNotes(state),
+  communityList: getFiltered(state, getPublicNotes(state)),
   searchTerm: getSearchTerm(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
-    dispatch(getPublicNotes());
+    dispatch(fetchNotes());
   },
   handleSubmit(event) {
     event.preventDefault();
   },
-  handleCheckbox({ target }) {
-    dispatch(updateCheckbox(target.value));
+  handleFavorite(note, event) {
+    event.preventDefault();
+    dispatch(updateFaves(note));
   },
-  onChange({ target }) {
+  handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
   }
 });
