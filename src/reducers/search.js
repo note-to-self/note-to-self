@@ -1,7 +1,7 @@
 import { UPDATE_SEARCHTERM } from '../actions/search';
 
 const initialState = {
-  searchTerm: 'search'
+  searchTerm: ''
 };
 
 export default function reducer(state = initialState, { type, payload }) {
