@@ -18,4 +18,5 @@ export const postNote = note => {
       return json;
     })
     .catch(console.log);
+    
 };

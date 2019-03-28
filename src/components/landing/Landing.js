@@ -126,7 +126,7 @@ export default class Landing extends React.PureComponent {
           <StyledLogo src={lotusIcon}/>
           <StyledDiv>
             <StyledLink to='/auth'> Sign-up </ StyledLink>
-            <StyledLink to='/login'> Sign-in </ StyledLink>
+            <StyledLink to='/login'> Sign-in </ StyledLink> 
           </StyledDiv>
           <QuoteContainer />
         </HomeImage>
