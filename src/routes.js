@@ -36,8 +36,13 @@ export const ROUTES  = {
   },
   JOURNAL: {
     path: '/journal',
-    component: JournalPage,
+    component: withSession(JournalPage),
     linkTo: () => '/journal'
+  },
+  COMMUNITYPAGE: {
+    path: '/community',
+    component: withSession(CommunityPage),
+    linkTo: () => '/Community'
   }
 };
 

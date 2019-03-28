@@ -5,10 +5,22 @@ import { getJournalList, getFavorites } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
 import Favorites from '../components/journal/Favorites';
+import Header from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
 import { fetchFaves, updateFaves } from '../actions/favorites';
-import { getSearchTerm } from '../selectors/search';
+import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
+import styles from 'styled-components';
+import { getUserId } from '../selectors/session';
+
+const JournalHeader = styles.header `
+  margin: 0 auto;
+  text-align: center
+
+  h2 {
+
+  }
+`;
 
 class JournalPage extends PureComponent {
   static propTypes = {
@@ -19,23 +31,26 @@ class JournalPage extends PureComponent {
     handleUnfavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     fetchJournal: PropTypes.func,
-    fetchFavorites: PropTypes.func
+    fetchFavorites: PropTypes.func,
+    userId: PropTypes.string.isRequired
   }
 
   componentDidMount() {
-    this.props.fetchJournal();
-    this.props.fetchFavorites();
+    this.props.fetchJournal(this.props.userId);
+    this.props.fetchFavorites(this.props.userId);
   }
-
+  
   render() {
     const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
+    console.log('JournalList', this.props.journalList);
     return (
       <>
-      <header>
-        <h1>Journal</h1>
-        <h2>This is where you can find all of your scheduled affirmation notes</h2>
-      </header>
+      <Header />
       <main>
+        <JournalHeader>
+          <h1>Journal</h1>
+          {journalList && <h2>This is where you can find all of your scheduled affirmation notes</h2>}
+        </JournalHeader>
         <Search 
           searchTerm={searchTerm}
           onChange={handleChange}
@@ -59,21 +74,23 @@ class JournalPage extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  journalList: getJournalList(state),
+  journalList: getFiltered(state, getJournalList(state)),
   favorites: getFavorites(state),
-  searchTerm: getSearchTerm(state)
+  searchTerm: getSearchTerm(state),
+  userId: getUserId(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFavorites() {
-    dispatch(fetchFaves());
+  fetchFavorites(id) {
+    dispatch(fetchFaves(id));
   },
-  fetchJournal() {
-    dispatch(fetchJournalList());
+  fetchJournal(id) {
+    dispatch(fetchJournalList(id));
   },
   handleDelete(id, event) {
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
+    dispatch(fetchJournalList(id));
   },
   handleUnfavorite(note, event) {
     event.preventDefault();
