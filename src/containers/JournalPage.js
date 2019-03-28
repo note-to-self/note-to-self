@@ -30,7 +30,7 @@ class JournalPage extends PureComponent {
       <main>
         <Search 
           searchTerm={searchTerm}
-          handleChange={handleChange}
+          onChange={handleChange}
         />
         <ul>
           <li>My Notes</li>
@@ -63,7 +63,7 @@ const mapDispatchToProps = dispatch => ({
   },
   handleUnfavorite(id, event) {
     event.preventDefault();
-    dispatch(fetchFaves(id));
+    dispatch();
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));

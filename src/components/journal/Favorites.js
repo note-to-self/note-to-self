@@ -6,11 +6,13 @@ export default function Favorites({ favorites, handleUnfavorite }) {
   const favesList = favorites.map((note, i) => {
     return <li key={i}>
       <Note 
+        body={note.body}
         handleUnfavorite={handleUnfavorite}
+        buttonLabel="X"
       />
     </li>;
   });
-  
+
   return (
     <section>
       <ul>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Note from '../notes/Note';
 
-export default function JournalList({ journalList, handleSubmit }) {
+export default function JournalList({ journalList, handleDelete }) {
   const list = journalList.map(note => {
     const repeat = note.repeat.weekly ? 'weekly' : 'daily';
     <li key={note._id}>
@@ -10,7 +10,7 @@ export default function JournalList({ journalList, handleSubmit }) {
         _id={note._id}
         body={note.body}
         schedule={repeat}
-        handleSubmit={handleSubmit}
+        handleDelete={handleDelete}
       />
     </li>;
   });
@@ -22,5 +22,5 @@ export default function JournalList({ journalList, handleSubmit }) {
 
 JournalList.propTypes = {
   journalList: PropTypes.array.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
