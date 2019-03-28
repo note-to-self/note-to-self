@@ -8,6 +8,8 @@ export const getFileteredNotes = state => {
   return getFavorites(state).filter(note => {
     const { body } = note;
     return body.includes(searchTerm);
-  })
-}
+  });
+};
+
+
 

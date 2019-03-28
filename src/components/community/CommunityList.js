@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 export default function CommunityList({ communityList, handleCheckbox }) {
   const listOfNotes = communityList.map(note => {
     return (
-      <li>
+      <li key={note._id}>
         <Note 
-          // key={note._id}
           id={note._id}
           body={note.body}
           checkboxLabel="Save to Favorites"
