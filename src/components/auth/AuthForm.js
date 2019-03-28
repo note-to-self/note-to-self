@@ -20,6 +20,7 @@ const HomeImage = styles.div`
   background-size: cover;
 }
 @media (min-width: 1000px) {
+  overflow: scroll;
   background-image: url(${homeImage}); 
   height: 100vh;
   background-size: 50vw 100vh;
@@ -45,7 +46,7 @@ const FormStyles = styles.form`
   font-family: 'Muli', sans-serif;
   font-size: 1.6em;
   text-align: left;
-  padding-top: 5em;
+  padding-top: 3em;
 }
 `;
 
@@ -200,8 +201,11 @@ const AuthButton = styles.button`
   width: 40%;
 }
 @media (min-width: 1500px) {
+  margin-top: 1em;
   font-size: 1.2em;
   width: 32%;
+  padding: .2em;
+  margin-bottom: 2em;
 }
 `;
 
