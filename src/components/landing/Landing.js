@@ -80,6 +80,10 @@ const StyledLink = styled(Link)`
 @media (min-width: 1500px) {
   width: 30%; 
 }
+@media (min-width: 2000px) {
+  font-size: 2em;
+  width: 25%; 
+}
 `;
 
 const StyledDiv = styles.div`

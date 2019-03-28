@@ -19,6 +19,9 @@ const QuoteStyle = styles.div`
 @media (min-width: 1500px) {  
   font-size: 1.7em;
 }
+@media (min-width: 1500px) {  
+  font-size: 2em;
+}
 `;
 
 const QuoteContainer = styles.div`
@@ -77,6 +80,11 @@ const QuoteAuthor = styles.div`
 }
 @media (min-width: 1000px) {
   font-size: 1.2em;
+  font-weight: 300;
+}
+@media (min-width: 2000px) {
+  font-size: 1.8em;
+  margin-top: 1em;
   font-weight: 300;
 }
 `;

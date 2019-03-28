@@ -32,6 +32,16 @@ const Lotus = styles.img`
   top: 30%;
   left: 42%;
 }
+@media (min-width: 2000px) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+  position: fixed;
+  height: 30%;
+  width: 15%;
+  top: 30%;
+  left: 45%;
+}
 `;
 export class LoginContainer extends React.PureComponent {
 
