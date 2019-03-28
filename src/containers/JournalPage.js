@@ -90,6 +90,7 @@ const mapDispatchToProps = dispatch => ({
   handleDelete(id, event) {
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
+    dispatch(fetchJournalList(id));
   },
   handleUnfavorite(note, event) {
     event.preventDefault();
