@@ -74,10 +74,11 @@ const StyledLink = styled(Link)`
   margin: 1em auto;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   width: 40%; 
-  z-index: 1;
-  margin: 1em auto;
+}
+@media (min-width: 1500px) {
+  width: 30%; 
 }
 `;
 
@@ -114,9 +115,14 @@ const StyledLogo = styles.img `
   height: 10vh;
   justify-self: center;
 }
+
 @media (min-width: 800px) {
   margin-top: 2em;
   width: 9vw;
+}
+@media (min-width: 1500px) {
+  margin-top: 2em;
+  width: 7vw;
 }
 `;
 

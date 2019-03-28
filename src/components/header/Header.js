@@ -117,17 +117,17 @@ export default class Header extends PureComponent {
   render() {
     console.log(this.props, 'picture');
     return (
-      <>
+      <>  
       <HeaderStyle>
         <DivStyle>
           <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
             <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
             <NavStyles id="auth" className="menu-item" href='/auth'> AUTH </NavStyles>
-            <NavStyles id="loginin" className="menu-item" href='/loginin'> LOGIN </NavStyles>
+            <NavStyles id="login" className="menu-item" href='/login'> LOGIN </NavStyles>
             <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>
-        {this.props.profilePicture ? <ProfilePic src={this.props.profilePicture} />  : <Lotus src={lotus} /> }
+        {this.props.profilePicture ? <a href="/home"><ProfilePic src={this.props.profilePicture} /></a>  : <Lotus src={lotus} /> }
       </HeaderStyle>
       </>
     );
