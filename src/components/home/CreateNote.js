@@ -30,7 +30,6 @@ const FormStyle = styles.form`
   input, textarea {
     margin-left: 1em;
     color: black;
-<<<<<<< HEAD
     border: 1pt solid #316f7f;
   }
 }
@@ -39,9 +38,6 @@ const FormStyle = styles.form`
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
   color: #316f7f;
-=======
-@media (min-width: 700px) {
->>>>>>> 1de2649a2f3e9abe3f00a15fbf997506aea730bf
   width: 70%;
   display: block;
   margin-right: auto;
