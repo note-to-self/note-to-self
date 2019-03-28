@@ -16,3 +16,9 @@ export const [
   FETCH_JOURNAL_LIST_FULFILLED,
   FETCH_JOURNAL_LIST_REJECTED
 ] = createAction('FETCH_JOURNAL_LIST', getUserNotes);
+
+export const UPDATE_TOGGLE = 'UPDATE_TOGGLE';
+export const updateToggle = toggle => ({
+  type: UPDATE_TOGGLE,
+  payload: toggle
+});

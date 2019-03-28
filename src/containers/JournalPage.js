@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList, getFavorites } from '../selectors/journal';
+import { getJournalList, getFavorites, isToggle } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
 import Favorites from '../components/journal/Favorites';
-import { deleteNote, fetchJournalList } from '../actions/journal';
+import { deleteNote, fetchJournalList, updateToggle } from '../actions/journal';
 import { fetchFaves, updateFaves } from '../actions/favorites';
 import { getSearchTerm } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
@@ -17,9 +17,11 @@ class JournalPage extends PureComponent {
     handleDelete: PropTypes.func,
     handleChange: PropTypes.func,
     handleUnfavorite: PropTypes.func,
+    handleClick: PropTypes.func.isRequired,
     searchTerm: PropTypes.string.isRequired,
     fetchJournal: PropTypes.func,
-    fetchFavorites: PropTypes.func
+    fetchFavorites: PropTypes.func,
+    toggle: PropTypes.bool.isRequired
   }
 
   componentDidMount() {
@@ -28,7 +30,7 @@ class JournalPage extends PureComponent {
   }
 
   render() {
-    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite, toggle, handleClick } = this.props;
     return (
       <>
       <header>
@@ -41,17 +43,17 @@ class JournalPage extends PureComponent {
           onChange={handleChange}
         />
         <ul>
-          <li>My Notes</li>
-          <li>Favorites</li>
+          <li onClick={handleClick} id='journal'>My Notes</li>
+          <li onClick={handleClick} id='favorites'>Favorites</li>
         </ul>
-        <JournalList 
+        {!toggle && <JournalList 
           journalList={journalList}
           handleDelete={handleDelete}
-        />
-        <Favorites 
+        />}
+        {toggle && <Favorites 
           favorites={favorites}
           handleUnfavorite={handleUnfavorite}
-        />
+        />}
       </main>
       </>
     );
@@ -61,7 +63,8 @@ class JournalPage extends PureComponent {
 const mapStateToProps = state => ({
   journalList: getJournalList(state),
   favorites: getFavorites(state),
-  searchTerm: getSearchTerm(state)
+  searchTerm: getSearchTerm(state),
+  toggle: isToggle(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -81,6 +84,10 @@ const mapDispatchToProps = dispatch => ({
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
+  },
+  handleClick({ target }) {
+    const toggle = target.id === 'favorites' ? true : false; 
+    dispatch(updateToggle(toggle));
   }
 });
 
