@@ -100,7 +100,7 @@ export const getUserFaves = () => {
 };
 
 export const updateUserFaves = id => {
-  console.log(id);
+  console.log('ID', id);
   return fetch(`${process.env.API_URL}/faves`, {
     method: 'PUT',
     headers : {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
   return (
     <section>
-      {handleSubmit && <form onSubmit={handleSubmit.bind(null, id)}>
+      {handleSubmit && <form onSubmit={handleSubmit.bind(null, { id })}>
         <button>{buttonLabel}</button>
       </form>}
       <h3>{body}</h3>
