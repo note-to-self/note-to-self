@@ -3,65 +3,195 @@ import PropTypes from 'prop-types';
 import styles from 'styled-components';
 
 
-const FormStyle = styles.form`
+
+const OpenIcon = styles.img`
+@media (max-width: 414px) {
+  height: 8vh;
+  padding: 1em;
+  display: flex;
+  width: 50%;
+}
+@media (min-width: 414px) {
+  height: 8vh;
+  padding: 1em;
+  display: flex;
+  width: 20%;
+}
+`;
+
+const NavStyles = styles.a`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
 @media (max-width: 414px) {
-  background: #D7D6D6;
-  font-family: 'Muli', sans-serif;
+ color: white;
+ display: block;
+ font-family: 'Muli', sans-serif;
+ margin-right: auto;
+ margin-left: 28%;
+ text-decoration: none;
+ width: 50%;
+ font-size: 2em;
+ font-weight: 700;
+ padding: 2em 1em .3em 1em;
+ text-align: center;
+  button {
+   color: white;
+   font-weight: 700;
+ }
+}
+@media (min-width: 414px) {
   color: white;
-  width: 70%;
   display: block;
+  font-family: 'Muli', sans-serif;
   margin-right: auto;
-  margin-left: auto;
-  padding: 1em;
-  box-shadow: 1pt 1pt 1pt #9BB7C3;
-  button {
+  margin-left: 28%;
+  text-decoration: none;
+  width: 50%;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 2em 1em .3em 1em;
+  text-align: center;
+   button {
     color: white;
+    font-weight: 700;
   }
-  input, textarea {
-    color: black;
-@media (min-width: 700px) {
-  width: 70%;
-  margin-top: 0;
-  button {
-    color: black;
-    border-style: none;
-  }
-  input, textarea {
-    color: black;
-  }
-}
-`;
-
-const LabelStyle = styles.label`
-@media (max-width: 414px) {
+ }
+ @media (min-width: 700px) {
+  color: white;
   display: block;
-  padding: 1em 0 1em 0;
-]
+  width: 50%;
+  font-family: 'Muli', sans-serif;
+  margin-right: auto;
+  margin-left: 45%;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 2em 1em .3em 1em;
+  text-align: center;
+   button {
+    color: white;
+    font-weight: 700;
+    font-weight: 700;
+    border-style: none;
+    background: none;
+  }
+}
+@media (min-width: 1600px) {
+  color: white;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  font-family: 'Muli', sans-serif;
+  margin-right: 0;
+  margin-left: 0;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 2em 1em .3em 1em;
+  text-align: center;
+   button {
+    color: white;
+    font-weight: 700;
+    border-style: none;
+    background: none;
+  }
+}
 `;
-
-const InputStyle = styles.input`
+const DivStyle = styles.div`
 @media (max-width: 414px) {
-  padding: 1em
+  height: 10vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (min-width: 414px) {
+  height: 10vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 700px) {
+  height: 15vh;
+}
+@media (min-width: 920px) {
+  height: 20vh;
 }
 `;
 
-const FormContainer = styles.div`
+const Lotus = styles.img`
 @media (max-width: 414px) {
-  padding-top: 5em;
-  textarea {
-    position: relative;
-    margin: 2em 0 0 0;
-    width: 250px;
-    height: 100px;
-    background: transparent;
-  }
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
+}
+@media (min-width: 414px) {
+  height: 6vh;
+  width: 8vw;
+  padding: 1em;
+}
+`;
+
+const ProfilePic = styles.img`
+@media (max-width: 414px) {
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
+}
+@media (min-width: 414px) {
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
 }
 @media (min-width: 700px) {
-  box-shadow: 1pt 1pt 1pt grey;
-  }
+  height: 10vh;
+  width: 10vw;
+  padding: 1.5em;
+}
+@media (min-width: 925px) {
+  height: 8vh;
+  width: 8vw;
+  padding: 1.5em;
+}
+@media (min-width: 1600px) {
+  height: 5rem;
+  width: 5rem;
+  padding: 1.5em 4em 2em 2em;
+}
 `;
 
+const HeaderStyle = styles.header`
+@media (max-width: 414px) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (min-width: 414px) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (min-width: 700px) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+`;
+
+
+const InputLabel = styles.input`
+  zoom: 1.5;
+  transform: scale(1);
+  -ms-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+  -moz-transform: scale(2);
+  transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+`;
 export default function CreateNote({ handleSubmit, onChange, time, date, body, isRepeated, weekly, daily, privateMessage, handleChecked }) {
   console.log(daily, weekly, privateMessage);
   return (
@@ -70,7 +200,8 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, i
       <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, isRepeated, weekly, daily, privateMessage)}>
         <section>
           <LabelStyle> Private Message
-            <InputStyle type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
+            <InputLabel type="checkbox" value={privateMessage} onChange={handleChecked} id="privateMessage"/>
+            <label className="checkboxOne"></label>
           </LabelStyle>
           <LabelStyle> Date
             <InputStyle type="date" value={date} onChange={onChange} id="date" />
@@ -82,16 +213,16 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, i
             <textarea value={body} onChange={onChange} id="body"/>
           </LabelStyle> 
           <LabelStyle> Reoccuring
-            <input type="checkbox" value={isRepeated} onChange={handleChecked} id="isRepeated"/>
+            <InputLabel type="checkbox" value={isRepeated} onChange={handleChecked} id="isRepeated"/>
           </LabelStyle>
           {isRepeated && <LabelStyle> Daily
-            <input type="checkbox" value={daily} onChange={handleChecked}  id="daily"/>
+            <InputLabel type="checkbox" value={daily} onChange={handleChecked}  id="daily"/>
           </LabelStyle>}
           {isRepeated && <LabelStyle> Weekly
-            <input type="checkbox" value={weekly} onChange={handleChecked}  id="weekly"/>
+            <InputLabel type="checkbox" value={weekly} onChange={handleChecked}  id="weekly"/>
           </LabelStyle> }
+          <button type="submit">Create Note</button>
         </section>
-        <button type="submit">Create Note</button>
       </FormStyle>
     </FormContainer>
   );
