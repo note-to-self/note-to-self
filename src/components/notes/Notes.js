@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function Notes({ notes }) {
   const noteList = notes.map(note => {
     return (
-      <Note key={note.id} note={note} />
+      <Note key={note._id} note={note} _id={note._id}/>
     );
   });
   return (
