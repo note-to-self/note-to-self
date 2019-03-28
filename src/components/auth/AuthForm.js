@@ -58,6 +58,7 @@ const FormDiv = styles.div`
   width: 30%;
 }
 `;
+
 const InputAuth = styles.input`
 @media (min-width: 375px) {
   margin-left: .2em;

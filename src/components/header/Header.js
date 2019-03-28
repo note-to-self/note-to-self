@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import styles from 'styled-components';
 import { slide as Menu } from 'react-burger-menu';
 import openIcon from '../../../assets/images/menu.png';
@@ -20,7 +21,7 @@ const OpenIcon = styles.img`
 }
 `;
 
-const NavStyles = styles.a`
+const NavStyles = styles(Link)`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
 @media (min-width: 375px) {
  color: white;
@@ -128,10 +129,11 @@ export default class Header extends PureComponent {
       <HeaderStyle>
         <DivStyle>
           <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
-            <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'> AUTH </NavStyles>
-            <NavStyles id="loginin" className="menu-item" href='/loginin'> LOGIN </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
+            <NavStyles id="home" className="menu-item" to='/home'> HOME </NavStyles>
+            <NavStyles id="journal" className="menu-item" to='/journal'> JOURNAL </NavStyles>
+            <NavStyles id="auth" className="menu-item" to='/auth'> AUTH </NavStyles>
+            <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles>
+            <NavStyles id="auth" className="menu-item" to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>
         {this.props.profilePicture ? <ProfilePic src={this.props.profilePicture} />  : <Lotus src={lotus} /> }
