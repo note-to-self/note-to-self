@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import { withSession } from './containers/withSession';
+import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
 import AuthContainer from './containers/authContainer';
@@ -11,7 +11,7 @@ import JournalPage from './components/journal/JournalPage';
 export const ROUTES  = {
   HOME: {
     path: '/home',
-    component: HomeContainer,
+    component: withSession(HomeContainer),
     linkTo: () => '/home'
   },
   CALLBACK: {

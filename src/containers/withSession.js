@@ -5,6 +5,7 @@ import { getToken } from '../selectors/session';
 import AuthContainer from './AuthContainer';
 // import { Redirect } from 'react-router-dom';
 import { ROUTES } from '../routes';
+import { login } from '../services/auth';
 
 
 export const withSession = Component => {
@@ -16,7 +17,8 @@ export const withSession = Component => {
     }
     componentDidMount() {
       if(!this.props.token) {
-        this.props.history.push(ROUTES.AUTHCONTAINER.linkTo());
+        login();
+        // this.props.history.push(ROUTES.AUTHCONTAINER.linkTo());
       }
     }
     render() {

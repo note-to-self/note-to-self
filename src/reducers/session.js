@@ -4,7 +4,7 @@ const initialState = {
   token: '',
   id: '', 
   name: '',
-  profilePicture:'',
+  profilePicture: 'abc',
   password: '',
   phone: '',
   email: ''

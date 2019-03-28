@@ -62,6 +62,20 @@ const StyledLink = styled(Link)`
   z-index: 1;
   margin: 0 auto;
 }
+@media (min-width: 1200px) {
+  font-family: 'Muli', sans-serif;
+  text-decoration: none;
+  color: #47B1CD;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: 1px solid #47B1CD;
+  border-radius: .3em;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: .8em .5em .5em .5em;
+  width: 30%; 
+  z-index: 1;
+  margin: 0 auto;
+}
 `;
 
 const StyledDiv = styles.div`
@@ -73,7 +87,10 @@ const StyledDiv = styles.div`
 }
 @media (min-width: 700px) {    
   margin-top: 5em;
-  c
+  margin-left: 0;
+}
+@media (min-width: 1200px) {    
+  margin-top: 5em;
   margin-left: 0;
 }
 
@@ -90,6 +107,12 @@ const StyledLogo = styles.img `
   margin-top: 2em;
   width: 10vw;
   height: 10vh;
+  justify-self: center;
+}
+@media (min-width: 700px) {
+  margin-top: 2em;
+  width: 10vw;
+  height: 15vh;
   justify-self: center;
 }
 `;
