@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { deleteRequest } from '../services/deleteRequest';
+import { deleteRequest } from '../services/herokuApi';
 
 export const UPDATE_CHECKBOX = 'UPDATE_CHECKBOX';
 export const updateCheckbox = status => ({
