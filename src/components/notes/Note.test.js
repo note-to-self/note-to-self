@@ -10,7 +10,7 @@ describe('Note snapshot', () => {
     const handleCheckbox = jest.fn();
     const wrapper = shallow(
       <Note 
-        _id="1234"
+        id="1234"
         body="You got this!"
         onSubmit={handleSubmit}
         schedule="daily"
