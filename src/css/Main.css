@@ -1,0 +1,23 @@
+:global(.bm-overlay) {
+@media only screen and (min-width: 1000px) {
+  width: 50% !important;
+  margin:0 !important;
+}
+}
+
+:global(.bm-icon) {
+@media only screen and (min-width: 1600px) {
+  width: 5rem !important;
+  padding: 2em;
+}
+}
+
+:global(.bm-menu-wrap) {
+  @media only screen and (min-width: 1600px) {
+   width: 45% !important;
+   margin-top: 5em;
+  }
+  }
+:global(.bm-overlay) {
+    background: rgba(21, 43, 50, 0.7) !important;
+}

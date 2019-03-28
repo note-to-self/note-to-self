@@ -7,23 +7,23 @@ import lotus from '../../../assets/images/lotus.png';
 import PropTypes from 'prop-types';
 
 const OpenIcon = styles.img`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   height: 8vh;
   padding: 1em;
   display: flex;
   width: 50%;
 }
-@media (min-width: 700px) {
-  height: 7vh;
+@media (min-width: 414px) {
+  height: 8vh;
   padding: 1em;
   display: flex;
-  width: 30%;
+  width: 20%;
 }
 `;
 
 const NavStyles = styles(Link)`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-@media (min-width: 375px) {
+@media (max-width: 414px) {
  color: white;
  display: block;
  font-family: 'Muli', sans-serif;
@@ -40,7 +40,12 @@ const NavStyles = styles(Link)`
    font-weight: 700;
  }
 }
-@media (min-width: 700px) {
+@media (min-width: 414px) {
+  color: white;
+  display: block;
+  font-family: 'Muli', sans-serif;
+  margin-right: auto;
+  margin-left: 28%;
   text-decoration: none;
   width: 50%;
   font-size: 2em;
@@ -48,62 +53,121 @@ const NavStyles = styles(Link)`
   padding: 2em 1em .3em 1em;
   text-align: center;
    button {
-    background: transparent;
-    border-style: none;
+    color: white;
     font-weight: 700;
   }
  }
+ @media (min-width: 700px) {
+  color: white;
+  display: block;
+  width: 50%;
+  font-family: 'Muli', sans-serif;
+  margin-right: auto;
+  margin-left: 45%;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 2em 1em .3em 1em;
+  text-align: center;
+   button {
+    color: white;
+    font-weight: 700;
+    font-weight: 700;
+    border-style: none;
+    background: none;
+  }
+}
+@media (min-width: 1600px) {
+  color: white;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  font-family: 'Muli', sans-serif;
+  margin-right: 0;
+  margin-left: 0;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 2em 1em .3em 1em;
+  text-align: center;
+   button {
+    color: white;
+    font-weight: 700;
+    border-style: none;
+    background: none;
+  }
+}
 `;
 const DivStyle = styles.div`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   height: 10vh;
-  width: 10vw;
   position: relative;
   display: flex;
   justify-content: flex-end;
 }
-@media (min-width: 700px) {
+@media (min-width: 414px) {
   height: 10vh;
-  width: 10vw;
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+}
+
+@media (min-width: 700px) {
+  height: 15vh;
+}
+@media (min-width: 920px) {
+  height: 20vh;
 }
 `;
 
 const Lotus = styles.img`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   height: 6vh;
   width: 12vw;
   padding: 1em;
 }
-@media (min-width: 700px) {
-  width: 10vw;
-  margin-right: 10%;
+@media (min-width: 414px) {
+  height: 6vh;
+  width: 8vw;
+  padding: 1em;
 }
 `;
 
 const ProfilePic = styles.img`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
+}
+@media (min-width: 414px) {
   height: 6vh;
   width: 12vw;
   padding: 1em;
 }
 @media (min-width: 700px) {
+  height: 10vh;
+  width: 10vw;
+  padding: 1.5em;
+}
+@media (min-width: 925px) {
+  height: 8vh;
   width: 8vw;
-  margin-right: 10%;
+  padding: 1.5em;
+}
+@media (min-width: 1600px) {
+  height: 5rem;
+  width: 5rem;
+  padding: 1.5em 4em 2em 2em;
 }
 `;
 
-// const ProfilePic = styles.img`
-//   height: 6vh;
-//   width: 12vw;
-//   padding: 1em;
-//   border-radius: 10px;
-// `;
-
 const HeaderStyle = styles.header`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (min-width: 414px) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -111,9 +175,10 @@ const HeaderStyle = styles.header`
 @media (min-width: 700px) {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 `;
+
 
 
 export default class Header extends PureComponent {
@@ -125,9 +190,10 @@ export default class Header extends PureComponent {
   render() {
     console.log(this.props, 'picture');
     return (
-      <>
+      <>  
       <HeaderStyle>
         <DivStyle>
+<<<<<<< HEAD
           <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
             <NavStyles id="home" className="menu-item" to='/home'> HOME </NavStyles>
             <NavStyles id="journal" className="menu-item" to='/journal'> JOURNAL </NavStyles>
@@ -135,9 +201,16 @@ export default class Header extends PureComponent {
             <NavStyles id="auth" className="menu-item" to='/auth'> AUTH </NavStyles>
             <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles>
             <NavStyles id="auth" className="menu-item" to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
+=======
+          <Menu customBurgerIcon={ <OpenIcon style="width: 0" src={openIcon}/> }>
+            <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
+            <NavStyles id="auth" className="menu-item" href='/auth'> AUTH </NavStyles>
+            <NavStyles id="login" className="menu-item" href='/login'> LOGIN </NavStyles>
+            <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
+>>>>>>> 4e321417b30ddb3d1f250b61ae809d6eaaba8f8a
           </Menu>
         </DivStyle>
-        {this.props.profilePicture ? <ProfilePic src={this.props.profilePicture} />  : <Lotus src={lotus} /> }
+        {this.props.profilePicture ? <a href="/home"><ProfilePic src={this.props.profilePicture} /></a>  : <Lotus src={lotus} /> }
       </HeaderStyle>
       </>
     );
