@@ -1,24 +1,24 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList } from '../selectors/journal';
+import { getJournalList, getFavorites } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
-import { updateCheckbox, deleteNote } from '../actions/journal';
+import { deleteNote } from '../actions/journal';
 import { getSearchTerm } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
+    favorites: PropTypes.array,
     handleSubmit: PropTypes.func,
-    handleCheckbox: PropTypes.func,
-    handleChange: PropTypes.func.isRequired,
+    handleChange: PropTypes.func,
     searchTerm: PropTypes.string.isRequired
   }
 
   render() {
-    const { journalList, handleCheckbox, handleSubmit, searchTerm, handleChange } = this.props;
+    const { journalList, handleSubmit, handleChange, searchTerm, } = this.props;
     return (
       <>
       <header>
@@ -29,7 +29,7 @@ class JournalPage extends PureComponent {
         <Search 
           handleSubmit={handleSubmit}
           searchTerm={searchTerm}
-          onChange={handleChange}
+          handleChange={handleChange}
         />
         <ul>
           <li>My Notes</li>
@@ -37,10 +37,12 @@ class JournalPage extends PureComponent {
         </ul>
         <JournalList 
           journalList={journalList}
-          handleCheckbox={handleCheckbox}
           handleSubmit={handleSubmit}
         />
-        {/* <Favorites /> */}
+        {/* <Favorites 
+          favorites={favorites}
+          handleSubmit={handleSubmit}
+        /> */}
       </main>
       </>
     );
@@ -49,6 +51,7 @@ class JournalPage extends PureComponent {
 
 const mapStateToProps = state => ({
   journalList: getJournalList(state),
+  favorites: getFavorites(state),
   searchTerm: getSearchTerm(state)
 });
 
@@ -56,9 +59,6 @@ const mapDispatchToProps = dispatch => ({
   handleSubmit(id, event) {
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
-  },
-  handleCheckbox({ target }) {
-    dispatch(updateCheckbox(target.value));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));

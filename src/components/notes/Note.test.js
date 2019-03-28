@@ -13,8 +13,7 @@ describe('Note snapshot', () => {
         body="You got this!"
         onSubmit={handleSubmit}
         schedule="daily"
-        checkboxLabel="delete"
-        checkboxValue={false}
+        buttonLabel="Delete Note"
         onChange={handleCheckbox}
       />
     );
