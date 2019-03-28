@@ -30,7 +30,6 @@ const mapDispatchToProps = dispatch => ({
       time: updateTime,
       message: updateMessage
     };
-    console.log('target', target.checked);
     dispatch(factoryMethod[target.id](target.value));
   },
   

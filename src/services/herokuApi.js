@@ -2,7 +2,7 @@ import store from '../store';
 import { getToken } from '../selectors/session';
 
 export const postNote = note => {
-  return fetch('https://note-to-self-server.herokuapp.com/notes', {
+  return fetch('http://localhost:7891/notes', {
     method: 'POST',
     headers : {
       Authorization: `Bearer ${getToken(store.getState())}`,
