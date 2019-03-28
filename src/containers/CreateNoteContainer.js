@@ -1,24 +1,23 @@
 import { connect } from 'react-redux';
-import { updateDate, updateTime, updateMessage, createMessage, updateRepeat, updateDaily, updateWeekly, updatePrivateMessage } from '../actions/message';
-import { getDate, getTime, getMessage, getRepeat, getDaily, getPrivateMessage, getWeekly } from '../selectors/message';
+import { updateDate, updateTime, updateMessage, createMessage, updateDaily, updateWeekly, updatePrivateMessage, updateIsRepeated } from '../actions/message';
+import { getDate, getTime, getMessage, getDaily, getPrivateMessage, getWeekly, getIsRepeat } from '../selectors/message';
 import CreateNote from '../components/home/CreateNote';
-
 
 const mapStateToProps = state => ({
   date: getDate(state),
   time: getTime(state),
   privateMessage: getPrivateMessage(state),
   body: getMessage(state),
-  repeat: getRepeat(state),
+  isRepeated: getIsRepeat(state),
   daily: getDaily(state),
   weekly: getWeekly(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   handleChecked({ target }) {
     const checkedMethods = {
       privateMessage: updatePrivateMessage,
-      repeat: updateRepeat,
+      isRepeated: updateIsRepeated,
       daily: updateDaily,
       weekly: updateWeekly
     };
@@ -28,15 +27,21 @@ const mapDispatchToProps = dispatch => ({
     const factoryMethod = {
       date: updateDate,
       time: updateTime,
-      message: updateMessage
+      body: updateMessage
     };
-    console.log('target', target.checked);
     dispatch(factoryMethod[target.id](target.value));
   },
   
-  handleSubmit(body, time, date, event, repeat, repeatDay, repeatTime, privateMessage) {
+  handleSubmit(body, time, date, isRepeated, weekly, daily, privateMessage, event) {
+    console.log(ownProps);
+
+    console.log(daily, weekly, privateMessage);
+    const repeat = {
+      daily,
+      weekly
+    };
     event.preventDefault();
-    dispatch(createMessage({ date, time, body, repeat, repeatDay, repeatTime, privateMessage }));
+    dispatch(createMessage({ date, time, body, isRepeated, repeat, privateMessage }));
   }
 });
 

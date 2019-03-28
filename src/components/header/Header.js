@@ -46,6 +46,13 @@ const Lotus = styles.img`
   padding: 1em;
 `;
 
+const ProfilePic = styles.img`
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
+  border-radius: 10px;
+`;
+
 const HeaderStyle = styles.header`
   display: flex;
   flex-direction: row;
@@ -60,6 +67,7 @@ export default class Header extends PureComponent {
   };
 
   render() {
+    console.log(this.props, 'picture');
     return (
       <>
       <HeaderStyle>
@@ -71,7 +79,7 @@ export default class Header extends PureComponent {
             <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>
-        {!this.props.profilePicture ? <Lotus src={lotus} /> : <img src={this.props.profilePicture} /> }
+        {this.props.profilePicture ? <ProfilePic src={this.props.profilePicture} />  : <Lotus src={lotus} /> }
       </HeaderStyle>
       </>
     );

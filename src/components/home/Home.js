@@ -4,7 +4,8 @@ import homeImage from '../../../assets/images/home-form-image.jpg';
 import 'normalize.css';
 import PropTypes from 'prop-types';
 import CreateNoteContainer from '../../containers/CreateNoteContainer';
-import Header from '../header/Header';
+import HeaderContainer from '../../containers/HeaderContainer';
+
 
 
 const HomeImage = styles.div`
@@ -30,7 +31,7 @@ export default class Home extends PureComponent {
     return (  
     <>
     <HomeImage>
-      <Header/>
+      <HeaderContainer />
       {/* <header>
         <DivStyle>
           <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
