@@ -7,7 +7,7 @@ export default function CommunityList({ communityList, handleCheckbox }) {
     return (
       <li>
         <Note 
-          key={note._id}
+          // key={note._id}
           id={note._id}
           body={note.body}
           checkboxLabel="Save to Favorites"

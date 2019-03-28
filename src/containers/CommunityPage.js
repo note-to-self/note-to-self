@@ -11,6 +11,7 @@ import { updateCheckbox } from '../actions/community';
 
 class CommunityPage extends PureComponent {
   static propTypes = {
+    fetch: PropTypes.func,
     communityList: PropTypes.array,
     handleCheckbox: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
@@ -56,7 +57,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
-    dispatch(fetchNotes());
+    dispatch(getPublicNotes());
   },
   handleSubmit(event) {
     event.preventDefault();
