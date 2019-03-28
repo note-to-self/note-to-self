@@ -17,17 +17,6 @@ const QuoteStyle = styles.div`
 `;
 
 const QuoteContainer = styles.div`
-@media (max-width: 414px) {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-  position: absolute;
-  color: #47B1CD;
-  line-height: 1em;
-  bottom: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-}
 @media (min-width: 414px) {
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   font-family: 'Muli', sans-serif;
@@ -38,7 +27,17 @@ const QuoteContainer = styles.div`
   bottom: 10%;
   background-color: rgba(255, 255, 255, 0.8);
 }
-
+@media (min-width: 700px) {
+  position: absolute;
+  color: #47B1CD;
+  line-height: 1em;
+  bottom: 10%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: block
+  margin-right: auto;
+  margin-left: 25%;
+  width: 50%;
+}
 `;
 
 const QuoteAuthor = styles.div`

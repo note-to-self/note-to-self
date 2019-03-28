@@ -20,8 +20,6 @@ const FormStyle = styles.form`
   }
   input, textarea {
     color: black;
-  }
-}
 @media (min-width: 700px) {
   width: 70%;
   margin-top: 0;

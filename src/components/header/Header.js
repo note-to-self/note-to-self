@@ -94,6 +94,13 @@ const ProfilePic = styles.img`
 }
 `;
 
+const ProfilePic = styles.img`
+  height: 6vh;
+  width: 12vw;
+  padding: 1em;
+  border-radius: 10px;
+`;
+
 const HeaderStyle = styles.header`
 @media (min-width: 375px) {
   display: flex;

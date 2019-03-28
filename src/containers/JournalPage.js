@@ -1,24 +1,34 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList } from '../selectors/journal';
+import { getJournalList, getFavorites } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
-import { updateCheckbox, deleteNote } from '../actions/journal';
+import Favorites from '../components/journal/Favorites';
+import { deleteNote, fetchJournalList } from '../actions/journal';
+import { fetchFaves, updateFaves } from '../actions/favorites';
 import { getSearchTerm } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
-    handleSubmit: PropTypes.func,
-    handleCheckbox: PropTypes.func,
-    handleChange: PropTypes.func.isRequired,
-    searchTerm: PropTypes.string.isRequired
+    favorites: PropTypes.array,
+    handleDelete: PropTypes.func,
+    handleChange: PropTypes.func,
+    handleUnfavorite: PropTypes.func,
+    searchTerm: PropTypes.string.isRequired,
+    fetchJournal: PropTypes.func,
+    fetchFavorites: PropTypes.func
+  }
+
+  componentDidMount() {
+    this.props.fetchJournal();
+    this.props.fetchFavorites();
   }
 
   render() {
-    const { journalList, handleCheckbox, handleSubmit, searchTerm, handleChange } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
     return (
       <>
       <header>
@@ -27,7 +37,6 @@ class JournalPage extends PureComponent {
       </header>
       <main>
         <Search 
-          handleSubmit={handleSubmit}
           searchTerm={searchTerm}
           onChange={handleChange}
         />
@@ -37,10 +46,12 @@ class JournalPage extends PureComponent {
         </ul>
         <JournalList 
           journalList={journalList}
-          handleCheckbox={handleCheckbox}
-          handleSubmit={handleSubmit}
+          handleDelete={handleDelete}
         />
-        {/* <Favorites /> */}
+        <Favorites 
+          favorites={favorites}
+          handleUnfavorite={handleUnfavorite}
+        />
       </main>
       </>
     );
@@ -49,16 +60,24 @@ class JournalPage extends PureComponent {
 
 const mapStateToProps = state => ({
   journalList: getJournalList(state),
+  favorites: getFavorites(state),
   searchTerm: getSearchTerm(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit(id, event) {
+  fetchFavorites() {
+    dispatch(fetchFaves());
+  },
+  fetchJournal() {
+    dispatch(fetchJournalList());
+  },
+  handleDelete(id, event) {
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
   },
-  handleCheckbox({ target }) {
-    dispatch(updateCheckbox(target.value));
+  handleUnfavorite(note, event) {
+    event.preventDefault();
+    dispatch(updateFaves(note));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
