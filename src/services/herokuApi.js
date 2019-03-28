@@ -18,13 +18,6 @@ export const postNote = note => {
       return json;
     })
     .catch(console.log);
-    
-  .then(res => [res.ok, res.json()])
-      .then(([ok, json]) => {
-        if(!ok) throw json;
-        return json;
-      })
-  });
 };
 
 export const getPublicNotes = () => {

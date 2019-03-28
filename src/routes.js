@@ -38,11 +38,6 @@ export const ROUTES  = {
     path: '/journal',
     component: JournalPage,
     linkTo: () => '/journal'
-  },
-  COMMUNITY: {
-    path: '/community',
-    component: CommunityPage,
-    linkTo: () => '/community'
   }
 };
 
