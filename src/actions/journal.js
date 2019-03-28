@@ -16,11 +16,3 @@ export const [
   FETCH_JOURNAL_LIST_FULFILLED,
   FETCH_JOURNAL_LIST_REJECTED
 ] = createAction('FETCH_JOURNAL_LIST', getUserNotes);
-
-export const [
-  fetchFaves,
-  FETCH_FAVES,
-  FETCH_FAVES_PENDING,
-  FETCH_FAVES_FULFILLED,
-  FETCH_FAVES_REJECTED
-] = createAction('FETCH_FAVES', getUserFaves);

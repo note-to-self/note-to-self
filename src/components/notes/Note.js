@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Note({ body, handleSubmit, schedule, buttonLabel, _id }) {
+export default function Note({ body, handleDelete, schedule, buttonLabel, _id }) {
   return (
     <section>
-      {handleSubmit && <form onSubmit={handleSubmit.bind(null, _id)}>
+      {handleDelete && <form onSubmit={handleDelete.bind(null, { _id, body })}>
         <button>{buttonLabel}</button>
       </form>}
       <h3>{body}</h3>
@@ -15,10 +15,8 @@ function Note({ body, handleSubmit, schedule, buttonLabel, _id }) {
 
 Note.propTypes = {
   body: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func,
+  handleDelete: PropTypes.func,
   schedule: PropTypes.string,
   buttonLabel: PropTypes.string,
   _id: PropTypes.string.isRequired
 };
-
-export default Note;

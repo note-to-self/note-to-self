@@ -5,7 +5,8 @@ import { getJournalList, getFavorites } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
 import Favorites from '../components/journal/Favorites';
-import { deleteNote, fetchFaves } from '../actions/journal';
+import { deleteNote, fetchJournalList } from '../actions/journal';
+import { fetchFaves, updateFaves } from '../actions/favorites';
 import { getSearchTerm } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 
@@ -16,7 +17,14 @@ class JournalPage extends PureComponent {
     handleDelete: PropTypes.func,
     handleChange: PropTypes.func,
     handleUnfavorite: PropTypes.func,
-    searchTerm: PropTypes.string.isRequired
+    searchTerm: PropTypes.string.isRequired,
+    fetchJournal: PropTypes.func,
+    fetchFavorites: PropTypes.func
+  }
+
+  componentDidMount() {
+    this.props.fetchJournal();
+    this.props.fetchFavorites();
   }
 
   render() {
@@ -57,13 +65,19 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchFavorites() {
+    dispatch(fetchFaves());
+  },
+  fetchJournal() {
+    dispatch(fetchJournalList());
+  },
   handleDelete(id, event) {
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
   },
-  handleUnfavorite(id, event) {
+  handleUnfavorite(note, event) {
     event.preventDefault();
-    dispatch();
+    dispatch(updateFaves(note));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
