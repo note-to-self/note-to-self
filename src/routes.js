@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
-import AuthContainer from './containers/authContainer';
+import AuthContainer from './containers/AuthContainer';
 import LandingContainer from './containers/LandingContainer';
 import LoginContainer from './containers/LoginContainer';
 import JournalPage from './containers/JournalPage';
