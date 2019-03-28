@@ -7,7 +7,7 @@ import AuthContainer from './containers/AuthContainer';
 import LandingContainer from './containers/LandingContainer';
 import LoginContainer from './containers/LoginContainer';
 import JournalPage from './containers/JournalPage';
-import CommunityPage from './containers/CommunityPage';
+// import CommunityPage from './containers/CommunityPage';
 
 export const ROUTES  = {
   HOME: {
