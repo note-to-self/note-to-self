@@ -1,3 +1,6 @@
+import { getFavorites } from '../selectors/journal';
+// import { getPublicNotes } from '../selectors/community';
+
 export const getSearchTerm = state => state.search.searchTerm;
 
 
@@ -16,3 +19,4 @@ export const getFiltered = (state, theArray) => {
   });
 }
 ;
+
