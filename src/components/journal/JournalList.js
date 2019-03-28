@@ -20,7 +20,7 @@ export default function JournalList({ journalList, handleDelete }) {
           _id={note._id}
           body={note.body}
           schedule={check()}
-          handleDelete={handleDelete}
+          handleSubmit={handleDelete}
           buttonLabel='X'
         />
       </li>

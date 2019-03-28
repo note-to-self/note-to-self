@@ -10,7 +10,7 @@ export default function CommunityList({ communityList, handleFavorite }) {
           id={note._id}
           body={note.body}
           buttonLabel='<3'
-          handleFavorite={handleFavorite}
+          handleSubmit={handleFavorite}
         />
       </li>
     );
