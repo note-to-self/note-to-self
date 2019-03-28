@@ -4,7 +4,7 @@ import homeImage from '../../../assets/images/home-image.jpg';
 import logo from '../../../assets/images/logo.png';
 
 const HomeContainer = styles.section`
-@media (min-width: 375px) {
+@media (min-width: 0px) {
 position: fixed;
 top: 0; 
 left: 0;
@@ -40,17 +40,15 @@ animation-name: fadeOut;
         z-index:-1}
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 414px) {
   height: 100vh;
-  background-size: 50vw 100vh;
-  background-color:  #47B1CD
   .logo {
-    padding-top: 30%;
+    padding-top: 10%;
     width: 20%;
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1000px) {
   height: 100vh;
   background-size: 50vw 100vh;
   background-color:  #47B1CD

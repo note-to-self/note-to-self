@@ -5,7 +5,7 @@ import styles from 'styled-components';
 
 const FormStyle = styles.form`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
   color: white;
@@ -36,20 +36,20 @@ const FormStyle = styles.form`
 `;
 
 const LabelStyle = styles.label`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   display: block;
   padding: 1em 0 1em 0;
 ]
 `;
 
 const InputStyle = styles.input`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   padding: 1em
 }
 `;
 
 const FormContainer = styles.div`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   padding-top: 5em;
   textarea {
     position: relative;

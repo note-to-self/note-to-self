@@ -16,7 +16,7 @@ const HomeMain = styles.div`
 `;
 
 const HomeImage = styles.div`
-@media (min-width: 375px) {
+@media (max-width: 414px) {
   background-image: url(${homeImage}); 
   height: 40vh;
   background-position: center;
