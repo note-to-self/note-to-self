@@ -1,4 +1,4 @@
-import { UPDATE_CHECKBOX, DELETE_NOTE } from '../actions/journal';
+import { UPDATE_CHECKBOX, DELETE_NOTE, FETCH_JOURNAL_LIST, FETCH_FAVES } from '../actions/journal';
 
 const initialState = {
   journalList: [],
@@ -12,6 +12,16 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         isChecked: payload
+      };
+    case FETCH_JOURNAL_LIST:
+      return {
+        ...state,
+        journalList: payload
+      };
+    case FETCH_FAVES:
+      return {
+        ...state,
+        favorites: payload
       };
     case DELETE_NOTE:
       return state;
