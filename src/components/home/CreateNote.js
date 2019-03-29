@@ -220,7 +220,7 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, i
 CreateNote.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  privateMessage: PropTypes.string,
+  privateMessage: PropTypes.bool,
   body: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   handleChecked: PropTypes.func,
