@@ -46,13 +46,13 @@ const NotesContainer = styles.form`
 export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
   return (
     <NotesContainer>
-    <section>
-      {handleSubmit && <form onSubmit={handleSubmit.bind(null, { id })}>
-        <button>{buttonLabel}</button>
-      </form>}
-      <h3>{body}</h3>
-      {schedule && <p>This is a {schedule} affirmation.</p>}
-    </section>
+      <section>
+        {handleSubmit && <form onSubmit={handleSubmit.bind(null, { id })}>
+          <button>{buttonLabel}</button>
+        </form>}
+        <h3>{body}</h3>
+        {schedule && <p>This is a {schedule} affirmation.</p>}
+      </section>
     </NotesContainer>
   );
 }
