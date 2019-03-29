@@ -56,8 +56,6 @@ const SearchContainer = styles.section`
 
 const Container = styles.ul`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
- display: grid;
- grid-template-columns: 50% 50%;
  margin-left: auto;
  margin-right: auto;
  margin-top: 2em;
@@ -77,9 +75,6 @@ const Container = styles.ul`
 
 const NotesContainer = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
- display: grid;
- grid-column-gap: .5em;
- grid-template-columns: 50% 50%;
  margin-left: auto;
  margin-right: auto;
  margin-top: 2em;
@@ -126,7 +121,7 @@ class JournalPage extends PureComponent {
         {/* <ToggleContainer> */}
         <Container>
           <li>My Notes</li>
-          <li>Favorites</li>
+          {/* <li>Favorites</li> */}
         </Container>
         {/* </ToggleContainer> */}
         <NotesContainer>
@@ -134,10 +129,10 @@ class JournalPage extends PureComponent {
             journalList={journalList}
             handleDelete={handleDelete}
           />
-          {!favorites && <Favorites 
+          {/* {!favorites && <Favorites 
             favorites={favorites}
             handleUnfavorite={handleUnfavorite}
-          />}
+          />} */}
         </NotesContainer>
       </JournalMain>
       </>
