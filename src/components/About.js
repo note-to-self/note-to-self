@@ -33,11 +33,11 @@ const AboutMain = styles.div`
   letter-spacing: .02em;
 `;
 const StyledPhoto = styles.img`
-  img {
     border-radius: 8px;
-  }
+    display: block;
+    margin: 0 auto;
+    width: 100%;
 `;
-
 
 export default function About() {
   return (
@@ -45,13 +45,13 @@ export default function About() {
       <AboutMain>
         <main>
           <section>
-            <StyledPhoto img src={'../../assets/images/kate.jpg'} alt="logo" />
+            <StyledPhoto src={kate} alt="logo" />
             <h1>Kate Dameron</h1>
             <h2>Title: Full-stack Developer</h2>
             <p>As a Full-stack Developer with a background in arts education Kate enjoys making accessible tools that improve our community. When she’s not building components and working on her debugging superpowers - Kate enjoys hiking with her philosophical pup and husband, baking and making art.</p>
           </section>
           <section>
-            <StyledPhoto img src={'../../assets/images/marcy.jpg'} alt="logo" />
+            <StyledPhoto src={marcy} alt="logo" />
             <h1>Marcy Silverman</h1>
             <h2>Title: Developer Extraordinaire</h2>
             <p>Endlessly curious developer with a flare for the front-end. Absolutely enjoyed collaborating with this team and would definitely choose them to fight against a zombie apocalypse! One of my favorite aspects of this project was working with the Twilio API and seeing the front-end and back-end communicate. When I’am not developing you can find me petting dogs, napping, working out, and snacking!</p>

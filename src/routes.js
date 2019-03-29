@@ -8,6 +8,7 @@ import LandingContainer from './containers/LandingContainer';
 import CommunityPage from './containers/CommunityPage';
 import LoginContainer from './containers/LoginContainer';
 import JournalPage from './containers/JournalPage';
+import About from './components/About';
 
 export const ROUTES  = {
   HOME: {
@@ -44,6 +45,11 @@ export const ROUTES  = {
     path: '/community',
     component: withSession(CommunityPage),
     linkTo: () => '/community'
+  },
+  ABOUT: {
+    path: '/about',
+    component: About,
+    linkTo: () => '/about'
   }
 };
 
