@@ -10,7 +10,6 @@ const mapStateToProps = state => ({
   name: getName(state),
   phone: getPhone(state)
 });
-// fire an action that fires that signup function from auth
 const mapDispatchToProps = dispatch => ({
   handleAuth(email, password, name, phone, event) {
     event.preventDefault();
