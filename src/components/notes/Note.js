@@ -7,6 +7,7 @@ export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) 
     <section>
       {handleSubmit && <form onSubmit={handleSubmit.bind(null, id)}>
         <button>{buttonLabel} {id} </button>
+
       </form>}
       <h3>{body}</h3>
       {schedule && <p>This is a {schedule} affirmation.</p>}

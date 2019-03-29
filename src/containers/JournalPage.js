@@ -7,6 +7,7 @@ import JournalList from '../components/journal/JournalList';
 import Favorites from '../components/journal/Favorites';
 import Header from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList, updateToggle } from '../actions/journal';
+
 import { fetchFaves, updateFaves } from '../actions/favorites';
 import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
@@ -35,6 +36,7 @@ class JournalPage extends PureComponent {
     userId: PropTypes.string.isRequired,
     toggle: PropTypes.bool.isRequired,
     handleToggle: PropTypes.func.isRequired
+
   }
 
   componentDidMount() {
@@ -45,6 +47,7 @@ class JournalPage extends PureComponent {
   
   render() {
     const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite, handleToggle, toggle } = this.props;
+
     console.log('JournalList', this.props.journalList);
     return (
       <>
@@ -82,6 +85,7 @@ const mapStateToProps = state => ({
   searchTerm: getSearchTerm(state),
   userId: getUserId(state),
   toggle: isToggle(state)
+
 });
 
 const mapDispatchToProps = dispatch => ({
