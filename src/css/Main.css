@@ -6,9 +6,21 @@
 }
 
 :global(.bm-icon) {
+@media all and (min-width: 0px) and (max-width: 700px) {
+    width: 3rem !important;
+    padding: 1em;
+  }
+@media all and (min-width: 414px) and (max-width: 700px) {
+    width: 3.6rem !important;
+    padding: 1em;
+  }
+@media only screen and (min-width: 700px) {
+    width: 4rem !important;
+    padding: 1.8em;
+  }
 @media only screen and (min-width: 1600px) {
   width: 5rem !important;
-  padding: 2em;
+  padding: 1.8em;
 }
 }
 
@@ -17,6 +29,10 @@
    width: 45% !important;
    margin-top: 5em;
   }
+  @media only screen and (min-width: 800px) {
+    width: 40% !important;
+    margin-top: 5em;
+   }
   }
 :global(.bm-overlay) {
     background: rgba(21, 43, 50, 0.7) !important;

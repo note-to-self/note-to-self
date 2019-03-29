@@ -31,7 +31,7 @@ const NavStyles = styles(Link)`
  margin-left: 28%;
  text-decoration: none;
  width: 50%;
- font-size: 2em;
+ font-size: 1.4em;
  font-weight: 700;
  padding: 2em 1em .3em 1em;
  text-align: center;
@@ -63,7 +63,6 @@ const NavStyles = styles(Link)`
   width: 50%;
   font-family: 'Muli', sans-serif;
   margin-right: auto;
-  margin-left: 45%;
   text-decoration: none;
   font-size: 2em;
   font-weight: 700;
@@ -77,14 +76,14 @@ const NavStyles = styles(Link)`
     background: none;
   }
 }
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
   color: white;
   display: block;
   margin: 0 auto;
   width: 100%;
   font-family: 'Muli', sans-serif;
   margin-right: 0;
-  margin-left: 0;
+  margin-left: 1em;
   text-decoration: none;
   font-size: 2em;
   font-weight: 700;
@@ -150,11 +149,11 @@ const ProfilePic = styles.img`
   padding: 1.5em;
 }
 @media (min-width: 925px) {
-  height: 8vh;
-  width: 8vw;
+  height: 7vh;
+  width: 7vw;
   padding: 1.5em;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1400px) {
   height: 5rem;
   width: 5rem;
   padding: 1.5em 4em 2em 2em;
@@ -193,7 +192,7 @@ export default class Header extends PureComponent {
       <>  
       <HeaderStyle>
         <DivStyle>
-          <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
+          <Menu customBurgerIcon={ <OpenIcon src={openIcon} alt="lotus icon picture in blue background"/> }>
             <NavStyles id="home" className="menu-item" to='/home'> HOME </NavStyles>
             <NavStyles id="journal" className="menu-item" to='/journal'> JOURNAL </NavStyles>
             <NavStyles id="community" className="menu-item" to='/community'> COMMUNITY </NavStyles>
@@ -202,7 +201,7 @@ export default class Header extends PureComponent {
             <NavStyles id="auth" className="menu-item" to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>
-        {this.props.profilePicture ? <a href="/home"><ProfilePic src={this.props.profilePicture} /></a>  : <Lotus src={lotus} /> }
+        {this.props.profilePicture ? <a href="/home"><ProfilePic src={this.props.profilePicture} alt="user's profile Picture"/></a>  : <Lotus src={lotus} alt="lotus icon picture in blue background" /> }
       </HeaderStyle>
       </>
     );

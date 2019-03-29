@@ -17,6 +17,7 @@ const FormStyle = styles.form`
   padding: 1em;
   box-shadow: 1pt 1pt 1pt #9BB7C3;
   letter-spacing: .02em;
+  border-radius: 10px;
   button {
     color: #316f7f;
     display: block;
@@ -34,6 +35,7 @@ const FormStyle = styles.form`
   }
 }
 @media (min-width: 414px) {
+  border-radius: 10px;
   margin-top: 6em
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
@@ -112,7 +114,7 @@ const LabelStyle = styles.label`
 @media (min-width: 925px) {
   font-size: 1.2em;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
   font-size: 2em;
 }
 `;
@@ -158,7 +160,7 @@ const FormContainer = styles.div`
     background: transparent;
   }
   }
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
     textarea {
       width: 80%;
       height: 30vh;
