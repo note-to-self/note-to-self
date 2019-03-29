@@ -48,7 +48,7 @@ export const ROUTES  = {
   },
   ABOUT: {
     path: '/about',
-    component: About,
+    component: withSession(About),
     linkTo: () => '/about'
   }
 };

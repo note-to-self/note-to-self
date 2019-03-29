@@ -32,13 +32,14 @@ const mapDispatchToProps = dispatch => ({
     dispatch(factoryMethod[target.id](target.value));
   },
   
-  handleSubmit(body, time, date, isRepeated, weekly, daily, privateMessage, event) {
+  handleSubmit(body, localTime, date, isRepeated, weekly, daily, privateMessage, event) {
     const repeat = {
       daily,
       weekly
     };
     event.preventDefault();
-    dispatch(createMessage({ date, time, body, isRepeated, repeat, privateMessage }));
+    const time = new Date(date + ' ' + localTime).getTime();
+    dispatch(createMessage({ time, body, isRepeated, repeat, privateMessage }));
   }
 });
 

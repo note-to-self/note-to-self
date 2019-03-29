@@ -24,7 +24,7 @@ const Input = styles.input`
 export default function Search({ onChange, searchTerm }) {
   return (
     <>
-      <Label for="search">search</Label>
+      <Label htmlFor="search">search</Label>
       <Input type="text" placeholder="search" name="searchTerm" value={searchTerm} onChange={onChange} ></Input>
       {/* <Button>Search</Button> */}
     </>

@@ -40,8 +40,8 @@ animation-name: fadeOut;
 @media (min-width: 414px) {
   height: 100vh;
   .logo {
-    padding-top: 10%;
-    width: 20%;
+    padding-top: 0;
+    width: 40%;
   }
 }
 @media (min-width: 1000px) {
