@@ -8,6 +8,9 @@ const UlStyle = styles.ul`
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  li {
+    text-align: center;
+  }
 `;
 
 export default function CommunityList({ communityList, handleFavorite }) {
@@ -17,7 +20,6 @@ export default function CommunityList({ communityList, handleFavorite }) {
         <Note 
           id={note._id}
           body={note.body}
-          buttonLabel='<3'
           handleSubmit={handleFavorite}
         />
       </li>

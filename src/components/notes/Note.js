@@ -16,8 +16,9 @@ const NoteCard = styles.section`
  border: 1pt solid #8BCBC8;
  border-radius: 10px
  margin-bottom: 1em;
- padding: 1em;
+ padding: .3em;
  border: 1pt solid #8BCBC8;
+ margin: 1em;
 
 ul {
   list-style: none;

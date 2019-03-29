@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getJournalList, getFavorites, isToggle } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
-import Favorites from '../components/journal/Favorites';
+// import Favorites from '../components/journal/Favorites';
 import HeaderContainer from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
 import { fetchFaves, updateFaves } from '../actions/favorites';
@@ -56,8 +56,6 @@ const SearchContainer = styles.section`
 
 const Container = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
- display: grid;
- grid-template-columns: 50% 50%;
  margin-left: auto;
  margin-right: auto;
  margin-top: 2em;
@@ -77,9 +75,6 @@ const Container = styles.section`
 
 const NotesContainer = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
- display: grid;
- grid-column-gap: .5em;
- grid-template-columns: 50% 50%;
  margin-left: auto;
  margin-right: auto;
  margin-top: 2em;
@@ -91,10 +86,10 @@ const NotesContainer = styles.section`
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
-    favorites: PropTypes.array,
+    // favorites: PropTypes.array,
     handleDelete: PropTypes.func,
     handleChange: PropTypes.func,
-    handleUnfavorite: PropTypes.func,
+    // handleUnfavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     fetchJournal: PropTypes.func,
     fetchFavorites: PropTypes.func,
@@ -126,7 +121,7 @@ class JournalPage extends PureComponent {
         {/* <ToggleContainer> */}
         <Container>
           <li>My Notes</li>
-          <li>Favorites</li>
+          {/* <li>Favorites</li> */}
         </Container>
         {/* </ToggleContainer> */}
         <NotesContainer>
@@ -134,10 +129,10 @@ class JournalPage extends PureComponent {
             journalList={journalList}
             handleDelete={handleDelete}
           />
-          {!favorites && <Favorites 
+          {/* {!favorites && <Favorites 
             favorites={favorites}
             handleUnfavorite={handleUnfavorite}
-          />}
+          />} */}
         </NotesContainer>
       </JournalMain>
       </>
