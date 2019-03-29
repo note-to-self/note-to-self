@@ -4,13 +4,49 @@ import homeImage from '../../../assets/images/home-form-image.jpg';
 import 'normalize.css';
 import PropTypes from 'prop-types';
 import CreateNoteContainer from '../../containers/CreateNoteContainer';
-import Header from '../header/Header';
+import HeaderContainer from '../../containers/HeaderContainer';
 
 
-const HomeImage = styles.div`
-@media (min-width: 375px) {
+const HomeMain = styles.main`
+@media (min-width: 700px) {
+  height: 100vh;
+  width: 100vw;
+  background-size: 50vw 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+`;
+
+const HomeImage = styles.header`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  color: white;
+  letter-spacing: .09em;
+  text-shadow: 1pt 1.5pt grey;
+}
+@media (max-width: 414px) {
   background-image: url(${homeImage}); 
   height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 414px) {
+  background-image: url(${homeImage}); 
+  height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 700px) {
+  background-image: url(${homeImage}); 
+  height: 40vh;
+  width: 50vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,20 +65,13 @@ export default class Home extends PureComponent {
   render() {
     return (  
     <>
-    <HomeImage>
-      <Header/>
-      {/* <header>
-        <DivStyle>
-          <Menu customBurgerIcon={ <OpenIcon src={openIcon}/> }>
-            <NavStyles id="home" className="menu-item" href='/home'> HOME </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'> AUTH </NavStyles>
-            <NavStyles id="loginin" className="menu-item" href='/loginin'> LOGIN </NavStyles>
-            <NavStyles id="auth" className="menu-item" href='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
-          </Menu>
-        </DivStyle>
-      </header> */}
-      <CreateNoteContainer/>
-    </HomeImage>
+    <HomeMain>
+      <HomeImage>
+        <HeaderContainer />
+        <h1>I AM...</h1>
+        <CreateNoteContainer/>
+      </HomeImage>
+    </HomeMain>
     </>
     );
   }

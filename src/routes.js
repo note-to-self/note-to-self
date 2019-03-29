@@ -1,16 +1,19 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-// import { withSession } from './containers/withSession';
+import { withSession } from './containers/withSession';
 import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
-import AuthContainer from './containers/authContainer';
+import AuthContainer from './containers/AuthContainer';
 import LandingContainer from './containers/LandingContainer';
+import CommunityPage from './containers/CommunityPage';
 import LoginContainer from './containers/LoginContainer';
+import JournalPage from './containers/JournalPage';
+import About from './components/About';
 
 export const ROUTES  = {
-  HOME: { 
+  HOME: {
     path: '/home',
-    component: HomeContainer,
+    component: withSession(HomeContainer),
     linkTo: () => '/home'
   },
   CALLBACK: {
@@ -32,6 +35,21 @@ export const ROUTES  = {
     path: '/',
     component: LandingContainer,
     linkTo: () => '/'
+  },
+  JOURNAL: {
+    path: '/journal',
+    component: withSession(JournalPage),
+    linkTo: () => '/journal'
+  },
+  COMMUNITYPAGE: {
+    path: '/community',
+    component: withSession(CommunityPage),
+    linkTo: () => '/community'
+  },
+  ABOUT: {
+    path: '/about',
+    component: withSession(About),
+    linkTo: () => '/about'
   }
 };
 

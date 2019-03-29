@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note snapshot matches a snapshot 1`] = `
+<styled.section>
+  <styled.h3>
+    You got this!
+  </styled.h3>
+  <p>
+    This is a 
+    daily
+     affirmation.
+  </p>
+</styled.section>
+`;

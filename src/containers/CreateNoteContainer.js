@@ -1,27 +1,45 @@
 import { connect } from 'react-redux';
-import { updateDate, updateTime, updateMessage, createMessage } from '../actions/message';
-import { getDate, getTime, getMessage } from '../selectors/message';
+import { updateDate, updateTime, updateMessage, createMessage, updateDaily, updateWeekly, updatePrivateMessage, updateIsRepeated } from '../actions/message';
+import { getDate, getTime, getMessage, getDaily, getPrivateMessage, getWeekly, getIsRepeat } from '../selectors/message';
 import CreateNote from '../components/home/CreateNote';
 
 const mapStateToProps = state => ({
   date: getDate(state),
   time: getTime(state),
-  message: getMessage(state)
+  privateMessage: getPrivateMessage(state),
+  body: getMessage(state),
+  isRepeated: getIsRepeat(state),
+  daily: getDaily(state),
+  weekly: getWeekly(state)
 });
 
 const mapDispatchToProps = dispatch => ({
+  handleChecked({ target }) {
+    const checkedMethods = {
+      privateMessage: updatePrivateMessage,
+      isRepeated: updateIsRepeated,
+      daily: updateDaily,
+      weekly: updateWeekly
+    };
+    dispatch(checkedMethods[target.id](target.checked));
+  },
   onChange({ target }) {
     const factoryMethod = {
       date: updateDate,
       time: updateTime,
-      message: updateMessage
+      body: updateMessage
     };
     dispatch(factoryMethod[target.id](target.value));
   },
   
-  handleSubmit(message, time, date, event) {
+  handleSubmit(body, localTime, date, isRepeated, weekly, daily, privateMessage, event) {
+    const repeat = {
+      daily,
+      weekly
+    };
     event.preventDefault();
-    dispatch(createMessage({ date, time, message }));
+    const time = new Date(date + ' ' + localTime).getTime();
+    dispatch(createMessage({ time, body, isRepeated, repeat, privateMessage }));
   }
 });
 

@@ -36,7 +36,6 @@ export const handleAuth = () => {
 export const signup = (user) => {
   return new Promise((resolve, reject) => {
     const { email, password, name, phone } = user;
-    console.log(email, password, name, phone);
     auth0.signup({
       email,
       username: email.replace('@', '_'),
@@ -44,7 +43,7 @@ export const signup = (user) => {
       connection: 'Username-Password-Authentication',
       user_metadata: { name, phone }
     },  (err, token) =>{
-      console.log('RESULT FROM SIGNUP FUNCTION', token);
+
       if(err) return reject(err);
       auth0.authorize();
       return resolve({

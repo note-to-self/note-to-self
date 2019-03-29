@@ -15,9 +15,10 @@ export const updateDate = date => ({
   type: UPDATE_DATE,
   payload: date
 });
-export const UPDATE_PUBLIC_CHOICE = 'UPDATE_PUBLIC_CHOICE';
-export const updatePublicChoice = value => ({
-  type: UPDATE_PUBLIC_CHOICE,
+
+export const UPDATE_PRIVATE = 'UPDATE_PRIVATE';
+export const updatePrivateMessage = value => ({
+  type: UPDATE_PRIVATE,
   payload: value
 });
 
@@ -31,5 +32,28 @@ export const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
 export const updateMessage = message => ({
   type: UPDATE_MESSAGE,
   payload: message
+});
+
+// export const UPDATE_REPEAT = 'UPDATE_REPEAT';
+// export const updateRepeat = value => ({
+//   type: UPDATE_REPEAT,
+//   payload: value
+// });
+
+export const UPDATE_IS_REPEATED = 'UPDATE_IS_REPEATED';
+export const updateIsRepeated = value => ({
+  type: UPDATE_IS_REPEATED,
+  payload: value
+});
+export const UPDATE_DAILY = 'UPDATE_DAILY';
+export const updateDaily = value => ({
+  type: UPDATE_DAILY,
+  payload: value
+});
+
+export const UPDATE_WEEKLY = 'UPDATE_WEEKLY';
+export const updateWeekly = value => ({
+  type: UPDATE_WEEKLY,
+  payload: value
 });
 
