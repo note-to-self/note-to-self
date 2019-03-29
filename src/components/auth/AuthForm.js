@@ -6,6 +6,7 @@ import lotusIcon from '../../../assets/images/lotusIcon.png';
 
 const HomeImage = styles.div`
 @media (max-width: 414px) {
+
   background-image: url(${homeImage}); 
   height: 100vh;
   background-position: center;
@@ -26,11 +27,13 @@ const HomeImage = styles.div`
   background-size: 50vw 100vh;
   background-color:  #47B1CD
 }
+
 `;
 
 const FormStyles = styles.form`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
 @media (max-width: 414px) {
+
   font-family: 'Muli', sans-serif;
   font-size: 1.3em;
   text-align: left;
@@ -215,6 +218,7 @@ function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
     <>
     <HomeImage >
       <StyledLogo src={lotusIcon} alt="lotus icon picture in blue background"/>
+
       <FormStyles onSubmit={handleAuth.bind(null, email, password, name, phone)} id="signup">
         <FormDiv>
           <LabelAuth htmlFor="signup-email">Email: </LabelAuth>
