@@ -1,6 +1,13 @@
 import React from 'react';
 import Note from '../notes/Note';
 import PropTypes from 'prop-types';
+import styles from 'styled-components';
+
+const UlStyle = styles.ul`
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+`;
 
 export default function CommunityList({ communityList, handleFavorite }) {
   const listOfNotes = communityList.map(note => {
@@ -16,9 +23,9 @@ export default function CommunityList({ communityList, handleFavorite }) {
     );
   });
   return (
-    <ul>
+    <UlStyle>
       {listOfNotes}
-    </ul>
+    </UlStyle>
   );
 }
 

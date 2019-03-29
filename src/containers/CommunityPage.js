@@ -46,6 +46,11 @@ const CommunitySearch = styles.section`
   border-radius: 10px;
 `;
 
+
+const UlStyle = styles.ul`
+  list-style: none;
+  padding: 0;
+`;
 class CommunityPage extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func,
@@ -77,12 +82,12 @@ class CommunityPage extends PureComponent {
           </CommunitySearch>
         </CommunityHeader>
         <section>
-          <ul>
+          <UlStyle>
             <CommunityList
               communityList={communityList}
               handleFavorite={handleFavorite}
             />
-          </ul>
+          </UlStyle>
         </section>
       </main>
       </>

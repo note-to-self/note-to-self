@@ -47,34 +47,6 @@ const SearchContainer = styles.section`
   border-radius: 10px;
 `;
 
-<<<<<<< HEAD
-const Container = styles.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto; 
-  margin-top: 10em;
-  
-`;
-const FavoriteSection = styles.section`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-  :hover {
-    border-bottom: 1pt solid black;
-  }
-  h2  {
-    text-align: center;
-    font-family: 'Muli', sans-serif;
-  }
-`;
-
-const NotesSection = styles.section`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-  h2  {
-    text-align: center;
-    font-family: 'Muli', sans-serif;
-  }
-=======
 // const ToggleContainer = styles.section`
 //   font-size: 1.5em;
 //   width: 50%;
@@ -82,7 +54,7 @@ const NotesSection = styles.section`
 //   margin: 0 auto;
 // `;
 
-const Container = styles.ul`
+const Container = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
  display: grid;
  grid-template-columns: 50% 50%;
@@ -94,13 +66,13 @@ const Container = styles.ul`
  font-size: 1.4em;
  li {
    text-align: center;
-   font-family: 'Muli', sans-serif;
-   
+   font-family: 'Muli', sans-serif; 
+   list-style: none;
+  }
    h3 {
      border-bottom: black solid 1px;
    }
  }
->>>>>>> aa238add8a23ae1696c0caf799d075c7fda575a8
 `;
 
 class JournalPage extends PureComponent {
@@ -137,24 +109,6 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
-<<<<<<< HEAD
-        <Container>
-          <NotesSection>
-            <h2>My Notes</h2>
-            <JournalList 
-              journalList={journalList}
-              handleDelete={handleDelete}
-            />
-          </NotesSection>
-          <FavoriteSection>
-            <h2>Favorites</h2>
-            <Favorites 
-              favorites={favorites}
-              handleUnfavorite={handleUnfavorite}
-            />
-          </FavoriteSection>
-        </Container>
-=======
         {/* <ToggleContainer> */}
         <Container>
           <li>My Notes</li>
@@ -173,7 +127,6 @@ class JournalPage extends PureComponent {
             handleUnfavorite={handleUnfavorite}
           />
         </section>
->>>>>>> aa238add8a23ae1696c0caf799d075c7fda575a8
       </JournalMain>
       </>
     );
