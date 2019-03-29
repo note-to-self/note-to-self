@@ -54,7 +54,7 @@ const SearchContainer = styles.section`
 `;
 
 
-const Container = styles.ul`
+const Container = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
  margin-left: auto;
  margin-right: auto;
