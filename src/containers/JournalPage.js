@@ -48,19 +48,38 @@ const JournalMain = styles.main`
 const SearchContainer = styles.section`
   width: 50%;
   padding: -1em 1em 1em 1em;
-  background: white;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 1pt 1pt grey;
 `;
 
-const ToggleContainer = styles.section`
-  font-size: 1.5em;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
+// const ToggleContainer = styles.section`
+//   font-size: 1.5em;
+//   width: 50%;
+//   display: block;
+//   margin: 0 auto;
+// `;
+
+const Container = styles.ul`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+ display: grid;
+ grid-template-columns: 50% 50%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 2em;
+ list-style: none;
+ padding: 0;
+ font-size: 1.4em;
+ li {
+   text-align: center;
+   font-family: 'Muli', sans-serif;
+   
+   h3 {
+     border-bottom: black solid 1px;
+   }
+ }
 `;
+
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
@@ -96,12 +115,12 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
-        <ToggleContainer>
-          <ul>
-            <li>My Notes</li>
-            <li>Favorites</li>
-          </ul>
-        </ToggleContainer>
+        {/* <ToggleContainer> */}
+        <Container>
+          <li>My Notes</li>
+          <li>Favorites</li>
+        </Container>
+        {/* </ToggleContainer> */}
         <section>
           <JournalList 
             journalList={journalList}

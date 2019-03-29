@@ -41,11 +41,9 @@ const CommunityHeader = styles.header `
 const CommunitySearch = styles.section`
   width: 50%;
   padding: -1em 1em 1em 1em;
-  background: white;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 1pt 1pt grey;
 `;
 
 class CommunityPage extends PureComponent {

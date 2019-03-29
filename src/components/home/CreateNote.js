@@ -36,7 +36,7 @@ const FormStyle = styles.form`
 }
 @media (min-width: 414px) {
   border-radius: 10px;
-  margin-top: 6em
+  margin-top: 3em
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
   color: #135a6c;

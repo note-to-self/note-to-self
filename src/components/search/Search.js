@@ -3,64 +3,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from 'styled-components';
 
-const FormStyles = styles.form`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-@media (min-width: 375px) {
-  font-family: 'Muli', sans-serif;
-  font-size: 1.3em;
-  text-align: left;
-  padding-top: 2em;
-}
-`;
-
 const Label = styles.label`
-@media (min-width: 375px) {
-  margin-bottom: 1em;
-  padding-top: 1em;
-  display: block;
-  text-align: center;
-  vertical-align: 10px;
-  margin-left: 1em;
-  width: 50%
-}
+display: none;
 `;
 
-export const Input = styles.input`
+const Input = styles.input`
 @media (min-width: 375px) {
-  margin-left: 4em;
+  width: 90%;
+  padding: 0.4rem;
   vertical-align: 10px;
-  background: none;
-  border-style: none;
   border-bottom: 1pt solid #568697;
   display: block;
-  width: 100%
   color: #568697;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  box-shadow: 1pt 1pt grey;
 }
 `;
 
-const Button = styles.button`
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 50%;
-  margin-top: 1em;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-style: none;
-  padding: .5em;
-  border-radius: 10px;
-  font-family: 'Muli', sans-serif;
-  color: #568697;
-`;
-
-export default function Search({ onChange, searchTerm, handleSubmit }) {
+export default function Search({ onChange, searchTerm }) {
   return (
     <>
-      <FormStyles onSubmit={handleSubmit}>
-        <Label>
-          <Input type="text" name="searchTerm" value={searchTerm} onChange={onChange} ></Input>
-        </Label>
-        {/* <Button>Search</Button> */}
-      </FormStyles>
+      <Label for="search">search</Label>
+      <Input type="text" placeholder="search" name="searchTerm" value={searchTerm} onChange={onChange} ></Input>
+      {/* <Button>Search</Button> */}
     </>
   );
 
@@ -68,6 +34,5 @@ export default function Search({ onChange, searchTerm, handleSubmit }) {
 
 Search.propTypes = {
   searchTerm: PropTypes.string,
-  onChange: PropTypes.func,
-  handleSubmit: PropTypes.func,
+  onChange: PropTypes.func
 };

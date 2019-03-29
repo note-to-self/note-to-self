@@ -43,12 +43,12 @@ const NavStyles = styles(Link)`
 @media (min-width: 414px) {
   color: white;
   display: block;
-  font-family: 'Muli', sans-serif;
+  font-family: ‘Muli’, sans-serif;
   margin-right: auto;
-  margin-left: 28%;
+  margin-left: 38%;
   text-decoration: none;
-  width: 50%;
-  font-size: 2em;
+  width: 40%;
+  font-size: 1.6em;
   font-weight: 700;
   padding: 2em 1em .3em 1em;
   text-align: center;

@@ -3,7 +3,9 @@ import styles from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import kate from '../../assets/images/kate.jpg';
 import marcy from '../../assets/images/marcy.jpg';
+import lance from '../../assets/images/021319_LM_Headshot_01.jpg';
 import image from '../../assets/images/rose-elena-501720-unsplash.jpg';
+import carmen from '../../assets/images/IMG_20190329_090257.jpg';
 
 const AboutHeader = styles.header `
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -83,11 +85,13 @@ export default function About() {
           <p>Endlessly curious developer with a flare for the front-end. Absolutely enjoyed collaborating with this team and would definitely choose them to fight against a zombie apocalypse! One of my favorite aspects of this project was working with the Twilio API and seeing the front-end and back-end communicate. When I’am not developing you can find me petting dogs, napping, working out, and snacking!</p>
         </section>
         <section>
+          <StyledPhoto src={lance} alt="logo" />
           <h1>Lance Merrill</h1>
           <h2>Title: Full-stack Developer</h2>
-          <p></p>
+          <p>Developer. Cyclist. Foodie.</p>
         </section>
         <section>
+          <StyledPhoto src={carmen} alt="logo" />
           <h1>Carmen Perezchica</h1>
           <h2>Title: Consumer Centric Full-stack Developer</h2>
           <p>Full-stack developer who enjoys being at the intersection of consumers and technology. Focused on creating experiences that meet both our diverse consumer and business needs. Finds inspiration when spending time with her loved ones! </p>
