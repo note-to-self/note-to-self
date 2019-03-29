@@ -1,32 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search matches a snapshot 1`] = `
-
-<label
-  htmlFor="searchField"
->
-  <input
-    name="searchTerm"
-    type="text"
-  />
-</label>
-
 <form
   className="sc-bdVaJa dzKkSb"
 >
   <label
-    className="sc-bwzfXH cKJMRv"
+    className="sc-bwzfXH fAeLNd"
   >
     <input
-      className="sc-htpNat dbtHqZ"
+      className="sc-htpNat fibzDa"
       name="searchTerm"
       type="text"
     />
   </label>
-  <button
-    className="sc-bxivhb gqHkKN"
-  >
-    Search
-  </button>
 </form>
 `;
