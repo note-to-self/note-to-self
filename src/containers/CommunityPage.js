@@ -11,8 +11,6 @@ import { fetchNotes } from '../actions/community';
 import styles from 'styled-components';
 import community from '../../assets/images/community.jpg';
 import HeaderContainer from './HeaderContainer';
-import { Input } from '../components/search/Search';
-
 
 const CommunityHeader = styles.header `
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -20,7 +18,6 @@ const CommunityHeader = styles.header `
   text-align: center
   background-image: url(${community});
   height: 40vh;
-  width: 50vw;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -42,27 +39,11 @@ const CommunityHeader = styles.header `
 `;
 
 const CommunitySearch = styles.section`
-  form {
-    margin-top: 4em;
-  }
   width: 50%;
   padding: -1em 1em 1em 1em;
-  background: white;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 1pt 1pt grey;
-`;
-
-const CommunityInput = styles(Search) `
-    vertical-align: 10px;
-    background: none;
-    border-style: none;
-    border-bottom: 1pt solid #568697;
-    display: block;
-    width: 100%
-    margin-top: 3em;
-    color: #568697;
 `;
 
 class CommunityPage extends PureComponent {
@@ -80,19 +61,17 @@ class CommunityPage extends PureComponent {
   }
 
   render() {
-    const { communityList, handleFavorite, searchTerm, handleChange, handleSubmit } = this.props;
+    const { communityList, handleFavorite, searchTerm, handleChange } = this.props;
     return (
       <>
       <main>
         <CommunityHeader>
-          <HeaderContainer>
-            <h1>Community Messages</h1>
-            <h2>Inspired by a message? Check to save</h2>
-          </HeaderContainer>
+          <HeaderContainer />
+          <h1>Community Messages</h1>
+          <h2>Inspired by a message? Check to save</h2>
           <CommunitySearch>
-            <CommunityInput
+            <Search
               searchTerm={searchTerm}
-              handleSubmit={handleSubmit}
               onChange={handleChange}
             />
           </CommunitySearch>

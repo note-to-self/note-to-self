@@ -112,7 +112,7 @@ const StyledLogo = styles.img `
 }
 @media (min-width: 414px) {
   margin-top: 2em;
-  width: 12vw;
+  width: 17vw;
   height: 10vh;
   justify-self: center;
 }
