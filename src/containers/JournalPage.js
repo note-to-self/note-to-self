@@ -54,7 +54,7 @@ const SearchContainer = styles.section`
 //   margin: 0 auto;
 // `;
 
-const Container = styles.section`
+const Container = styles.ul`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
  display: grid;
  grid-template-columns: 50% 50%;
@@ -73,6 +73,19 @@ const Container = styles.section`
      border-bottom: black solid 1px;
    }
  }
+`;
+
+const NotesContainer = styles.section`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+ display: grid;
+ grid-column-gap: .5em;
+ grid-template-columns: 50% 50%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 2em;
+ list-style: none;
+ padding: 0;
+ font-size: 1.4em;
 `;
 
 class JournalPage extends PureComponent {
@@ -115,18 +128,16 @@ class JournalPage extends PureComponent {
           <li>Favorites</li>
         </Container>
         {/* </ToggleContainer> */}
-        <section>
+        <NotesContainer>
           <JournalList 
             journalList={journalList}
             handleDelete={handleDelete}
           />
-        </section>
-        <section>
-          <Favorites 
+          {!favorites && <Favorites 
             favorites={favorites}
             handleUnfavorite={handleUnfavorite}
-          />
-        </section>
+          />}
+        </NotesContainer>
       </JournalMain>
       </>
     );
