@@ -36,7 +36,7 @@ const JournalHeader = styles.header `
     font-family: 'Muli', sans-serif;
     color: white;
     letter-spacing: .04em;
-    text-shadow: 1pt 1.5pt grey;
+    text-shadow: 1pt 2pt grey;
   }
 `;
 
@@ -53,14 +53,8 @@ const SearchContainer = styles.section`
   border-radius: 10px;
 `;
 
-// const ToggleContainer = styles.section`
-//   font-size: 1.5em;
-//   width: 50%;
-//   display: block;
-//   margin: 0 auto;
-// `;
 
-const Container = styles.ul`
+const Container = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
  display: grid;
  grid-template-columns: 50% 50%;
@@ -72,8 +66,9 @@ const Container = styles.ul`
  font-size: 1.4em;
  li {
    text-align: center;
-   font-family: 'Muli', sans-serif;
-   
+   font-family: 'Muli', sans-serif; 
+   list-style: none;
+  }
    h3 {
      border-bottom: black solid 1px;
    }

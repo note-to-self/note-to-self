@@ -16,16 +16,23 @@ const NoteCard = styles.section`
  border: 1pt solid #8BCBC8;
  border-radius: 10px
  margin-bottom: 1em;
+ padding: 1em;
+ border: 1pt solid #8BCBC8;
+
+ul {
+  list-style: none;
+  padding: 0;
+}
 `;
 
 export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
   return (
     <NoteCard>
-      {handleSubmit && <form onSubmit={handleSubmit.bind(null, id)}>
-        <NoteButton>{buttonLabel} {id} </NoteButton>
-      </form>}
       <NoteTitle>{body}</NoteTitle>
       {schedule && <p>This is a {schedule} affirmation.</p>}
+      {handleSubmit && <form onSubmit={handleSubmit.bind(null, id)}>
+        <NoteButton>{buttonLabel} </NoteButton>
+      </form>}
     </NoteCard>
   );
 }
