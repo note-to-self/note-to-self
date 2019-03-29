@@ -2,17 +2,15 @@ import React from 'react';
 import Note from '../notes/Note';
 import PropTypes from 'prop-types';
 
-export default function CommunityList({ communityList, handleCheckbox }) {
+export default function CommunityList({ communityList, handleFavorite }) {
   const listOfNotes = communityList.map(note => {
     return (
-      <li>
+      <li key={note._id}>
         <Note 
-          // key={note._id}
           id={note._id}
           body={note.body}
-          checkboxLabel="Save to Favorites"
-          checkboxValue={false}
-          handleCheckbox={handleCheckbox}
+          buttonLabel='<3'
+          handleSubmit={handleFavorite}
         />
       </li>
     );
@@ -26,5 +24,5 @@ export default function CommunityList({ communityList, handleCheckbox }) {
 
 CommunityList.propTypes = {
   communityList: PropTypes.array.isRequired,
-  handleCheckbox: PropTypes.func.isRequired
+  handleFavorite: PropTypes.func.isRequired
 };

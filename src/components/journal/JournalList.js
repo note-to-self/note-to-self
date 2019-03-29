@@ -3,20 +3,34 @@ import PropTypes from 'prop-types';
 import Note from '../notes/Note';
 
 export default function JournalList({ journalList, handleDelete }) {
+
   const list = journalList.map(note => {
-    const repeat = note.repeat.weekly ? 'weekly' : 'daily';
-    <li key={note._id}>
-      <Note 
-        _id={note._id}
-        body={note.body}
-        schedule={repeat}
-        handleDelete={handleDelete}
-      />
-    </li>;
+
+    const check = () => {
+      if(note.isRepeated) {
+        return note.repeat.weekly ? 'weekly' : 'daily';
+      } else {
+        return 'one time';
+      }
+    };
+
+    return (
+      <li key={note._id}>
+        <Note 
+          _id={note._id}
+          body={note.body}
+          schedule={check()}
+          handleSubmit={handleDelete}
+          buttonLabel='X'
+        />
+      </li>
+    );
   });
 
   return (
+    <>
     <ul>{list}</ul>
+    </>
   );
 }
 

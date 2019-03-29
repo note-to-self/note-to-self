@@ -43,24 +43,22 @@ const NotesContainer = styles.form`
   }
 `;
 
-export default function Note({ body, handleDelete, schedule, buttonLabel, _id }) {
+export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
   return (
-    <NotesContainer className="container">
-      <section>
-        {handleDelete && <form onSubmit={handleDelete.bind(null, { _id, body })}>
-          <button>{buttonLabel}</button>
-        </form>}
-        <h3>{body}</h3>
-        {schedule && <p>This is a {schedule} affirmation.</p>}
-      </section>
-    </NotesContainer>
+    <section>
+      {handleSubmit && <form onSubmit={handleSubmit.bind(null, { id })}>
+        <button>{buttonLabel}</button>
+      </form>}
+      <h3>{body}</h3>
+      {schedule && <p>This is a {schedule} affirmation.</p>}
+    </section>
   );
 }
 
 Note.propTypes = {
   body: PropTypes.string.isRequired,
-  handleDelete: PropTypes.func,
+  handleSubmit: PropTypes.func,
   schedule: PropTypes.string,
   buttonLabel: PropTypes.string,
-  _id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired
 };

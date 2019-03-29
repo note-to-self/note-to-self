@@ -10,8 +10,9 @@ import HeaderContainer from '../../containers/HeaderContainer';
 const HomeMain = styles.div`
 @media (min-width: 700px) {
   height: 100vh;
+  width: 100vw;
   background-size: 50vw 100vh;
-  background-color:  white;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 `;
@@ -24,13 +25,20 @@ const HomeImage = styles.div`
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (min-width: 414px) {
+  background-image: url(${homeImage}); 
+  height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 @media (min-width: 700px) {
   background-image: url(${homeImage}); 
-  height: 30vh;
-  width: 40vw;
+  height: 40vh;
+  width: 50vw;
   display: block;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -25,7 +25,7 @@ export const getPublicNotes = () => {
     method: 'GET',
     headers : {
       Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json',
+      'Content-Type': 'application/json',
     }
   })
     .then(res => [res.ok, res.json()])
@@ -35,15 +35,18 @@ export const getPublicNotes = () => {
     });
 };
 
-export const getUserNotes = id => {
-  return fetch(`${process.env.API_URL}/notes/user/${id}`, {
+export const getUserNotes = () => {
+  return fetch(`${process.env.API_URL}/notes/user/allnotes`, {
     method: 'GET',
     headers : {
       Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json',
+      'Content-Type': 'application/json',
     }
   })
-    .then(res => [res.ok, res.json()])
+    .then(res => {
+      console.log('RES', res);
+      return [res.ok, res.json()];
+    })
     .then(([ok, json]) => {
       if(!ok) throw json;
       return json;
@@ -55,7 +58,7 @@ export const getNote = id => {
     method: 'GET',
     headers : {
       Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json',
+      'Content-Type': 'application/json',
     }
   })
     .then(res => [res.ok, res.json()])
@@ -66,21 +69,12 @@ export const getNote = id => {
 };
 
 export const deleteRequest = id => {
-  return fetch(`https://note-to-self-server.herokuapp.com/notes/${id}`, {
+  
+  return fetch(`${process.env.API_URL}/notes/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json',
-    }
-  });
-};
-
-export const getUserFaves = id => {
-  return fetch(`${process.env.API_URL}/faves/${id}`, {
-    method: 'GET',
-    headers : {
-      Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json'
+      'Content-Type': 'application/json',
     }
   })
     .then(res => [res.ok, res.json()])
@@ -90,14 +84,30 @@ export const getUserFaves = id => {
     });
 };
 
-export const updateUserFaves = (id, note) => {
-  return fetch(`${process.env.API_URL}/faves/${id}`, {
+export const getUserFaves = () => {
+  return fetch(`${process.env.API_URL}/faves`, {
+    method: 'GET',
+    headers : {
+      Authorization: `Bearer ${getToken(store.getState())}`,
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => [res.ok, res.json()])
+    .then(([ok, json]) => {
+      if(!ok) throw json;
+      return json;
+    });
+};
+
+export const updateUserFaves = id => {
+  console.log('ID', id);
+  return fetch(`${process.env.API_URL}/faves`, {
     method: 'PUT',
     headers : {
       Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json'
+      'Content-Type': 'application/json'
     },
-    body: note ? JSON.stringify(note) : null
+    body: id ? JSON.stringify(id) : null
   })
     .then(res => [res.ok, res.json()])
     .then(([ok, json]) => {
@@ -111,7 +121,7 @@ export const deleteFromFaves = id => {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${getToken(store.getState())}`,
-      'Content-Type': 'application-json',
+      'Content-Type': 'application/json',
     }
   });
 };

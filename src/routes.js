@@ -5,9 +5,9 @@ import Callback from './containers/Callback';
 import HomeContainer from './containers/HomeContainer';
 import AuthContainer from './containers/AuthContainer';
 import LandingContainer from './containers/LandingContainer';
+import CommunityPage from './containers/CommunityPage';
 import LoginContainer from './containers/LoginContainer';
 import JournalPage from './containers/JournalPage';
-import CommunityPage from './containers/CommunityPage';
 
 export const ROUTES  = {
   HOME: {
@@ -37,8 +37,13 @@ export const ROUTES  = {
   },
   JOURNAL: {
     path: '/journal',
-    component: JournalPage,
+    component: withSession(JournalPage),
     linkTo: () => '/journal'
+  },
+  COMMUNITYPAGE: {
+    path: '/community',
+    component: withSession(CommunityPage),
+    linkTo: () => '/community'
   }
 };
 
