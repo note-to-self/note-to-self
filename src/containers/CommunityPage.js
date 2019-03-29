@@ -46,7 +46,6 @@ const CommunitySearch = styles.section`
   border-radius: 10px;
 `;
 
-
 const UlStyle = styles.ul`
   list-style: none;
   padding: 0;
