@@ -24,7 +24,7 @@ const Label = styles.label`
 }
 `;
 
-const Input = styles.input`
+export const Input = styles.input`
 @media (min-width: 375px) {
   margin-left: 4em;
   vertical-align: 10px;
