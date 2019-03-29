@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList, getFavorites } from '../selectors/journal';
+import { getJournalList, getFavorites, isToggle } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
 import Favorites from '../components/journal/Favorites';
 import Header from '../containers/HeaderContainer';
-import { deleteNote, fetchJournalList } from '../actions/journal';
+import { deleteNote, fetchJournalList, updateToggle } from '../actions/journal';
+
 import { fetchFaves, updateFaves } from '../actions/favorites';
 import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
@@ -32,16 +33,21 @@ class JournalPage extends PureComponent {
     searchTerm: PropTypes.string.isRequired,
     fetchJournal: PropTypes.func,
     fetchFavorites: PropTypes.func,
-    userId: PropTypes.string.isRequired
+    userId: PropTypes.string.isRequired,
+    toggle: PropTypes.bool.isRequired,
+    handleToggle: PropTypes.func.isRequired
+
   }
 
   componentDidMount() {
     this.props.fetchJournal(this.props.userId);
     this.props.fetchFavorites(this.props.userId);
+    console.log('FAVS', this.props.favorites);
   }
   
   render() {
-    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite, handleToggle, toggle } = this.props;
+
     console.log('JournalList', this.props.journalList);
     return (
       <>
@@ -56,17 +62,17 @@ class JournalPage extends PureComponent {
           onChange={handleChange}
         />
         <ul>
-          <li>My Notes</li>
-          <li>Favorites</li>
+          <li onClick={handleToggle}>My Notes</li>
+          <li onClick={handleToggle}>Favorites</li>
         </ul>
-        <JournalList 
+        {!toggle && <JournalList 
           journalList={journalList}
           handleDelete={handleDelete}
-        />
-        <Favorites 
+        />}
+        {toggle && <Favorites 
           favorites={favorites}
           handleUnfavorite={handleUnfavorite}
-        />
+        />}
       </main>
       </>
     );
@@ -77,7 +83,9 @@ const mapStateToProps = state => ({
   journalList: getFiltered(state, getJournalList(state)),
   favorites: getFavorites(state),
   searchTerm: getSearchTerm(state),
-  userId: getUserId(state)
+  userId: getUserId(state),
+  toggle: isToggle(state)
+
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -88,6 +96,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchJournalList(id));
   },
   handleDelete(id, event) {
+    console.log('ID FROM HANDLE DELETE', id);
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
     dispatch(fetchJournalList(id));
@@ -98,6 +107,9 @@ const mapDispatchToProps = dispatch => ({
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
+  },
+  handleToggle({ target }) {
+    dispatch(updateToggle(target.id));
   }
 });
 
