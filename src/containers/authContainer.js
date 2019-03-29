@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
   name: getName(state),
   phone: getPhone(state)
 });
+
 const mapDispatchToProps = dispatch => ({
   handleAuth(email, password, name, phone, event) {
     event.preventDefault();
