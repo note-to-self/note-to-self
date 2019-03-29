@@ -43,6 +43,7 @@ export const signup = (user) => {
       connection: 'Username-Password-Authentication',
       user_metadata: { name, phone }
     },  (err, token) =>{
+
       if(err) return reject(err);
       auth0.authorize();
       return resolve({

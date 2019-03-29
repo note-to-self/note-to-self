@@ -14,7 +14,6 @@ const HomeMain = styles.div`
   background-size: 50vw 100vh;
   background-color: rgba(255, 255, 255, 0.9);
 }
-
 `;
 
 const HomeImage = styles.div`

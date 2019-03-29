@@ -110,7 +110,6 @@ const DivStyle = styles.div`
   display: flex;
   justify-content: flex-end;
 }
-
 @media (min-width: 700px) {
   height: 15vh;
 }
