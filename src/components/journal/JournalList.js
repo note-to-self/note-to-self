@@ -18,7 +18,6 @@ export default function JournalList({ journalList, handleDelete }) {
       <li key={note._id}>
         <Note 
           id={note._id}
-
           body={note.body}
           schedule={check()}
           handleSubmit={handleDelete}

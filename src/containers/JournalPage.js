@@ -35,7 +35,7 @@ class JournalPage extends PureComponent {
     fetchFavorites: PropTypes.func,
     userId: PropTypes.string.isRequired,
     toggle: PropTypes.bool.isRequired,
-    handleToggle: PropTypes.func.isRequired
+    handleClick: PropTypes.func.isRequired
 
   }
 
@@ -46,7 +46,7 @@ class JournalPage extends PureComponent {
   }
   
   render() {
-    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite, handleToggle, toggle } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite, handleClick, toggle } = this.props;
 
     console.log('JournalList', this.props.journalList);
     return (
@@ -62,8 +62,8 @@ class JournalPage extends PureComponent {
           onChange={handleChange}
         />
         <ul>
-          <li onClick={handleToggle}>My Notes</li>
-          <li onClick={handleToggle}>Favorites</li>
+          <li onClick={handleClick}>My Notes</li>
+          <li onClick={handleClick}>Favorites</li>
         </ul>
         {!toggle && <JournalList 
           journalList={journalList}
@@ -108,8 +108,9 @@ const mapDispatchToProps = dispatch => ({
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
   },
-  handleToggle({ target }) {
-    dispatch(updateToggle(target.id));
+  handleClick({ target }) {
+    const toggle = target.id === 'favorites' ? true : false;
+    dispatch(updateToggle(toggle));
   }
 });
 

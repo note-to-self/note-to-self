@@ -62,9 +62,9 @@ const mapDispatchToProps = dispatch => ({
   handleSubmit(event) {
     event.preventDefault();
   },
-  handleFavorite(note, event) {
+  handleFavorite(id, event) {
     event.preventDefault();
-    dispatch(updateFaves(note));
+    dispatch(updateFaves({ id }));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
