@@ -5,6 +5,7 @@ import styles from 'styled-components';
 
 const UlStyle = styles.ul`
   list-style: none;
+  padding: 0;
 `;
 
 
