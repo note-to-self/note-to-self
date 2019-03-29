@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getJournalList, getFavorites, isToggle } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
-import Favorites from '../components/journal/Favorites';
+// import Favorites from '../components/journal/Favorites';
 import HeaderContainer from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
 import { fetchFaves, updateFaves } from '../actions/favorites';
@@ -86,10 +86,10 @@ const NotesContainer = styles.section`
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
-    favorites: PropTypes.array,
+    // favorites: PropTypes.array,
     handleDelete: PropTypes.func,
     handleChange: PropTypes.func,
-    handleUnfavorite: PropTypes.func,
+    // handleUnfavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     fetchJournal: PropTypes.func,
     fetchFavorites: PropTypes.func,
