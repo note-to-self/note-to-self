@@ -25,12 +25,6 @@ ul {
 }
 `;
 
-// const NoteTitle = styles.h3`
-// @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-//   font-family: 'Muli', sans-serif;
-// `;
-
-
 export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
   return (
     <NoteCard>

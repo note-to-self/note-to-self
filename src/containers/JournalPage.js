@@ -26,6 +26,12 @@ const JournalHeader = styles.header `
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  h1 {
+    font-family: 'Muli', sans-serif;
+    color: white;
+    letter-spacing: .09em;
+    text-shadow: 1pt 1.5pt grey;
+  }
   h2 {
     font-family: 'Muli', sans-serif;
     color: white;
@@ -47,12 +53,6 @@ const SearchContainer = styles.section`
   border-radius: 10px;
 `;
 
-// const ToggleContainer = styles.section`
-//   font-size: 1.5em;
-//   width: 50%;
-//   display: block;
-//   margin: 0 auto;
-// `;
 
 const Container = styles.section`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -101,6 +101,7 @@ class JournalPage extends PureComponent {
       <JournalMain>
         <JournalHeader>
           <HeaderContainer/>
+          <h1>Journal</h1>
           {journalList && <h2>This is where you can find all of your scheduled affirmation notes</h2>}
           <SearchContainer>
             <Search 

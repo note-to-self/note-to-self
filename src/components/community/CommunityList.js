@@ -1,6 +1,7 @@
 import React from 'react';
 import Note from '../notes/Note';
 import PropTypes from 'prop-types';
+
 import styles from 'styled-components';
 
 const UlStyle = styles.ul`
