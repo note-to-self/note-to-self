@@ -69,6 +69,7 @@ export const getNote = id => {
 };
 
 export const deleteRequest = id => {
+  console.log('IM DELETING AND ID', id);
   
   return fetch(`${process.env.API_URL}/notes/${id}`, {
     method: 'DELETE',
