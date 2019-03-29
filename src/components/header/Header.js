@@ -132,49 +132,21 @@ const Lotus = styles.img`
 `;
 
 const ProfilePic = styles.img`
-@media (max-width: 414px) {
-  height: 6vh;
-  width: 12vw;
-  padding: 1em;
-}
-@media (min-width: 414px) {
-  height: 6vh;
-  width: 12vw;
-  padding: 1em;
-}
+width: 4em;
+padding: 1em;
+
 @media (min-width: 700px) {
-  height: 10vh;
-  width: 10vw;
-  padding: 1.5em;
-}
-@media (min-width: 925px) {
-  height: 7vh;
-  width: 7vw;
   padding: 1.5em;
 }
 @media (min-width: 1400px) {
-  height: 5rem;
-  width: 5rem;
   padding: 1.5em 4em 2em 2em;
 }
 `;
 
 const HeaderStyle = styles.header`
-@media (max-width: 414px) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-@media (min-width: 414px) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-@media (min-width: 700px) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 `;
 
 
@@ -186,7 +158,6 @@ export default class Header extends PureComponent {
   };
 
   render() {
-    console.log(this.props, 'picture');
     return (
       <>  
       <HeaderStyle>

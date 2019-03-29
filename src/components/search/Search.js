@@ -58,7 +58,7 @@ export default function Search({ onChange, searchTerm, handleSubmit }) {
         <Label>
           <Input type="text" name="searchTerm" value={searchTerm} onChange={onChange} ></Input>
         </Label>
-        <Button>Search</Button>
+        {/* <Button>Search</Button> */}
       </FormStyles>
     </>
   );

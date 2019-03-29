@@ -20,7 +20,6 @@ const JournalHeader = styles.header `
   text-align: center
   background-image: url(${image});
   height: 40vh;
-  width: 50vw;
   display: block;
   margin-right: auto;
   margin-left: auto;
