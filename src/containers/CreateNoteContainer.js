@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
   weekly: getWeekly(state)
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   handleChecked({ target }) {
     const checkedMethods = {
       privateMessage: updatePrivateMessage,
@@ -33,9 +33,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   
   handleSubmit(body, time, date, isRepeated, weekly, daily, privateMessage, event) {
-    console.log(ownProps);
-
-    console.log(daily, weekly, privateMessage);
     const repeat = {
       daily,
       weekly

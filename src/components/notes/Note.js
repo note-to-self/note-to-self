@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
-  console.log('ID', id);
   return (
     <section>
       {handleSubmit && <form onSubmit={handleSubmit.bind(null, id)}>

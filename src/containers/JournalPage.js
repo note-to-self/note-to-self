@@ -137,7 +137,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchJournalList(id));
   },
   handleDelete(id, event) {
-    console.log('ID FROM HANDLE DELETE', id);
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
     dispatch(fetchJournalList(id));
