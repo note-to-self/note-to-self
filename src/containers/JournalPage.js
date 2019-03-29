@@ -20,7 +20,6 @@ const JournalHeader = styles.header `
   text-align: center
   background-image: url(${image});
   height: 40vh;
-  width: 50vw;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -43,13 +42,12 @@ const JournalMain = styles.main`
 const SearchContainer = styles.section`
   width: 50%;
   padding: -1em 1em 1em 1em;
-  background: white;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 1pt 1pt grey;
 `;
 
+<<<<<<< HEAD
 const Container = styles.div`
   display: grid;
   grid-template-columns: 50% 50%;
@@ -76,7 +74,35 @@ const NotesSection = styles.section`
     text-align: center;
     font-family: 'Muli', sans-serif;
   }
+=======
+// const ToggleContainer = styles.section`
+//   font-size: 1.5em;
+//   width: 50%;
+//   display: block;
+//   margin: 0 auto;
+// `;
+
+const Container = styles.ul`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+ display: grid;
+ grid-template-columns: 50% 50%;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 2em;
+ list-style: none;
+ padding: 0;
+ font-size: 1.4em;
+ li {
+   text-align: center;
+   font-family: 'Muli', sans-serif;
+   
+   h3 {
+     border-bottom: black solid 1px;
+   }
+ }
+>>>>>>> aa238add8a23ae1696c0caf799d075c7fda575a8
 `;
+
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
@@ -111,6 +137,7 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
+<<<<<<< HEAD
         <Container>
           <NotesSection>
             <h2>My Notes</h2>
@@ -127,6 +154,26 @@ class JournalPage extends PureComponent {
             />
           </FavoriteSection>
         </Container>
+=======
+        {/* <ToggleContainer> */}
+        <Container>
+          <li>My Notes</li>
+          <li>Favorites</li>
+        </Container>
+        {/* </ToggleContainer> */}
+        <section>
+          <JournalList 
+            journalList={journalList}
+            handleDelete={handleDelete}
+          />
+        </section>
+        <section>
+          <Favorites 
+            favorites={favorites}
+            handleUnfavorite={handleUnfavorite}
+          />
+        </section>
+>>>>>>> aa238add8a23ae1696c0caf799d075c7fda575a8
       </JournalMain>
       </>
     );
@@ -150,7 +197,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchJournalList(id));
   },
   handleDelete(id, event) {
-    console.log('ID FROM HANDLE DELETE', id);
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
     dispatch(fetchJournalList(id));

@@ -6,4 +6,3 @@ export const getDaily = state => state.message.repeat.daily;
 export const getWeekly = state => state.message.repeat.weekly;
 export const getPrivateMessage = state => state.message.privateMessage;
 
-

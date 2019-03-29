@@ -27,13 +27,10 @@ animation-delay: 2s;
 animation-duration: 4s;
 -webkit-animation-name: fadeOut;
 animation-name: fadeOut;
-
 .logo {
   padding-bottom: 70%;
   width: 40%;
 }
-
-
 @keyframes fadeOut {
   0% {opacity: 1;}
   100% {opacity: 0;
@@ -43,11 +40,10 @@ animation-name: fadeOut;
 @media (min-width: 414px) {
   height: 100vh;
   .logo {
-    padding-top: 10%;
-    width: 20%;
+    padding-top: 0;
+    width: 40%;
   }
 }
-
 @media (min-width: 1000px) {
   height: 100vh;
   background-size: 50vw 100vh;

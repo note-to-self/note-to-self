@@ -9,7 +9,7 @@ const FormStyle = styles.form`
 @media (max-width: 414px) {
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
-  color: #316f7f;
+  color: #135a6c;
   width: 70%;
   display: block;
   margin-right: auto;
@@ -19,48 +19,48 @@ const FormStyle = styles.form`
   letter-spacing: .02em;
   border-radius: 10px;
   button {
-    color: #316f7f;
+    color: #135a6c;
     display: block;
     background-color: white;
     margin-right: auto;
     margin-left: auto;
-    border: 1pt solid #316f7f;
-    border-radius: 10px;
-    padding: .5em;
-  }
-  input, textarea {
-    margin-left: 1em;
-    color: black;
-    border: 1pt solid #316f7f;
-  }
-}
-@media (min-width: 414px) {
-  border-radius: 10px;
-  margin-top: 6em
-  background: #D7D6D6;
-  font-family: 'Muli', sans-serif;
-  color: #316f7f;
-  width: 70%;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1em;
-  box-shadow: 1pt 1pt 1pt #9BB7C3;
-  letter-spacing: .02em;
-  button {
-    color: #316f7f;
-    display: block;
-    background-color: white;
-    margin-right: auto;
-    margin-left: auto;
-    border: 1pt solid #316f7f;
+    border: 1pt solid #135a6c;
     border-radius: 10%;
     padding: .5em;
   }
   input, textarea {
     margin-left: 1em;
     color: black;
-    border: 1pt solid #316f7f;
+    border: 1pt solid #135a6c;
+  }
+}
+@media (min-width: 414px) {
+  border-radius: 10px;
+  margin-top: 3em
+  background: #D7D6D6;
+  font-family: 'Muli', sans-serif;
+  color: #135a6c;
+  width: 70%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1em;
+  box-shadow: 1pt 1pt 1pt #9BB7C3;
+  letter-spacing: .02em;
+  button {
+    color: #135a6c;
+    display: block;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1pt solid #135a6c;
+    border-radius: 10%;
+    padding: .5em;
+  }
+  input, textarea {
+    margin-left: 1em;
+    color: black;
+    border: 1pt solid #135a6c;
   }
 }
 @media (min-width: 700px) {
@@ -71,19 +71,19 @@ const FormStyle = styles.form`
     letter-spacing: .02em;
     button {
       margin-top: 2em;
-      color: #316f7f;
+      color: #135a6c;
       display: block;
       background-color: white;
       margin-right: auto;
       margin-left: auto;
-      border: 1pt solid #316f7f;
+      border: 1pt solid #135a6c;
       border-radius: 10%;
       padding: .5em;
     }
   input, textarea {
     margin-left: 1em;
     color: black;
-    border: 1pt solid #316f7f;
+    border: 1pt solid #135a6c;
   }
 }
 @media (min-width: 925px) {
@@ -168,7 +168,6 @@ const FormContainer = styles.div`
 }
 `;
 
-
 const InputLabel = styles.input`
   zoom: 1.5;
   transform: scale(1);
@@ -183,10 +182,9 @@ const InputLabel = styles.input`
   -moz-transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
 `;
-export default function CreateNote({ handleSubmit, onChange, time, date, body, isRepeated, weekly, daily, privateMessage, handleChecked }) {
-  console.log(daily, weekly, privateMessage);
-  return (
 
+export default function CreateNote({ handleSubmit, onChange, time, date, body, isRepeated, weekly, daily, privateMessage, handleChecked }) {
+  return (
     <FormContainer className="container">
       <FormStyle onSubmit={handleSubmit.bind(null, body, time, date, isRepeated, weekly, daily, privateMessage)}>
         <section>
@@ -222,7 +220,7 @@ export default function CreateNote({ handleSubmit, onChange, time, date, body, i
 CreateNote.propTypes = {
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
-  privateMessage: PropTypes.string,
+  privateMessage: PropTypes.bool,
   body: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   handleChecked: PropTypes.func,

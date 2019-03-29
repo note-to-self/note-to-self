@@ -35,7 +35,6 @@ const HomeImage = styles.main`
   background-size: 50vw 100vh;
   background-color:  #47B1CD
 }
-
 `;
 
 const StyledLink = styled(Link)`
@@ -73,7 +72,6 @@ const StyledLink = styled(Link)`
   z-index: 1;
   margin: 1em auto;
 }
-
 @media (min-width: 1000px) {
   width: 40%; 
 }
@@ -103,7 +101,6 @@ const StyledDiv = styles.div`
   margin-top: 5em;
   margin-left: 0;
 }
-
 `;
 
 const StyledLogo = styles.img `
@@ -115,11 +112,10 @@ const StyledLogo = styles.img `
 }
 @media (min-width: 414px) {
   margin-top: 2em;
-  width: 12vw;
+  width: 17vw;
   height: 10vh;
   justify-self: center;
 }
-
 @media (min-width: 800px) {
   margin-top: 2em;
   width: 9vw;

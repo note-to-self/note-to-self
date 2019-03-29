@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import store from '../store';
 import { getToken } from '../selectors/session';
 
@@ -12,7 +13,6 @@ export const postNote = note => {
   })
     .then(res => [res.ok, res.json()])
     .then(([ok, json]) => {
-      console.log('OK', ok);
       if(!ok) throw json;
       return json;
     })
@@ -43,7 +43,6 @@ export const getUserNotes = () => {
     }
   })
     .then(res => {
-      console.log('RES', res);
       return [res.ok, res.json()];
     })
     .then(([ok, json]) => {
@@ -99,7 +98,6 @@ export const getUserFaves = () => {
 };
 
 export const updateUserFaves = id => {
-  console.log('ID', id);
   return fetch(`${process.env.API_URL}/faves`, {
     method: 'PUT',
     headers : {

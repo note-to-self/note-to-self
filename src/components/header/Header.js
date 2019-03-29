@@ -43,12 +43,12 @@ const NavStyles = styles(Link)`
 @media (min-width: 414px) {
   color: white;
   display: block;
-  font-family: 'Muli', sans-serif;
+  font-family: ‘Muli’, sans-serif;
   margin-right: auto;
-  margin-left: 28%;
+  margin-left: 38%;
   text-decoration: none;
-  width: 50%;
-  font-size: 2em;
+  width: 40%;
+  font-size: 1.6em;
   font-weight: 700;
   padding: 2em 1em .3em 1em;
   text-align: center;
@@ -110,7 +110,6 @@ const DivStyle = styles.div`
   display: flex;
   justify-content: flex-end;
 }
-
 @media (min-width: 700px) {
   height: 15vh;
 }
@@ -133,49 +132,21 @@ const Lotus = styles.img`
 `;
 
 const ProfilePic = styles.img`
-@media (max-width: 414px) {
-  height: 6vh;
-  width: 12vw;
-  padding: 1em;
-}
-@media (min-width: 414px) {
-  height: 6vh;
-  width: 12vw;
-  padding: 1em;
-}
+width: 4em;
+padding: 1em;
+
 @media (min-width: 700px) {
-  height: 10vh;
-  width: 10vw;
-  padding: 1.5em;
-}
-@media (min-width: 925px) {
-  height: 7vh;
-  width: 7vw;
   padding: 1.5em;
 }
 @media (min-width: 1400px) {
-  height: 5rem;
-  width: 5rem;
   padding: 1.5em 4em 2em 2em;
 }
 `;
 
 const HeaderStyle = styles.header`
-@media (max-width: 414px) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-@media (min-width: 414px) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-@media (min-width: 700px) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 `;
 
 
@@ -187,7 +158,6 @@ export default class Header extends PureComponent {
   };
 
   render() {
-    console.log(this.props, 'picture');
     return (
       <>  
       <HeaderStyle>
@@ -196,8 +166,13 @@ export default class Header extends PureComponent {
             <NavStyles id="home" className="menu-item" to='/home'> HOME </NavStyles>
             <NavStyles id="journal" className="menu-item" to='/journal'> JOURNAL </NavStyles>
             <NavStyles id="community" className="menu-item" to='/community'> COMMUNITY </NavStyles>
+<<<<<<< HEAD
             {/* <NavStyles id="auth" className="menu-item" to='/auth'> AUTH </NavStyles>
             <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles> */}
+=======
+            <NavStyles id="about" className="menu-item" to='/about'> ABOUT US </NavStyles>
+            <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles>
+>>>>>>> aa238add8a23ae1696c0caf799d075c7fda575a8
             <NavStyles id="auth" className="menu-item" to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>

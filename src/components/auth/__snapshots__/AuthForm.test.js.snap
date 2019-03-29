@@ -4,6 +4,7 @@ exports[`authform tests matches a snapshot 1`] = `
 <Fragment>
   <styled.div>
     <styled.img
+      alt="lotus icon picture in blue background"
       src=""
     />
     <styled.form
