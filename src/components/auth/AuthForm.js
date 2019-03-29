@@ -156,7 +156,7 @@ const StyledLogo = styles.img `
 @media (min-width: 1000px) {
   width: 10vw;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
   width: 5rem;
 }
 @media (min-width: 2000px) {
@@ -214,7 +214,7 @@ function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
   return (
     <>
     <HomeImage >
-      <StyledLogo src={lotusIcon} />
+      <StyledLogo src={lotusIcon} alt="lotus icon picture in blue background"/>
       <FormStyles onSubmit={handleAuth.bind(null, email, password, name, phone)} id="signup">
         <FormDiv>
           <LabelAuth htmlFor="signup-email">Email: </LabelAuth>

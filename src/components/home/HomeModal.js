@@ -63,7 +63,7 @@ export default function HomeModal() {
   return (
     <>
     <HomeContainer>
-      <img className="logo" src={logo} />
+      <img className="logo" src={logo} alt="note to self logo"/>
     </HomeContainer>
     </>
   );
