@@ -20,7 +20,6 @@ const CommunityHeader = styles.header `
   text-align: center
   background-image: url(${community});
   height: 40vh;
-  width: 50vw;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -42,9 +41,6 @@ const CommunityHeader = styles.header `
 `;
 
 const CommunitySearch = styles.section`
-  form {
-    margin-top: 4em;
-  }
   width: 50%;
   padding: -1em 1em 1em 1em;
   background: white;
@@ -80,19 +76,17 @@ class CommunityPage extends PureComponent {
   }
 
   render() {
-    const { communityList, handleFavorite, searchTerm, handleChange, handleSubmit } = this.props;
+    const { communityList, handleFavorite, searchTerm, handleChange } = this.props;
     return (
       <>
       <main>
         <CommunityHeader>
-          <HeaderContainer>
-            <h1>Community Messages</h1>
-            <h2>Inspired by a message? Check to save</h2>
-          </HeaderContainer>
+          <HeaderContainer />
+          <h1>Community Messages</h1>
+          <h2>Inspired by a message? Check to save</h2>
           <CommunitySearch>
-            <CommunityInput
+            <Search
               searchTerm={searchTerm}
-              handleSubmit={handleSubmit}
               onChange={handleChange}
             />
           </CommunitySearch>

@@ -5,7 +5,7 @@ import kate from '../../assets/images/kate.jpg';
 import marcy from '../../assets/images/marcy.jpg';
 import image from '../../assets/images/rose-elena-501720-unsplash.jpg';
 
-const JournalHeader = styles.header `
+const AboutHeader = styles.header `
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   padding-top: 0;
   text-align: center
@@ -42,7 +42,7 @@ const AboutMain = styles.div`
 }
 @media (min-width: 414px) {
   border-radius: 10px;
-  margin-top: 6em
+  margin-top: -4em;
   background: #D7D6D6;
   font-family: 'Muli', sans-serif;
   color: #316f7f;
@@ -64,10 +64,10 @@ const StyledPhoto = styles.img`
 export default function About() {
   return (
     <>
-    <JournalHeader>
+    <AboutHeader>
       <HeaderContainer />
       <h1>About Us</h1>
-    </JournalHeader>
+    </AboutHeader>
     <AboutMain>
       <main>
         <section>
