@@ -9,7 +9,7 @@ export default function Favorites({ favorites, handleUnfavorite }) {
         _id={note._id}
         body={note.body}
         handleUnfavorite={handleUnfavorite}
-        buttonLabel="X"
+        buttonLabel="x"
       />
     </li>;
   });

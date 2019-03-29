@@ -27,17 +27,11 @@ const JournalHeader = styles.header `
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  h1 {
-    font-family: 'Muli', sans-serif;
-    color: white;
-    letter-spacing: .09em;
-    text-shadow: 1pt 1.5pt grey;
-  }
   h2 {
     font-family: 'Muli', sans-serif;
     color: white;
     letter-spacing: .04em;
-    text-shadow: 1pt 1.5pt grey;
+    text-shadow: 1pt 2pt grey;
   }
 `;
 
@@ -56,11 +50,32 @@ const SearchContainer = styles.section`
   box-shadow: 1pt 1pt grey;
 `;
 
-const ToggleContainer = styles.section`
-  font-size: 1.5em;
+const Container = styles.div`
+  display: grid;
+  grid-template-columns: 50% 50%;
   width: 50%;
-  display: block;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 10em;
+  
+`;
+const FavoriteSection = styles.section`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+  :hover {
+    border-bottom: 1pt solid black;
+  }
+  h2  {
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+  }
+`;
+
+const NotesSection = styles.section`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+  h2  {
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+  }
 `;
 class JournalPage extends PureComponent {
   static propTypes = {
@@ -88,7 +103,6 @@ class JournalPage extends PureComponent {
       <JournalMain>
         <JournalHeader>
           <HeaderContainer/>
-          <h1>Journal</h1>
           {journalList && <h2>This is where you can find all of your scheduled affirmation notes</h2>}
           <SearchContainer>
             <Search 
@@ -97,24 +111,22 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
-        <ToggleContainer>
-          <ul>
-            <li>My Notes</li>
-            <li>Favorites</li>
-          </ul>
-        </ToggleContainer>
-        <section>
-          <JournalList 
-            journalList={journalList}
-            handleDelete={handleDelete}
-          />
-        </section>
-        <section>
-          <Favorites 
-            favorites={favorites}
-            handleUnfavorite={handleUnfavorite}
-          />
-        </section>
+        <Container>
+          <NotesSection>
+            <h2>My Notes</h2>
+            <JournalList 
+              journalList={journalList}
+              handleDelete={handleDelete}
+            />
+          </NotesSection>
+          <FavoriteSection>
+            <h2>Favorites</h2>
+            <Favorites 
+              favorites={favorites}
+              handleUnfavorite={handleUnfavorite}
+            />
+          </FavoriteSection>
+        </Container>
       </JournalMain>
       </>
     );

@@ -156,8 +156,9 @@ const StyledLogo = styles.img `
 @media (min-width: 1000px) {
   width: 10vw;
 }
-@media (min-width: 1500px) {
+@media (min-width: 1400px) {
   width: 5rem;
+  height: 4rem;
 }
 @media (min-width: 2000px) {
   width: 7vw;

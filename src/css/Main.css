@@ -18,9 +18,9 @@
     width: 4rem !important;
     padding: 1.8em;
   }
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1500px) {
   width: 5rem !important;
-  padding: 1.8em;
+  padding: 1.3em 2em 2em 3em;
 }
 }
 

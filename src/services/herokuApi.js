@@ -2,7 +2,6 @@ import store from '../store';
 import { getToken } from '../selectors/session';
 
 export const postNote = note => {
-  console.log('NOTE IN FETCH', note);
   return fetch(`${process.env.API_URL}/notes`, {
     method: 'POST',
     headers : {

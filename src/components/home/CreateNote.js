@@ -25,7 +25,7 @@ const FormStyle = styles.form`
     margin-right: auto;
     margin-left: auto;
     border: 1pt solid #316f7f;
-    border-radius: 10%;
+    border-radius: 10px;
     padding: .5em;
   }
   input, textarea {

@@ -196,8 +196,8 @@ export default class Header extends PureComponent {
             <NavStyles id="home" className="menu-item" to='/home'> HOME </NavStyles>
             <NavStyles id="journal" className="menu-item" to='/journal'> JOURNAL </NavStyles>
             <NavStyles id="community" className="menu-item" to='/community'> COMMUNITY </NavStyles>
-            <NavStyles id="auth" className="menu-item" to='/auth'> AUTH </NavStyles>
-            <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles>
+            {/* <NavStyles id="auth" className="menu-item" to='/auth'> AUTH </NavStyles>
+            <NavStyles id="loginin" className="menu-item" to='/loginin'> LOGIN </NavStyles> */}
             <NavStyles id="auth" className="menu-item" to='/auth'><button type="button" onClick={this.props.logout}>LOGOUT</button></NavStyles>
           </Menu>
         </DivStyle>
