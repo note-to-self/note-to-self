@@ -78,7 +78,7 @@ const QuoteAuthor = styles.div`
   margin-top: 1em;
   color: #47B1CD;
 }
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
   font-size: 2em;
   font-weight: 300;
 }

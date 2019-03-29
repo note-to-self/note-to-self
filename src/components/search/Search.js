@@ -16,25 +16,23 @@ const Label = styles.label`
 @media (min-width: 375px) {
   margin-bottom: 1em;
   padding-top: 1em;
-  display: inline-block;
-  text-align: left;
+  display: block;
+  text-align: center;
   vertical-align: 10px;
   margin-left: 1em;
   width: 50%
 }
 `;
 
-const Input = styles.input`
+export const Input = styles.input`
 @media (min-width: 375px) {
-  margin-left: .2em;
+  margin-left: 4em;
   vertical-align: 10px;
   background: none;
   border-style: none;
   border-bottom: 1pt solid #568697;
   display: block;
-  margin-right: auto;
-  margin-left: auto;
-  width: 80%;
+  width: 100%
   color: #568697;
 }
 `;

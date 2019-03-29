@@ -53,7 +53,7 @@ export class LoginContainer extends React.PureComponent {
   render() {
     return (
       <>
-        <Lotus src={lotus} /><Link to='/auth'> </Link>
+        <Lotus src={lotus} alt="lotus icon picture in blue background"/><Link to='/auth'> </Link>
       </>
     );
   }

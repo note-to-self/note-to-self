@@ -55,7 +55,7 @@ class Callback extends React.PureComponent{
       if(this.props.token) {
         return <Redirect to={ROUTES.HOME.linkTo()} />;
       }
-      return <Lotus src={lotus} />;
+      return <Lotus src={lotus} alt="lotus icon picture in blue background"/>;
     }
 }
 const mapStateToProps = state => ({
