@@ -1,6 +1,6 @@
 # Note to Self
 
-**Authors**: [Carmen Perezchica](https://github.com/crperezchica), [marcysilverman](https://github.com/marcysilverman), [Kate Dameron](https://github.com/Katedam), [Lance Merill](https://github.com/zulilu)
+**Authors**: [Carmen Perezchica](https://github.com/crperezchica), [Marcy Silverman](https://github.com/marcysilverman), [Kate Dameron](https://github.com/Katedam), [Lance Merill](https://github.com/zulilu)
 
 **[https://notes-to-self.netlify.com](https://notes-to-self.netlify.com/)**
 
