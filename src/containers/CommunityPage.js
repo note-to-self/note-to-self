@@ -11,8 +11,6 @@ import { fetchNotes } from '../actions/community';
 import styles from 'styled-components';
 import community from '../../assets/images/community.jpg';
 import HeaderContainer from './HeaderContainer';
-import { Input } from '../components/search/Search';
-
 
 const CommunityHeader = styles.header `
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -48,17 +46,6 @@ const CommunitySearch = styles.section`
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 1pt 1pt grey;
-`;
-
-const CommunityInput = styles(Search) `
-    vertical-align: 10px;
-    background: none;
-    border-style: none;
-    border-bottom: 1pt solid #568697;
-    display: block;
-    width: 100%
-    margin-top: 3em;
-    color: #568697;
 `;
 
 class CommunityPage extends PureComponent {
