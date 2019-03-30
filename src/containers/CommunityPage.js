@@ -6,13 +6,14 @@ import { updateSearchTerm } from '../actions/search';
 import { getPublicNotes } from '../selectors/community';
 import PropTypes from 'prop-types';
 import CommunityList from '../components/community/CommunityList';
-import { updateFaves } from '../actions/favorites';
+import { addFaves, fetchFaves } from '../actions/favorites';
 import { fetchNotes } from '../actions/community';
 import styles from 'styled-components';
 import community from '../../assets/images/community.jpg';
 import HeaderContainer from './HeaderContainer';
+import { getFavorites } from '../selectors/journal';
 
-const CommunityHeader = styles.header `
+const CommunityHeader = styles.header`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   padding-top: 0;
   text-align: center
@@ -54,10 +55,10 @@ class CommunityPage extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func,
     communityList: PropTypes.array,
+    favorites: PropTypes.array,
     handleFavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func
   };
 
   componentDidMount() {
@@ -65,30 +66,37 @@ class CommunityPage extends PureComponent {
   }
 
   render() {
-    const { communityList, handleFavorite, searchTerm, handleChange } = this.props;
+    const {
+      communityList,
+      favorites,
+      handleFavorite,
+      searchTerm,
+      handleChange
+    } = this.props;
     return (
       <>
-      <main>
-        <CommunityHeader>
-          <HeaderContainer />
-          <h1>Community Messages</h1>
-          <h2>Inspired by a message? Check to save</h2>
-          <CommunitySearch>
-            <Search
-              searchTerm={searchTerm}
-              onChange={handleChange}
-            />
-          </CommunitySearch>
-        </CommunityHeader>
-        <section>
-          <UlStyle>
-            <CommunityList
-              communityList={communityList}
-              handleFavorite={handleFavorite}
-            />
-          </UlStyle>
-        </section>
-      </main>
+        <main>
+          <CommunityHeader>
+            <HeaderContainer />
+            <h1>Community Messages</h1>
+            <h2>Inspired by a message? Check to save</h2>
+            <CommunitySearch>
+              <Search
+                searchTerm={searchTerm}
+                onChange={handleChange}
+              />
+            </CommunitySearch>
+          </CommunityHeader>
+          <section>
+            <UlStyle>
+              <CommunityList
+                favorites={favorites}
+                communityList={communityList}
+                handleFavorite={handleFavorite}
+              />
+            </UlStyle>
+          </section>
+        </main>
       </>
     );
   }
@@ -96,19 +104,17 @@ class CommunityPage extends PureComponent {
 
 const mapStateToProps = state => ({
   communityList: getFiltered(state, getPublicNotes(state)),
+  favorites: getFavorites(state),
   searchTerm: getSearchTerm(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
     dispatch(fetchNotes());
+    dispatch(fetchFaves());
   },
-  handleSubmit(event) {
-    event.preventDefault();
-  },
-  handleFavorite(id, event) {
-    event.preventDefault();
-    dispatch(updateFaves({ id }));
+  handleFavorite(id) {
+    dispatch(addFaves(id));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
@@ -119,5 +125,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CommunityPage);
-
-

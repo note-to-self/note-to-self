@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { getUserFaves, updateUserFaves } from '../services/herokuApi';
+import { getUserFaves, updateUserFaves, addUserFaves, removeUserFaves } from '../services/notesApi';
 
 export const [
   fetchFaves,
@@ -10,9 +10,17 @@ export const [
 ] = createAction('FETCH_FAVES', getUserFaves);
 
 export const [
-  updateFaves,
-  UPDATE_FAVES,
-  UPDATE_FAVES_PENDING,
-  UPDATE_FAVES_FULFILLED,
-  UPDATE_FAVES_REJECTED
-] = createAction('UPDATE_FAVES', updateUserFaves);
+  addFaves,
+  ADD_FAVES,
+  ADD_FAVES_PENDING,
+  ADD_FAVES_FULFILLED,
+  ADD_FAVES_REJECTED
+] = createAction('ADD_FAVES', addUserFaves);
+
+export const [
+  removeFaves,
+  REMOVE_FAVES,
+  REMOVE_FAVES_PENDING,
+  REMOVE_FAVES_FULFILLED,
+  REMOVE_FAVES_REJECTED
+] = createAction('REMOVE_FAVES', removeUserFaves);
