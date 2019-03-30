@@ -1,5 +1,5 @@
 import { DELETE_NOTE, FETCH_JOURNAL_LIST, UPDATE_TOGGLE } from '../actions/journal';
-import { UPDATE_FAVES, FETCH_FAVES } from '../actions/favorites';
+import { FETCH_FAVES, ADD_FAVES, REMOVE_FAVES } from '../actions/favorites';
 
 const initialState = {
   journalList: [],
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, { type, payload }) {
-  switch(type) {
+  switch (type) {
     case FETCH_JOURNAL_LIST:
       return {
         ...state,
@@ -19,7 +19,8 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         favorites: payload
       };
-    case UPDATE_FAVES:
+    case REMOVE_FAVES:
+    case ADD_FAVES:
       return {
         ...state,
         favorites: payload

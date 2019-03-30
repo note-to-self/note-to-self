@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { postNote } from '../services/herokuApi';
+import { postNote } from '../services/notesApi';
 
 export const [
   createMessage,
@@ -8,7 +8,7 @@ export const [
   CREATE_MESSAGE_FULFILLED,
   CREATE_MESSAGE_REJECTED
 ] = createAction('CREATE_MESSAGE', postNote);
-  
+
 
 export const UPDATE_DATE = 'UPDATE_DATE';
 export const updateDate = date => ({
@@ -56,4 +56,3 @@ export const updateWeekly = value => ({
   type: UPDATE_WEEKLY,
   payload: value
 });
-

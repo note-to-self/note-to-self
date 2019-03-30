@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { deleteRequest, getUserNotes } from '../services/herokuApi';
+import { deleteRequest, getUserNotes } from '../services/notesApi';
 
 export const [
   deleteNote,

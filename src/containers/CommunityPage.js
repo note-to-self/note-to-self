@@ -6,13 +6,13 @@ import { updateSearchTerm } from '../actions/search';
 import { getPublicNotes } from '../selectors/community';
 import PropTypes from 'prop-types';
 import CommunityList from '../components/community/CommunityList';
-import { updateFaves } from '../actions/favorites';
+import { addFaves } from '../actions/favorites';
 import { fetchNotes } from '../actions/community';
 import styles from 'styled-components';
 import community from '../../assets/images/community.jpg';
 import HeaderContainer from './HeaderContainer';
 
-const CommunityHeader = styles.header `
+const CommunityHeader = styles.header`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   padding-top: 0;
   text-align: center
@@ -68,27 +68,27 @@ class CommunityPage extends PureComponent {
     const { communityList, handleFavorite, searchTerm, handleChange } = this.props;
     return (
       <>
-      <main>
-        <CommunityHeader>
-          <HeaderContainer />
-          <h1>Community Messages</h1>
-          <h2>Inspired by a message? Check to save</h2>
-          <CommunitySearch>
-            <Search
-              searchTerm={searchTerm}
-              onChange={handleChange}
-            />
-          </CommunitySearch>
-        </CommunityHeader>
-        <section>
-          <UlStyle>
-            <CommunityList
-              communityList={communityList}
-              handleFavorite={handleFavorite}
-            />
-          </UlStyle>
-        </section>
-      </main>
+        <main>
+          <CommunityHeader>
+            <HeaderContainer />
+            <h1>Community Messages</h1>
+            <h2>Inspired by a message? Check to save</h2>
+            <CommunitySearch>
+              <Search
+                searchTerm={searchTerm}
+                onChange={handleChange}
+              />
+            </CommunitySearch>
+          </CommunityHeader>
+          <section>
+            <UlStyle>
+              <CommunityList
+                communityList={communityList}
+                handleFavorite={handleFavorite}
+              />
+            </UlStyle>
+          </section>
+        </main>
       </>
     );
   }
@@ -108,7 +108,7 @@ const mapDispatchToProps = dispatch => ({
   },
   handleFavorite(id, event) {
     event.preventDefault();
-    dispatch(updateFaves({ id }));
+    dispatch(addFaves(id));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
@@ -119,5 +119,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CommunityPage);
-
-

@@ -7,14 +7,14 @@ import JournalList from '../components/journal/JournalList';
 // import Favorites from '../components/journal/Favorites';
 import HeaderContainer from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
-import { fetchFaves, updateFaves } from '../actions/favorites';
+import { fetchFaves, removeFaves } from '../actions/favorites';
 import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 import styles from 'styled-components';
 import { getUserId } from '../selectors/session';
 import image from '../../assets/images/journal.png';
 
-const JournalHeader = styles.header `
+const JournalHeader = styles.header`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   padding-top: 0;
   text-align: center
@@ -64,7 +64,7 @@ const Container = styles.section`
  font-size: 1.4em;
  li {
    text-align: center;
-   font-family: 'Muli', sans-serif; 
+   font-family: 'Muli', sans-serif;
    list-style: none;
   }
    h3 {
@@ -101,40 +101,40 @@ class JournalPage extends PureComponent {
     this.props.fetchJournal(this.props.userId);
     this.props.fetchFavorites(this.props.userId);
   }
-  
+
   render() {
     const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
     return (
       <>
-      <JournalMain>
-        <JournalHeader>
-          <HeaderContainer/>
-          <h1>Journal</h1>
-          {journalList && <h2>This is where you can find all of your scheduled affirmation notes</h2>}
-          <SearchContainer>
-            <Search 
-              searchTerm={searchTerm}
-              onChange={handleChange}
+        <JournalMain>
+          <JournalHeader>
+            <HeaderContainer />
+            <h1>Journal</h1>
+            {journalList && <h2>This is where you can find all of your scheduled affirmation notes</h2>}
+            <SearchContainer>
+              <Search
+                searchTerm={searchTerm}
+                onChange={handleChange}
+              />
+            </SearchContainer>
+          </JournalHeader>
+          {/* <ToggleContainer> */}
+          <Container>
+            <li>My Notes</li>
+            {/* <li>Favorites</li> */}
+          </Container>
+          {/* </ToggleContainer> */}
+          <NotesContainer>
+            <JournalList
+              journalList={journalList}
+              handleDelete={handleDelete}
             />
-          </SearchContainer>
-        </JournalHeader>
-        {/* <ToggleContainer> */}
-        <Container>
-          <li>My Notes</li>
-          {/* <li>Favorites</li> */}
-        </Container>
-        {/* </ToggleContainer> */}
-        <NotesContainer>
-          <JournalList 
-            journalList={journalList}
-            handleDelete={handleDelete}
-          />
-          {/* {!favorites && <Favorites 
+            {/* {!favorites && <Favorites
             favorites={favorites}
             handleUnfavorite={handleUnfavorite}
           />} */}
-        </NotesContainer>
-      </JournalMain>
+          </NotesContainer>
+        </JournalMain>
       </>
     );
   }
@@ -158,12 +158,12 @@ const mapDispatchToProps = dispatch => ({
   },
   handleDelete(id, event) {
     event.preventDefault();
-    if(id) dispatch(deleteNote(id));
+    if (id) dispatch(deleteNote(id));
     dispatch(fetchJournalList(id));
   },
   handleUnfavorite(note, event) {
     event.preventDefault();
-    dispatch(updateFaves(note));
+    dispatch(removeFaves(note));
   },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
