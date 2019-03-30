@@ -15,6 +15,7 @@ const QuoteStyle = styles.div`
 }
 @media (min-width: 1000px) {  
   font-size: 1.5em;
+  line-height: .9;
 }
 @media (min-width: 1500px) {  
   font-size: 1.5em;
@@ -26,24 +27,27 @@ const QuoteStyle = styles.div`
 `;
 
 const QuoteContainer = styles.div`
-@media (min-width: 414px) {
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   font-family: 'Muli', sans-serif;
-  width: 100%;
   position: absolute;
   color: #47B1CD;
   line-height: 2em;
   bottom: 10%;
   background-color: rgba(255, 255, 255, 0.8);
   padding-top: 1.3em;
-}
+@media (min-width: 700px) {
+    line-height: 1em;
+    display: block
+    margin-right: auto;
+  }
 @media (min-width: 1000px) {
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   font-family: 'Muli', sans-serif;
-  width: 50vw;
-  height: 10vh;
+  width: 50%;
+  height: 15vh;
+  font-size: .8em;
   position: absolute;
-  left: 25%;
+  margin-left: 25%;
 }
 @media (min-width: 1500px) {
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -53,16 +57,7 @@ const QuoteContainer = styles.div`
   position: absolute;
   left: 25%;
 }
-@media (min-width: 700px) {
-  position: absolute;
-  color: #47B1CD;
-  line-height: 1em;
-  bottom: 10%;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: block
-  margin-right: auto;
-  width: 50%;
-}
+
 `;
 
 const QuoteAuthor = styles.div`

@@ -106,7 +106,7 @@ class JournalPage extends PureComponent {
   }
   
   render() {
-    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm } = this.props;
     return (
       <>
       <JournalMain>
