@@ -8,14 +8,14 @@ const HomeImage = styles.div`
 @media (max-width: 414px) {
 
   background-image: url(${homeImage}); 
-  height: 100vh;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 @media (min-width: 414px) {
   background-image: url(${homeImage}); 
-  height: 100vh;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,8 +23,8 @@ const HomeImage = styles.div`
 @media (min-width: 1000px) {
   overflow: scroll;
   background-image: url(${homeImage}); 
-  height: 100vh;
-  background-size: 50vw 100vh;
+  height: 100%;
+  background-size: 50vw 100%;
   background-color:  #47B1CD
 }
 

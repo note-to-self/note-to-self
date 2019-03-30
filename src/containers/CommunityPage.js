@@ -36,6 +36,10 @@ const CommunityHeader = styles.header `
     letter-spacing: .04em;
     text-shadow: 1pt 1.5pt grey;
   }
+
+@media (min-width: 1000px) {
+  width: 50%;
+}
 `;
 
 const CommunitySearch = styles.section`
@@ -46,10 +50,6 @@ const CommunitySearch = styles.section`
   border-radius: 10px;
 `;
 
-const UlStyle = styles.ul`
-  list-style: none;
-  padding: 0;
-`;
 class CommunityPage extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func,
@@ -81,12 +81,12 @@ class CommunityPage extends PureComponent {
           </CommunitySearch>
         </CommunityHeader>
         <section>
-          <UlStyle>
+          <ul>
             <CommunityList
               communityList={communityList}
               handleFavorite={handleFavorite}
             />
-          </UlStyle>
+          </ul>
         </section>
       </main>
       </>
