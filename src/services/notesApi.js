@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
-import store from '../store';
-import { getToken } from '../selectors/session';
-import { post, get, del, put } from './request';
+import { post, get, patch, del } from './request';
 
-export const postNote = post('/notes', note);
+export const postNote = note => post('/notes', note);
 
 export const getPublicNotes = () => get('/notes');
 

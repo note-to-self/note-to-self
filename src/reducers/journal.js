@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, { type, payload }) {
-  switch (type) {
+  switch(type) {
     case FETCH_JOURNAL_LIST:
       return {
         ...state,
@@ -17,13 +17,13 @@ export default function reducer(state = initialState, { type, payload }) {
     case FETCH_FAVES:
       return {
         ...state,
-        favorites: payload
+        favorites: payload.notes
       };
     case REMOVE_FAVES:
     case ADD_FAVES:
       return {
         ...state,
-        favorites: payload
+        favorites: payload.notes
       };
     case UPDATE_TOGGLE:
       return {

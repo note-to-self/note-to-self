@@ -6,11 +6,12 @@ import { updateSearchTerm } from '../actions/search';
 import { getPublicNotes } from '../selectors/community';
 import PropTypes from 'prop-types';
 import CommunityList from '../components/community/CommunityList';
-import { addFaves } from '../actions/favorites';
+import { addFaves, fetchFaves } from '../actions/favorites';
 import { fetchNotes } from '../actions/community';
 import styles from 'styled-components';
 import community from '../../assets/images/community.jpg';
 import HeaderContainer from './HeaderContainer';
+import { getFavorites } from '../selectors/journal';
 
 const CommunityHeader = styles.header`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
@@ -54,10 +55,10 @@ class CommunityPage extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func,
     communityList: PropTypes.array,
+    favorites: PropTypes.array,
     handleFavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func
   };
 
   componentDidMount() {
@@ -65,7 +66,13 @@ class CommunityPage extends PureComponent {
   }
 
   render() {
-    const { communityList, handleFavorite, searchTerm, handleChange } = this.props;
+    const {
+      communityList,
+      favorites,
+      handleFavorite,
+      searchTerm,
+      handleChange
+    } = this.props;
     return (
       <>
         <main>
@@ -83,6 +90,7 @@ class CommunityPage extends PureComponent {
           <section>
             <UlStyle>
               <CommunityList
+                favorites={favorites}
                 communityList={communityList}
                 handleFavorite={handleFavorite}
               />
@@ -96,18 +104,16 @@ class CommunityPage extends PureComponent {
 
 const mapStateToProps = state => ({
   communityList: getFiltered(state, getPublicNotes(state)),
+  favorites: getFavorites(state),
   searchTerm: getSearchTerm(state)
 });
 
 const mapDispatchToProps = dispatch => ({
   fetch() {
     dispatch(fetchNotes());
+    dispatch(fetchFaves());
   },
-  handleSubmit(event) {
-    event.preventDefault();
-  },
-  handleFavorite(id, event) {
-    event.preventDefault();
+  handleFavorite(id) {
     dispatch(addFaves(id));
   },
   handleChange({ target }) {
