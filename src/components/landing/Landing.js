@@ -46,9 +46,6 @@ const StyledLink = styled(Link)`
   margin: 1em auto;
 }
 @media (min-width: 1000px) {
-  width: 40%; 
-}
-@media (min-width: 1500px) {
   width: 30%; 
 }
 @media (min-width: 2000px) {
@@ -89,7 +86,6 @@ const StyledLogo = styles.img `
 }
 @media (min-width: 1500px) {
   margin-top: 2em;
-  width: 7vw;
 }
 `;
 

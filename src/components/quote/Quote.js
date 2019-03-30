@@ -6,8 +6,9 @@ const QuoteStyle = styles.div`
 @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
 @media (max-width: 414px) {  
   font-family: 'Muli', sans-serif;
-  font-size: 1em;
+  font-size: .8em;
   letter-spacing: .04em;
+  padding: .5em;
 }
 @media (min-width: 800px) {  
   font-size: 1.5em;
@@ -55,7 +56,6 @@ const QuoteContainer = styles.div`
   width: 50vw;
   height: 15vh;
   position: absolute;
-  left: 25%;
 }
 
 `;

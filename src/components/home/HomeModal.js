@@ -49,7 +49,7 @@ animation-name: fadeOut;
   background-size: 50vw 100vh;
   background-color:  #47B1CD
   .logo {
-    padding-top: 30%;
+    padding-top: 40%;
     width: 14%;
   }
 }
