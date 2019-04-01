@@ -4,10 +4,9 @@ import {
   UPDATE_PRIVATE,
   UPDATE_TIME, 
   UPDATE_MESSAGE,
-  UPDATE_IS_REPEATED, 
-  // UPDATE_DAILY, 
-  // UPDATE_IS_REPEATED, 
-  // UPDATE_WEEKLY,   
+  UPDATE_IS_REPEATED,
+  UPDATE_DAILY,
+  UPDATE_WEEKLY,  
 } from '../actions/message';
 import reducer from './message';
 
@@ -97,5 +96,21 @@ describe('message reducer', () => {
       payload: true
     });
     expect(updatedState.isRepeated).toBeTruthy();
+  });
+
+  it('can handle UPDATE_DAILY', () => {
+    const updatedState = reducer(state, {
+      type: UPDATE_DAILY,
+      payload: true
+    });
+    expect(updatedState.repeat.daily).toBeTruthy();
+  });
+
+  it('can handle UPDATE_WEEKLY', () => {
+    const updatedState = reducer(state, {
+      type: UPDATE_WEEKLY,
+      payload: true
+    });
+    expect(updatedState.repeat.weekly).toBeTruthy();
   });
 });
