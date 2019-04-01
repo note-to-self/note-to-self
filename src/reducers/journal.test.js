@@ -60,11 +60,45 @@ describe('can handle Journal actios', () => {
   });
 
   it('handles the action DELETE_NOTE', () => {
+    const state = {
+      journalList: [{
+        body: 'banana',
+        isRepeated: true,
+        repeat: {
+          daily: true,
+          weekly: false
+        },
+        _id: '1234'
+      },
+      {
+        body: 'banana',
+        isRepeated: true,
+        repeat: {
+          daily: true,
+          weekly: false
+        },
+        _id: '1235'
+      }]
+    };
     const updatedState = reducer(state, {
       type: DELETE_NOTE,
+      payload: '1235'
     });
 
-    // eslint-disable-next-line no-console
-    console.log(updatedState);
+    expect(updatedState).toEqual({ 
+      journalList: [
+        { 
+          body: 'banana',
+          isRepeated: true,
+          repeat: expect.any(Object),
+          _id: '1234' 
+        },
+        { 
+          body: 'banana',
+          isRepeated: true,
+          repeat: expect.any(Object),
+          _id: '1235' 
+        }] 
+    });
   });
 });
