@@ -17,11 +17,11 @@ const QuoteStyle = styles.div`
   font-size: 1.5em;
 }
 @media (min-width: 1500px) {  
-  font-size: 1.7em;
-}
-@media (min-width: 1500px) {  
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1em;
+}
+@media (min-width: 1800px) {  
+  font-size: 1.8em;
 }
 `;
 
@@ -79,7 +79,7 @@ const QuoteAuthor = styles.div`
   color: #47B1CD;
 }
 @media (min-width: 1500px) {
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: 300;
 }
 `;

@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Note from '../notes/Note';
+import styles from 'styled-components';
+
+const UlStyle = styles.ul`
+  list-style: none;
+  padding: 0;
+`;
 
 export default function Favorites({ favorites, handleUnfavorite }) {
   const favesList = favorites.map(note => {
@@ -9,16 +15,16 @@ export default function Favorites({ favorites, handleUnfavorite }) {
         _id={note._id}
         body={note.body}
         handleUnfavorite={handleUnfavorite}
-        buttonLabel="X"
+        buttonLabel="delete"
       />
     </li>;
   });
 
   return (
     <section>
-      <ul>
+      <UlStyle>
         {favesList}
-      </ul>
+      </UlStyle>
     </section>
   );
 }

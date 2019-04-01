@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { getJournalList, getFavorites, isToggle } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
-import Favorites from '../components/journal/Favorites';
+// import Favorites from '../components/journal/Favorites';
 import HeaderContainer from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
 import { fetchFaves, updateFaves } from '../actions/favorites';
@@ -20,7 +20,6 @@ const JournalHeader = styles.header `
   text-align: center
   background-image: url(${image});
   height: 40vh;
-  width: 50vw;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -37,7 +36,7 @@ const JournalHeader = styles.header `
     font-family: 'Muli', sans-serif;
     color: white;
     letter-spacing: .04em;
-    text-shadow: 1pt 1.5pt grey;
+    text-shadow: 1pt 2pt grey;
   }
 `;
 
@@ -49,26 +48,48 @@ const JournalMain = styles.main`
 const SearchContainer = styles.section`
   width: 50%;
   padding: -1em 1em 1em 1em;
-  background: white;
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: 1pt 1pt grey;
 `;
 
-const ToggleContainer = styles.section`
-  font-size: 1.5em;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
+
+const Container = styles.section`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 2em;
+ list-style: none;
+ padding: 0;
+ font-size: 1.4em;
+ li {
+   text-align: center;
+   font-family: 'Muli', sans-serif; 
+   list-style: none;
+  }
+   h3 {
+     border-bottom: black solid 1px;
+   }
+ }
 `;
+
+const NotesContainer = styles.section`
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 2em;
+ list-style: none;
+ padding: 0;
+ font-size: 1.4em;
+`;
+
 class JournalPage extends PureComponent {
   static propTypes = {
     journalList: PropTypes.array,
-    favorites: PropTypes.array,
+    // favorites: PropTypes.array,
     handleDelete: PropTypes.func,
     handleChange: PropTypes.func,
-    handleUnfavorite: PropTypes.func,
+    // handleUnfavorite: PropTypes.func,
     searchTerm: PropTypes.string.isRequired,
     fetchJournal: PropTypes.func,
     fetchFavorites: PropTypes.func,
@@ -97,24 +118,22 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
-        <ToggleContainer>
-          <ul>
-            <li>My Notes</li>
-            <li>Favorites</li>
-          </ul>
-        </ToggleContainer>
-        <section>
+        {/* <ToggleContainer> */}
+        <Container>
+          <li>My Notes</li>
+          {/* <li>Favorites</li> */}
+        </Container>
+        {/* </ToggleContainer> */}
+        <NotesContainer>
           <JournalList 
             journalList={journalList}
             handleDelete={handleDelete}
           />
-        </section>
-        <section>
-          <Favorites 
+          {/* {!favorites && <Favorites 
             favorites={favorites}
             handleUnfavorite={handleUnfavorite}
-          />
-        </section>
+          />} */}
+        </NotesContainer>
       </JournalMain>
       </>
     );
@@ -138,7 +157,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchJournalList(id));
   },
   handleDelete(id, event) {
-    console.log('ID FROM HANDLE DELETE', id);
     event.preventDefault();
     if(id) dispatch(deleteNote(id));
     dispatch(fetchJournalList(id));
