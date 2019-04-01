@@ -1,6 +1,6 @@
 import { 
   CREATE_MESSAGE, 
-  // UPDATE_DATE, 
+  UPDATE_DATE, 
   // UPDATE_MESSAGE, 
   // UPDATE_TIME, 
   // UPDATE_DAILY, 
@@ -50,6 +50,24 @@ describe('message reducer', () => {
       time: '01:00 PM',
       privateMessage: false,
       body: 'message',
+      repeat: {
+        daily: false,
+        weekly: false
+      },
+      isRepeated: false,
+    });
+  });
+
+  it('can handle the UPDATE_DATE action', () => {
+    const updatedState = reducer(state, {
+      type: UPDATE_DATE,
+      payload: '03/31/2019'
+    });
+    expect(updatedState).toEqual({
+      date: '03/31/2019',
+      time: '',
+      privateMessage: false,
+      body: '',
       repeat: {
         daily: false,
         weekly: false
