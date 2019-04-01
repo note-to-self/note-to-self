@@ -5,7 +5,7 @@ jest.mock('../services/herokuApi.js');
 jest.mock('../services/auth.js');
 
 
-describe('can handle Journal actios', () => {
+describe('can handle Journal actions', () => {
   let state;
 
   beforeEach(() => {
@@ -82,7 +82,7 @@ describe('can handle Journal actios', () => {
     };
     const updatedState = reducer(state, {
       type: DELETE_NOTE,
-      payload: '1235'
+      payload: { _id: '1235', body: 'banana' }
     });
 
     expect(updatedState).toEqual({ 
