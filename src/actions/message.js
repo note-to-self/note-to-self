@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { postNote } from '../services/herokuApi';
+import { postNote } from '../services/message';
 
 export const [
   createMessage,

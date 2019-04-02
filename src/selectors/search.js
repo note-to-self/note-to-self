@@ -1,8 +1,4 @@
-// import { getFavorites } from '../selectors/journal';
-// import { getPublicNotes } from '../selectors/community';
-
 export const getSearchTerm = state => state.search.searchTerm;
-
 
 export const getFiltered = (state, theArray) => {
   const searchTerm = getSearchTerm(state);
@@ -13,5 +9,4 @@ export const getFiltered = (state, theArray) => {
 
     return lowerCaseBody.includes(lowerCaseSearch);
   });
-}
-;
+};

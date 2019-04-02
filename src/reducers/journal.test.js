@@ -1,7 +1,7 @@
 import reducer from './journal';
 import { FETCH_JOURNAL_LIST, DELETE_NOTE } from '../actions/journal';
 
-jest.mock('../services/herokuApi.js');
+jest.mock('../services/journal.js');
 jest.mock('../services/auth.js');
 
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList, isToggle } from '../selectors/journal';
+import { getJournalList } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
 // import Favorites from '../components/journal/Favorites';
@@ -118,12 +118,10 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
-        {/* <ToggleContainer> */}
         <Container>
           <li>My Notes</li>
           {/* <li>Favorites</li> */}
         </Container>
-        {/* </ToggleContainer> */}
         <NotesContainer>
           <JournalList 
             journalList={journalList}
@@ -145,7 +143,6 @@ const mapStateToProps = state => ({
   // favorites: getFavorites(state),
   searchTerm: getSearchTerm(state),
   userId: getUserId(state),
-  toggle: isToggle(state)
 
 });
 

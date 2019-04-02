@@ -1,7 +1,7 @@
 import { FETCH_NOTES } from '../actions/community';
 import reducer from './community';
 
-jest.mock('../services/herokuApi');
+jest.mock('../services/community');
 
 describe('Quote reducer', () => {
   let state;

@@ -1,5 +1,3 @@
-export const getPublicNotes = () => Promise.resolve(['banana', 'orange', 'apple']);
-
 export const getUserNotes = () => Promise.resolve([{
   body: 'banana',
   isRepeated: true,

@@ -10,7 +10,7 @@ import {
 } from '../actions/message';
 import reducer from './message';
 
-jest.mock('../services/herokuApi.js');
+jest.mock('../services/message.js');
 jest.mock('../services/auth.js');
 
 describe('message reducer', () => {
