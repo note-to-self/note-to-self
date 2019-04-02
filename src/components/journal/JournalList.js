@@ -1,13 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Note from '../notes/Note';
-import styles from 'styled-components';
-
-const UlStyle = styles.ul`
-  list-style: none;
-  padding: 0;
-`;
-
 
 export default function JournalList({ journalList, handleDelete }) {
 
@@ -36,7 +29,7 @@ export default function JournalList({ journalList, handleDelete }) {
 
   return (
     <>
-    <UlStyle>{list}</UlStyle>
+    <ul>{list}</ul>
     </>
   );
 }

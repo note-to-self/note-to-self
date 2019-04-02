@@ -38,11 +38,14 @@ const JournalHeader = styles.header `
     letter-spacing: .04em;
     text-shadow: 1pt 2pt grey;
   }
+  @media (min-width: 1000px) {
+    width: 50%;
+  }
 `;
 
 const JournalMain = styles.main`
-  height: 100vh;
-  background-size: 50vw 100vh;
+  height: 100%;
+  background-size: 50vw 100%;
 `;
 
 const SearchContainer = styles.section`
