@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getJournalList, getFavorites, isToggle } from '../selectors/journal';
+import { getJournalList } from '../selectors/journal';
 import Search from '../components/search/Search';
 import JournalList from '../components/journal/JournalList';
 // import Favorites from '../components/journal/Favorites';
 import HeaderContainer from '../containers/HeaderContainer';
 import { deleteNote, fetchJournalList } from '../actions/journal';
-import { fetchFaves, updateFaves } from '../actions/favorites';
+import { fetchFaves } from '../actions/favorites';
 import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
 import styles from 'styled-components';
@@ -103,7 +103,7 @@ class JournalPage extends PureComponent {
   }
   
   render() {
-    const { journalList, handleDelete, handleChange, searchTerm, favorites, handleUnfavorite } = this.props;
+    const { journalList, handleDelete, handleChange, searchTerm } = this.props;
     return (
       <>
       <JournalMain>
@@ -118,12 +118,10 @@ class JournalPage extends PureComponent {
             />
           </SearchContainer>
         </JournalHeader>
-        {/* <ToggleContainer> */}
         <Container>
           <li>My Notes</li>
           {/* <li>Favorites</li> */}
         </Container>
-        {/* </ToggleContainer> */}
         <NotesContainer>
           <JournalList 
             journalList={journalList}
@@ -142,10 +140,9 @@ class JournalPage extends PureComponent {
 
 const mapStateToProps = state => ({
   journalList: getFiltered(state, getJournalList(state)),
-  favorites: getFavorites(state),
+  // favorites: getFavorites(state),
   searchTerm: getSearchTerm(state),
   userId: getUserId(state),
-  toggle: isToggle(state)
 
 });
 
@@ -161,10 +158,10 @@ const mapDispatchToProps = dispatch => ({
     if(id) dispatch(deleteNote(id));
     dispatch(fetchJournalList(id));
   },
-  handleUnfavorite(note, event) {
-    event.preventDefault();
-    dispatch(updateFaves(note));
-  },
+  // handleUnfavorite(note, event) {
+  //   event.preventDefault();
+  //   dispatch(updateFaves(note));
+  // },
   handleChange({ target }) {
     dispatch(updateSearchTerm(target.value));
   },
