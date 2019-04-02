@@ -1,10 +1,9 @@
-import { DELETE_NOTE, FETCH_JOURNAL_LIST, UPDATE_TOGGLE } from '../actions/journal';
-import { UPDATE_FAVES, FETCH_FAVES } from '../actions/favorites';
+import { DELETE_NOTE, FETCH_JOURNAL_LIST } from '../actions/journal';
+// import { UPDATE_FAVES, FETCH_FAVES } from '../actions/favorites';
 
 const initialState = {
   journalList: [],
-  favorites: [],
-  toggle: false
+  favorites: []
 };
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -14,23 +13,18 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         journalList: payload
       };
-    case FETCH_FAVES:
-      return {
-        ...state,
-        favorites: payload
-      };
-    case UPDATE_FAVES:
-      return {
-        ...state,
-        favorites: payload
-      };
-    case UPDATE_TOGGLE:
-      return {
-        ...state,
-        toggle: payload
-      };
     case DELETE_NOTE:
       return state;
+    // case FETCH_FAVES:
+    //   return {
+    //     ...state,
+    //     favorites: payload
+    //   };
+    // case UPDATE_FAVES:
+    //   return {
+    //     ...state,
+    //     favorites: payload
+    //   };
     default:
       return state;
   }

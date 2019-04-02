@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { getUserFaves, updateUserFaves } from '../services/herokuApi';
+import { getUserFaves, updateUserFaves } from '../services/favorites';
 
 export const [
   fetchFaves,
