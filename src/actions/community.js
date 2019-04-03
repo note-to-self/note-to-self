@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { getPublicNotes } from '../services/herokuApi';
+import { getPublicNotes } from '../services/community';
 
 export const UPDATE_CHECKBOX = 'UPDATE_CHECKBOX';
 export const updateCheckbox = status => ({

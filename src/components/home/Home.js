@@ -9,9 +9,9 @@ import HeaderContainer from '../../containers/HeaderContainer';
 
 const HomeMain = styles.main`
 @media (min-width: 700px) {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  background-size: 50vw 100vh;
+  background-size: 50vw 100%;
   background-color: rgba(255, 255, 255, 0.9);
 }
 `;

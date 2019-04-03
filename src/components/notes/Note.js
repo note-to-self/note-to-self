@@ -24,6 +24,13 @@ ul {
   list-style: none;
   padding: 0;
 }
+@media (min-width: 1000px) {
+  width: 50%;
+  margin: 1em auto;
+  li {
+    margin: 1em;
+  }
+} 
 `;
 
 export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) {
