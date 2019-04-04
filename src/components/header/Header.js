@@ -76,6 +76,9 @@ const NavStyles = styles(Link)`
     background: none;
   }
 }
+@media (min-width: 1400px) {
+  margin-left: 30%;
+}
 @media (min-width: 1500px) {
   color: white;
   display: block;
