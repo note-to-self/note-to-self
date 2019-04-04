@@ -64,6 +64,7 @@ const NavStyles = styles(Link)`
   font-family: 'Muli', sans-serif;
   margin-right: auto;
   text-decoration: none;
+  margin-left: 30%;
   font-size: 2em;
   font-weight: 700;
   padding: 2em 1em .3em 1em;
