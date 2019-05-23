@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Note from '../notes/Note';
 
-
 export default function Favorites({ favorites, handleUnfavorite }) {
   const favesList = favorites.map(note => {
     return <li key={note._id}>

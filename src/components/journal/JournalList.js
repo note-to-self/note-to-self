@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Note from '../notes/Note';
 
 export default function JournalList({ journalList, handleDelete }) {
-
+  
   const list = journalList.map(note => {
 
     const check = () => {
