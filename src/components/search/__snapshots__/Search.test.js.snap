@@ -3,13 +3,13 @@
 exports[`Search matches a snapshot 1`] = `
 Array [
   <label
-    className="sc-bdVaJa gpidBe"
+    className="sc-bdVaJa fGYvF"
     htmlFor="search"
   >
     search
   </label>,
   <input
-    className="sc-bwzfXH lcXNLo"
+    className="sc-bwzfXH fYIQJD"
     name="searchTerm"
     placeholder="search"
     type="text"
