@@ -8,13 +8,18 @@ export const HomeImage = styles.main`
   height: 100vh; 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-size: 100%;
+  width: 100%;
   z-index: 10
   text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+@media (min-width: 700px) {
+  width: 60%;
+}
+
 @media (min-width: 1000px) {
-  background-image: url(${homeImage}); 
-  height: 100vh;
-  background-size: 50vw 100vh;
   background-color:  #47B1CD
 }
 `;
@@ -30,33 +35,27 @@ export const StyledLink = styled(Link)`
   border-radius: .3em;
   background-color: rgba(255, 255, 255, 0.9);
   padding: .8em .5em .5em .5em;
-  width: 60%; 
-  z-index: 1;
-  margin: 0 auto;
-@media (min-width: 800px) {
   width: 50%; 
   z-index: 1;
+  margin: 10px auto;
+
+@media (min-width: 800px) {
   margin: 1em auto;
-}
-@media (min-width: 1000px) {
-  width: 30%; 
-}
-@media (min-width: 2000px) {
-  font-size: 2em;
-  width: 25%; 
-}
+} 
 `;
 
 export const StyledDiv = styles.div`
   margin-top: 5em;
   display: grid;
   grid-row-gap: 2em;
-  grid-template-rows: 1fr; 
+  grid-template-rows: 1fr;
+
 @media (min-width: 414px) {    
   margin-left: 0;
   display: flex;
   flex-direction: column;
 }
+
 @media (min-width: 1200px) {    
   margin-top: 5em;
   margin-left: 0;
@@ -65,13 +64,9 @@ export const StyledDiv = styles.div`
 
 export const StyledLogo = styles.img `
   margin-top: 2em;
-  width: 20vw;
-  height: 10vh;
+  width: 5em;
+  height: 5em;
   justify-self: center;
-@media (min-width: 800px) {
-  margin-top: 2em;
-  width: 9vw;
-}
 
 @media (min-width: 1000px) {
   margin-top: 2em;
