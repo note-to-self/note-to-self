@@ -19,7 +19,7 @@ export default class Home extends PureComponent {
     <HomeMain>
       <HomeImage>
         <HeaderContainer />
-        <h1>I AM...</h1>
+        <h1>Note to Self...</h1>
         <CreateNoteContainer/>
       </HomeImage>
     </HomeMain>

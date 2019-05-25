@@ -19,6 +19,7 @@ export const OpenIcon = styles.img`
 export const NavStyles = styles(Link)`
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   font-family: 'Muli', sans-serif;
+  outline: transparent auto 0px;
   color: white;
   display: block;
   margin-right: auto;
@@ -33,11 +34,12 @@ export const NavStyles = styles(Link)`
     color: white;
     font-weight: 700;
   }
-  
+
   @media (min-width: 414px) {
     width: 40%;
     font-size: 1.6em;
   }
+
   @media (min-width: 760px) {
     width: 50%;
     font-size: 2em;
@@ -71,6 +73,7 @@ export const DivStyle = styles.div`
 }
 @media (min-width: 920px) {
   height: 20vh;
+  outline: transparent auto 0px;
 }
 `;
 
