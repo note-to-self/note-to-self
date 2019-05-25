@@ -4,7 +4,6 @@ import openIcon from '../../../assets/images/hamburger-icon.png';
 import lotus from '../../../assets/images/lotus.png';
 import PropTypes from 'prop-types';
 import { HeaderStyle, DivStyle, OpenIcon, NavStyles, ProfilePic, Lotus } from './HeaderStyles';
-
 export default class Header extends PureComponent {
   static propTypes = {
     logout: PropTypes.func,

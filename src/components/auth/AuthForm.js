@@ -11,7 +11,6 @@ import {
   AuthButton
 } from './AuthFormStyles';
 
-
 function AuthForm({ handleAuth, onChange, email, password, name, phone }) {
   return (
     <>
