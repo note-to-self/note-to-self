@@ -1,50 +1,42 @@
 import styles from 'styled-components';
-import homeImage from '../../../assets/images/home-form-image.jpg';
+import homeImage from '../../../assets/images/home.jpg';
 
 export const HomeMain = styles.main`
 @media (min-width: 700px) {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
-  background-size: 50vw 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  overflow: scroll;
+  background-color: white;
 }
 `;
 
 export const HomeImage = styles.header`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-h1 {
+  @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+  background-image: url(${homeImage}); 
+  height: 50vh;
   margin: 0 auto;
-  text-align: center;
-  font-family: 'Muli', sans-serif;
-  color: white;
-  letter-spacing: .09em;
-  text-shadow: 1pt 1.5pt grey;
-}
-@media (max-width: 414px) {
-  background-image: url(${homeImage}); 
-  height: 40vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-@media (min-width: 414px) {
-  background-image: url(${homeImage}); 
-  height: 40vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media (min-width: 700px) {
-  background-image: url(${homeImage}); 
-  height: 40vh;
-  width: 50vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  max-width: 870px;
+  
+  h1 {
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    letter-spacing: .09em;
+    background-color: rgba(245, 245, 245, 0.7);
+    padding: 10px;
+    color: #4d5c3f
+  }
+
+  @media (min-width: 760px) {
+    width: 100vw;
+  }
+
+  @media (min-width: 1240px) {
+    width: 65vw;
+  }
+
 `;
 
 export const HomeContainer = styles.section`
@@ -56,7 +48,6 @@ height: 100vh;
 width: 100vw;
 display: flex;
 background-image: url(${homeImage});
-height: 100vh; 
 background-position: center;
 background-repeat: no-repeat;
 background-size: 100vw 100vh;
