@@ -6,10 +6,14 @@ export default function Note({ body, handleSubmit, schedule, buttonLabel, id }) 
   return (
     <NoteCard>
       <NoteTitle>{body}</NoteTitle>
-      {schedule && <p>This is a {schedule} affirmation.</p>}
-      {handleSubmit && <form onSubmit={handleSubmit.bind(null, id)}>
-        <NoteButton>{buttonLabel} </NoteButton>
-      </form>}
+      {schedule && 
+        <p>This is a {schedule} affirmation.</p>}
+      {handleSubmit && 
+        <form onSubmit={handleSubmit.bind(null, id)}>
+          {buttonLabel && <NoteButton>
+            {buttonLabel} 
+          </NoteButton>}
+        </form>}
     </NoteCard>
   );
 }

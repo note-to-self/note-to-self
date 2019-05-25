@@ -12,19 +12,25 @@ export const Header = styles.header `
   background-repeat: no-repeat;
   background-size: cover;
 
-  h1 {
+  h1, h2 {
     font-family: 'Muli', sans-serif;
-    color: white;
+    text-align: center;
     letter-spacing: .09em;
-    text-shadow: 1pt 1.5pt grey;
+    padding: 10px;
+    color: #4d5c3f;
   }
 
   h2 {
-    font-family: 'Muli', sans-serif;
-    color: white;
     font-size: 1em;
+    width: 85%;
+    margin: 10px auto;
+    -webkit-letter-spacing: .04em;
+    -moz-letter-spacing: .04em;
+    -ms-letter-spacing: .04em;
     letter-spacing: .04em;
-    text-shadow: 1pt 1pt grey;
+    background-color: #4d5c3fa3;
+    border-radius: 30%;
+    color: whitesmoke;
   }
 
   @media (min-width: 960px) {

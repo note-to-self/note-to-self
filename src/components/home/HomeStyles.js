@@ -13,7 +13,7 @@ export const HomeMain = styles.main`
 export const HomeImage = styles.header`
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   background-image: url(${homeImage}); 
-  height: 45vh;
+  height: 50vh;
   margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,12 +21,12 @@ export const HomeImage = styles.header`
   max-width: 870px;
   
   h1 {
-    margin: 0 auto;
-    text-align: center;
     font-family: 'Muli', sans-serif;
-    color: white;
+    text-align: center;
     letter-spacing: .09em;
-    text-shadow: 1pt 1.5pt grey;
+    background-color: rgba(245, 245, 245, 0.7);
+    padding: 10px;
+    color: #4d5c3f
   }
 
   @media (min-width: 760px) {

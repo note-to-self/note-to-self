@@ -39,7 +39,7 @@ class CommunityPage extends PureComponent {
         <CommunityHeader>
           <HeaderContainer />
           <h1>Community Messages</h1>
-          <h2>Inspired by a message? Check to save</h2>
+          {/* <h2>Inspired by a message? Check to save</h2> */}
           <SearchContainer>
             <Search
               searchTerm={searchTerm}
