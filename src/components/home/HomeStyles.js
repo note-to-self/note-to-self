@@ -1,5 +1,5 @@
 import styles from 'styled-components';
-import homeImage from '../../../assets/images/home-form-image.jpg';
+import homeImage from '../../../assets/images/home.jpg';
 
 export const HomeMain = styles.main`
 @media (min-width: 700px) {
@@ -13,7 +13,7 @@ export const HomeMain = styles.main`
 export const HomeImage = styles.header`
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
   background-image: url(${homeImage}); 
-  height: 40vh;
+  height: 45vh;
   margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;

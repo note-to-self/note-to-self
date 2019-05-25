@@ -1,5 +1,5 @@
 import styles from 'styled-components';
-import image from '../../../assets/images/journal.png';
+import image from '../../../assets/images/journal2.jpg';
 
 export const Header = styles.header `
   @import url('https://fonts.googleapis.com/css?family=Muli:300,700');

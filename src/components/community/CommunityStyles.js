@@ -1,5 +1,5 @@
-import styles from 'style-components';
-import community from '../../assets/images/community.jpg';
+import styles from 'styled-components';
+import community from '../../../assets/images/community2.jpg';
 import { Header } from '../journal/JournalStyles';
 
 export const CommunityHeader = styles(Header) `

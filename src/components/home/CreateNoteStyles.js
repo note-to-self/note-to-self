@@ -7,7 +7,7 @@ export const FormStyle = styles.form`
   overflow: scroll;
   width: 100%;
   max-width: 870px;
-  height: 75vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 2em;
   box-sizing: border-box;
@@ -40,7 +40,6 @@ export const FormStyle = styles.form`
   }
 
   @media (min-width: 700px) {
-    height: 75vh;
     letter-spacing: .02em;
   }
 
@@ -68,8 +67,6 @@ export const LabelStyle = styles.label`
   }
 `;
 
-
-
 export const InputStyle = styles.input`
   padding: 1em
 
@@ -79,11 +76,12 @@ export const FormContainer = styles.div`
   background-color: whitesmoke;
   height: 100vh;
   overflow: scroll;
-  margin-top: 4em;
+  margin-top: 6.5em;
   max-width: 870px;
 
   @media (min-width: 925px) {
     padding-top: 0;
+    margin-top: 10em;
   }
     
 `;

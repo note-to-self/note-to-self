@@ -66,6 +66,12 @@ export const DivStyle = styles.div`
   justify-content: flex-end;
   outline: transparent auto 0px;
 
+  .bm-burger-button {
+    button {
+      color: black;
+    }
+  }
+
   @media (min-width: 700px) {
     height: 15vh;
   }
