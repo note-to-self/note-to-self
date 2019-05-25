@@ -17,81 +17,42 @@ export const OpenIcon = styles.img`
 `;
 
 export const NavStyles = styles(Link)`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-@media (max-width: 414px) {
- color: white;
- display: block;
- font-family: 'Muli', sans-serif;
- margin-right: auto;
- margin-left: 28%;
- text-decoration: none;
- width: 50%;
- font-size: 1.4em;
- font-weight: 700;
- padding: 2em 1em .3em 1em;
- text-align: center;
+  @import url('https://fonts.googleapis.com/css?family=Muli:300,700');
+  font-family: 'Muli', sans-serif;
+  color: white;
+  display: block;
+  margin-right: auto;
+  margin-left: 28%;
+  text-decoration: none;
+  width: 60%;
+  font-size: 1.4em;
+  font-weight: 700;
+  padding-top: 2em;
+  text-align: center;
   button {
-   color: white;
-   font-weight: 700;
- }
-}
-@media (min-width: 414px) {
-  color: white;
-  display: block;
-  font-family: ‘Muli’, sans-serif;
-  margin-right: auto;
-  margin-left: 38%;
-  text-decoration: none;
-  width: 40%;
-  font-size: 1.6em;
-  font-weight: 700;
-  padding: 2em 1em .3em 1em;
-  text-align: center;
-   button {
     color: white;
     font-weight: 700;
   }
- }
- @media (min-width: 700px) {
-  color: white;
-  display: block;
-  width: 50%;
-  font-family: 'Muli', sans-serif;
-  margin-right: auto;
-  text-decoration: none;
-  font-size: 2em;
-  font-weight: 700;
-  padding: 2em 1em .3em 1em;
-  text-align: center;
-   button {
-    color: white;
-    font-weight: 700;
-    font-weight: 700;
-    border-style: none;
-    background: none;
+  
+  @media (min-width: 414px) {
+    width: 40%;
+    font-size: 1.6em;
   }
+  @media (min-width: 760px) {
+    width: 50%;
+    font-size: 2em;
+    button {
+      border-style: none;
+      background: none;
+    }
 }
-@media (min-width: 1500px) {
-  color: white;
-  display: block;
-  margin: 0 auto;
+@media (min-width: 1240px) {
   width: 100%;
-  font-family: 'Muli', sans-serif;
   margin-right: 0;
   margin-left: 1em;
-  text-decoration: none;
-  font-size: 2em;
-  font-weight: 700;
-  padding: 2em 1em .3em 1em;
-  text-align: center;
-   button {
-    color: white;
-    font-weight: 700;
-    border-style: none;
-    background: none;
-  }
 }
 `;
+
 export const DivStyle = styles.div`
 @media (max-width: 414px) {
   height: 10vh;

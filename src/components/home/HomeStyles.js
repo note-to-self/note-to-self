@@ -3,10 +3,11 @@ import homeImage from '../../../assets/images/home-form-image.jpg';
 
 export const HomeMain = styles.main`
 @media (min-width: 700px) {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
-  background-size: 50vw 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2em;
+  overflow: scroll;
+  background-color: white;
 }
 `;
 
