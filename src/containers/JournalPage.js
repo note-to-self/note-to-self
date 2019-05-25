@@ -10,81 +10,14 @@ import { deleteNote, fetchJournalList } from '../actions/journal';
 import { fetchFaves } from '../actions/favorites';
 import { getSearchTerm, getFiltered } from '../selectors/search';
 import { updateSearchTerm } from '../actions/search';
-import styles from 'styled-components';
 import { getUserId } from '../selectors/session';
-import image from '../../assets/images/journal.png';
-
-const JournalHeader = styles.header `
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-  padding-top: 0;
-  text-align: center
-  background-image: url(${image});
-  height: 40vh;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  h1 {
-    font-family: 'Muli', sans-serif;
-    color: white;
-    letter-spacing: .09em;
-    text-shadow: 1pt 1.5pt grey;
-  }
-  h2 {
-    font-family: 'Muli', sans-serif;
-    color: white;
-    letter-spacing: .04em;
-    text-shadow: 1pt 2pt grey;
-  }
-  @media (min-width: 1000px) {
-    width: 50%;
-  }
-`;
-
-const JournalMain = styles.main`
-  height: 100%;
-  background-size: 50vw 100%;
-`;
-
-const SearchContainer = styles.section`
-  width: 50%;
-  padding: -1em 1em 1em 1em;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-`;
-
-
-const Container = styles.section`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
- margin-left: auto;
- margin-right: auto;
- margin-top: 2em;
- list-style: none;
- padding: 0;
- font-size: 1.4em;
- li {
-   text-align: center;
-   font-family: 'Muli', sans-serif; 
-   list-style: none;
-  }
-   h3 {
-     border-bottom: black solid 1px;
-   }
- }
-`;
-
-const NotesContainer = styles.section`
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
- margin-left: auto;
- margin-right: auto;
- margin-top: 2em;
- list-style: none;
- padding: 0;
- font-size: 1.4em;
-`;
+import {
+  Header,
+  Main,
+  SearchContainer,
+  SectionContainer,
+  NotesContainer
+} from '../components/journal/JournalStyles';
 
 class JournalPage extends PureComponent {
   static propTypes = {
@@ -109,8 +42,8 @@ class JournalPage extends PureComponent {
     const { journalList, handleDelete, handleChange, searchTerm } = this.props;
     return (
       <>
-      <JournalMain>
-        <JournalHeader>
+      <Main>
+        <Header>
           <HeaderContainer/>
           <h1>Journal</h1>
           {journalList && <h2>This is where you can find all of your scheduled affirmation notes</h2>}
@@ -120,11 +53,11 @@ class JournalPage extends PureComponent {
               onChange={handleChange}
             />
           </SearchContainer>
-        </JournalHeader>
-        <Container>
+        </Header>
+        <SectionContainer>
           <li>My Notes</li>
           {/* <li>Favorites</li> */}
-        </Container>
+        </SectionContainer>
         <NotesContainer>
           <JournalList 
             journalList={journalList}
@@ -135,7 +68,7 @@ class JournalPage extends PureComponent {
             handleUnfavorite={handleUnfavorite}
           />} */}
         </NotesContainer>
-      </JournalMain>
+      </Main>
       </>
     );
   }

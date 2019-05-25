@@ -8,47 +8,14 @@ import PropTypes from 'prop-types';
 import CommunityList from '../components/community/CommunityList';
 import { updateFaves } from '../actions/favorites';
 import { fetchNotes } from '../actions/community';
-import styles from 'styled-components';
-import community from '../../assets/images/community.jpg';
 import HeaderContainer from './HeaderContainer';
-
-const CommunityHeader = styles.header `
-@import url('https://fonts.googleapis.com/css?family=Muli:300,700');
-  padding-top: 0;
-  text-align: center
-  background-image: url(${community});
-  height: 40vh;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  h1 {
-    font-family: 'Muli', sans-serif;
-    color: white;
-    letter-spacing: .09em;
-    text-shadow: 1pt 1.5pt grey;
-  }
-  h2 {
-    font-family: 'Muli', sans-serif;
-    color: white;
-    letter-spacing: .04em;
-    text-shadow: 1pt 1.5pt grey;
-  }
-
-@media (min-width: 1000px) {
-  width: 50%;
-}
-`;
-
-const CommunitySearch = styles.section`
-  width: 50%;
-  padding: -1em 1em 1em 1em;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-`;
+import {
+  NotesContainer,
+  SearchContainer
+} from '../components/journal/JournalStyles';
+import {
+  CommunityHeader
+} from '../components/community/CommunityStyles';
 
 class CommunityPage extends PureComponent {
   static propTypes = {
@@ -73,21 +40,19 @@ class CommunityPage extends PureComponent {
           <HeaderContainer />
           <h1>Community Messages</h1>
           <h2>Inspired by a message? Check to save</h2>
-          <CommunitySearch>
+          <SearchContainer>
             <Search
               searchTerm={searchTerm}
               onChange={handleChange}
             />
-          </CommunitySearch>
+          </SearchContainer>
         </CommunityHeader>
-        <section>
-          <ul>
-            <CommunityList
-              communityList={communityList}
-              handleFavorite={handleFavorite}
-            />
-          </ul>
-        </section>
+        <NotesContainer>
+          <CommunityList
+            communityList={communityList}
+            handleFavorite={handleFavorite}
+          />
+        </NotesContainer>
       </main>
       </>
     );
